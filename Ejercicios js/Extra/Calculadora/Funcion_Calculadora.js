@@ -1,7 +1,7 @@
 var display = document.getElementById("texto");
 let values = [];
 let realValue = null;
-//var achievedOperation = false;
+
 var activeOperation = false;
 var operation = null;
 var result;
@@ -15,13 +15,6 @@ function addValue(value){
         realValue += '' + value;
     }
     showValues(realValue, value);
-    /*if (activeOperation == false){
-        values[0] = parseInt(realValue);
-        display.textContent = realValue;
-    }else{
-        values.push(parseInt(realValue))
-        display.textContent += ' ' + realValue;
-    }*/
 }
 
 function valueZero(){
@@ -36,7 +29,6 @@ function pushValue(pushingValue){
     }else{
         values.push(parseInt(pushingValue))
     }
-    //showValues(pushingValue);
 }
 
 function showValues(fullValue, value){
