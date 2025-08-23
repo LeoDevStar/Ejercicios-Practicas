@@ -16,7 +16,7 @@
     <body>
         <main>
             <div id="espacioCalculadora">
-                <label id="texto">Texto de prueba</label>
+                <label id="texto">0</label>
 
                 <div id="botones">
                     <button onclick="addValue(1)">1</button>
@@ -35,10 +35,11 @@
                 </div>
 
                 <div id="funcionalidades">
-                    <button onclick="">+</button>
-                    <button onclick="">-</button>
-                    <button onclick="">x</button>
-                    <button onclick="">/</button>
+                    <button onclick="addOperation('+')">+</button>
+                    <button onclick="addOperation('-')">-</button>
+                    <button onclick="addOperation('x')">x</button>
+                    <button onclick="addOperation('/')">/</button>
+                    <button onclick="doOperation()">=</button>
                 </div>
                 
             </div>
