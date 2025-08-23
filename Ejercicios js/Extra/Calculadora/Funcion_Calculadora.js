@@ -8,10 +8,12 @@ var result;
 
 
 function addValue(value){
-    values.push(value)
     if (activeOperation == false){
-        display.textContent = value;    
+        values[0] = value;
+        display.textContent = value;
+
     }else{
+        values.push(value)
         display.textContent += ' ' + value;
     }
     
@@ -42,5 +44,6 @@ function doOperation(){
     }
     display.textContent = result;
     values.length = 0;
+    values[0] = result;
     activeOperation = false;
 }
