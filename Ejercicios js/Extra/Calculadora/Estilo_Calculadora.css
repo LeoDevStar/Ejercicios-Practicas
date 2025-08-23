@@ -9,6 +9,57 @@ body{
 #espacioCalculadora{
     width: 35%;
     height: 680px;
+    
     background-color: gray;
+    border-radius: 5%;
+
     display: inline-grid;
+
+    margin-inline: 30%;
+}
+
+#texto{
+    background-color: black;
+    border-radius: 5%;
+    height: fit-content;
+
+    color: aliceblue;
+    font-size: x-large;
+
+    text-align: end;
+    padding: 15%;
+}
+
+#botones{
+    text-align: center;
+}
+
+#botones button{
+    background-color: darkgrey;
+    border-radius: 20%;
+    border: none;
+
+    color: aliceblue;
+
+    margin: 2%;
+    padding: 4%;
+    
+    cursor: pointer;
+}
+
+#funcionalidades{
+    text-align: center;
+}
+
+#funcionalidades button{
+    background-color: black;
+    border-radius: 20%;
+    border: none;
+
+    color: aliceblue;
+
+    margin: 2%;
+    padding: 4%;
+    
+    cursor: pointer;
 }
