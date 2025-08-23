@@ -2,7 +2,7 @@ var display = document.getElementById("texto");
 let values = [];
 //var achievedOperation = false;
 var activeOperation = false;
-var operation;
+var operation = null;
 var result;
 
 
@@ -41,9 +41,12 @@ function doOperation(){
                 result = values[0] / values[1]
                 break;
         }
+    }else{
+        result = values[0];
     }
     display.textContent = result;
     values.length = 0;
     values[0] = result;
     activeOperation = false;
+    operation = null;
 }
