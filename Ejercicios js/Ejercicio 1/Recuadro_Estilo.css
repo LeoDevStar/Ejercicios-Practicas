@@ -1,0 +1,107 @@
+:root{
+    --page-background-color: rgb(129, 171, 248);
+    --content-background-color:aliceblue;  
+    --focus-background-color: rgb(77, 0, 128); 
+    --font: 'Roboto', 'sans-serif';
+    --font-color: azure;
+    --background-color-red: rgba(240, 23, 23, 0.4);
+    --background-color-yellow: rgba(232, 243, 84, 0.4);
+    --background-color-green: rgba(103, 246, 81, 0.4);
+    --background-color-blue: rgba(100, 75, 238, 0.4);
+}
+
+body{
+    width: 100%;
+    height: 608px;
+    /*height: fit-content;*/
+    margin: 0;
+    background-color: var(--page-background-color);
+}
+
+.horizontalAlignment{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#Recuadro1{
+    background-color: var(--content-background-color);
+    width: 50%;
+    height: 75%;
+    /*position: absolute;
+    
+    margin-top: 25%;*/
+
+    margin-left: 25%;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+#Recuadro2{
+    background-color: var(--focus-background-color);
+    width: 50%;
+    height: 100%;
+    border-radius: 2rem;
+
+    font-family: var(--font);
+    color: var(--font-color);
+    text-align: center;
+    
+}
+
+#Circle{
+    background-color: rgb(99, 4, 162);
+    width: 50%;
+    height: 30%;
+    border-radius: 5rem;
+    margin-left: 22%;
+    padding: 3%;
+}
+
+#Data{
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+#Recuadro2 p{
+    margin: 5%;
+}
+
+#Recuadro3{
+    width: 50%;
+    height: 100%;
+
+    font-family: var(--font);
+}
+
+#Recuadro3 h2{
+    margin: 8%;
+}
+
+.MiniRecuadro{
+    width: 100%;
+    border-radius: 1rem;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.MiniRecuadro h4{
+    padding-left: 5%;
+    padding-right: 40%;
+}
+
+#Recuadro3 button{
+    background-color: black;
+    width: 100%;
+    border-radius: 3rem;
+    padding: 4%;   
+}
+
+#Recuadro3 button a{
+    text-decoration: none;
+    color: white;
+    font-family: var(--font);
+}

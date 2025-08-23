@@ -1,0 +1,14 @@
+:root{
+    --background-color: rgb(39, 41, 67);
+}
+
+body{
+    background-color: var(--background-color);
+}
+
+#espacioCalculadora{
+    width: 35%;
+    height: 680px;
+    background-color: gray;
+    display: inline-grid;
+}
