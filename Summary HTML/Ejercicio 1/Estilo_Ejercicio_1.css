@@ -1,0 +1,95 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: rgb(129, 171, 248);
+}
+
+.RecuadroInformacion table{
+    margin: auto;
+    width: 50%;
+
+    background-color: aliceblue;
+    border-style: dashed;
+    border-radius: 2rem;
+
+}
+
+.RecuadroInformacion table tr{
+    background-color: aquamarine;
+}
+
+.circleInfo{
+    background-color: blueviolet;
+    text-align: center;
+
+    width: 30%;
+    border-radius: 50%;
+
+    margin: auto;
+    padding: 10% 15% 10% 15%;
+
+}
+
+#generalValue{
+    font-size: xx-large;
+}
+
+.dataInfo{
+    border-style: dotted;
+    border-radius: 2rem;
+    width:80%;
+    /*background-color: burlywood;
+    display: flex;*/
+
+    margin: auto;
+    margin-top: 5%;
+}
+
+.dataValue{
+    position: relative;
+    margin: auto;
+}
+
+.RecuadroInformacion h2{
+    text-align: center;
+}
+
+.dataInfo span{
+    display: flex;
+    border-radius: 2rem;
+}
+
+#reactionBox{
+    background-color: rgba(240, 23, 23, 0.4);
+}
+
+#memoryBox{
+    background-color: rgba(232, 243, 84, 0.4);
+}
+
+#verbalBox{
+    background-color: rgba(103, 246, 81, 0.4);
+}
+
+#visualBox{
+    background-color: rgba(100, 75, 238, 0.4);
+}
+
+.columnLeft{
+    width: 50%;
+    text-align: center;
+}
+
+.columnRight button{
+    background-color: black;
+    width: 100%;
+    border-radius: 3rem;
+    padding: 4%;   
+}
+
+.columnRight button a{
+    text-decoration: none;
+    color: white;
+    font-family: var(--font);
+}
