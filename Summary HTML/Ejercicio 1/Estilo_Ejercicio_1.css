@@ -16,9 +16,9 @@ body{
     display: flex;
 }
 
-.RecuadroInformacion table tr{
-    /*background-color: aquamarine;*/
-}
+/*.RecuadroInformacion table tr{
+    background-color: aquamarine;
+}*/
 
 .circleInfo{
     background-color: rgb(93, 27, 154);
@@ -28,12 +28,13 @@ body{
     border-radius: 50%;
 
     margin: auto;
-    padding: 10% 15% 10% 15%;
+    /*padding: 10% 15% 10% 15%;*/
+    padding: 10%;
 
 }
 
 #generalValue{
-    font-size: xx-large;
+    font-size: xxx-large;
 }
 
 .dataInfo{
@@ -49,16 +50,18 @@ body{
 
 .dataValue{
     position: relative;
-    margin: auto;
+    margin-left: auto;
+
 }
 
 .RecuadroInformacion h2{
     text-align: center;
 }
 
-.dataInfo span{
+.dataInfo div{
     display: flex;
     border-radius: 2rem;
+
 }
 
 #reactionBox{
@@ -81,15 +84,31 @@ body{
     width: 50%;
     background-color: blueviolet;
     border-radius: 2rem;
+    color:aliceblue;
+}
+
+.columnLeft th{
+    font-size: large;
 }
 
 .columnLeft p{
     text-align: center;
 }
 
+#textScore{
+    width: 80%;
+    margin: auto;
+}
+
 .columnRight{
     width: 50%;
 }
+
+.columnRight th{
+    text-align: left;
+    font-size: large;
+}
+
 .columnRight button{
     background-color: black;
     width: 80%;
