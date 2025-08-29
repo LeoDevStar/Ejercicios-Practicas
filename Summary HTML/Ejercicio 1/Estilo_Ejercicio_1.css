@@ -22,7 +22,8 @@ body{
 }*/
 
 .circleInfo{
-    background-color: rgb(93, 27, 154);
+    background-image: linear-gradient(rgb(62, 28, 173), rgb(46, 65, 211));
+    /*background-color: rgb(93, 27, 154);*/
     text-align: center;
 
     width: 30%;
@@ -62,7 +63,7 @@ body{
 
 .dataInfo div{
     display: flex;
-    border-radius: 2rem;
+    border-radius: 1rem;
 
 }
 .dataInfo svg{
@@ -71,7 +72,7 @@ body{
     margin-right: 10%;
 }
 #reactionBox{
-    background-color: rgba(240, 23, 23, 0.4);
+    background-color: rgba(240, 23, 23, 0.2);
 }
 
 #reactionBox svg{
@@ -79,7 +80,7 @@ body{
 }
 
 #memoryBox{
-    background-color: rgba(232, 243, 84, 0.4);
+    background-color: rgba(232, 243, 84, 0.2);
 }
 
 #memoryBox svg{
@@ -87,7 +88,7 @@ body{
 }
 
 #verbalBox{
-    background-color: rgba(103, 246, 81, 0.4);
+    background-color: rgba(103, 246, 81, 0.2);
 }
 
 #verbalBox svg{
@@ -96,7 +97,7 @@ body{
 }
 
 #visualBox{
-    background-color: rgba(100, 75, 238, 0.4);
+    background-color: rgba(100, 75, 238, 0.2);
 }
 
 #visualBox svg{
@@ -105,7 +106,8 @@ body{
 
 .columnLeft{
     width: 50%;
-    background-color: blueviolet;
+    /*background-color: blueviolet;*/
+    background-image: linear-gradient(rgb(46, 65, 211), rgb(62, 28, 173));
     border-radius: 2rem;
     color:aliceblue;
 }
