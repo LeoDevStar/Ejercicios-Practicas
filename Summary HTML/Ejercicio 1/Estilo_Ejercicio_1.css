@@ -1,0 +1,176 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: rgb(129, 171, 248);
+}
+
+.RecuadroInformacion{
+    margin: auto;
+    margin-top: 9%;
+    width: 50%;
+
+    background-color: aliceblue;
+    /*border-style: dashed;*/
+    border-radius: 2rem;
+
+    display: flex;
+}
+
+/*.RecuadroInformacion table tr{
+    background-color: aquamarine;
+}*/
+
+.circleInfo{
+    background-image: linear-gradient(rgb(62, 28, 173), rgb(46, 65, 211));
+    /*background-color: rgb(93, 27, 154);*/
+    text-align: center;
+
+    width: 30%;
+    border-radius: 50%;
+
+    margin: auto;
+    /*padding: 10% 15% 10% 15%;*/
+    padding: 10%;
+
+}
+
+#generalValue{
+    font-size: xxx-large;
+    font-weight: bold;
+}
+
+.dataInfo{
+    /*border-style: dotted;*/
+    border-radius: 2rem;
+    width:80%;
+    /*background-color: burlywood;
+    display: flex;*/
+
+    margin: auto;
+    margin-top: 5%;
+}
+
+.dataValue{
+    position: relative;
+    margin-left: auto;
+    margin-right: 10%;
+
+}
+
+.dataValue span{
+    font-weight: bold;
+}
+
+.RecuadroInformacion h2{
+    text-align: center;
+}
+
+.dataInfo div{
+    display: flex;
+    border-radius: 1rem;
+
+}
+.dataInfo svg{
+    margin: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#reactionBox{
+    background-color: rgba(240, 23, 23, 0.2);
+}
+
+#reactionBox svg{
+    fill: rgb(194, 18, 18);
+}
+
+#reactionTitle{
+    color: rgb(194, 18, 18);
+}
+
+#memoryBox{
+    background-color: rgba(232, 243, 84, 0.2);
+}
+
+#memoryBox svg{
+    fill: rgb(193, 202, 71);
+}
+
+#memoryTitle{
+    color: rgb(193, 202, 71)
+}
+
+#verbalBox{
+    background-color: rgba(103, 246, 81, 0.2);
+}
+
+#verbalBox svg{
+    fill: rgb(82, 196, 65);
+
+}
+
+#verbalTitle{
+    color: rgb(82, 196, 65);
+}
+
+#visualBox{
+    background-color: rgba(100, 75, 238, 0.2);
+}
+
+#visualBox svg{
+    fill: rgb(80, 61, 190);
+}
+
+#visualTitle{
+    color: rgb(80, 61, 190);
+}
+
+.columnLeft{
+    width: 50%;
+    /*background-color: blueviolet;*/
+    background-image: linear-gradient(rgb(46, 65, 211), rgb(62, 28, 173));
+    border-radius: 2rem;
+    color:aliceblue;
+}
+
+.columnLeft th{
+    font-size: large;
+    padding: 5%;
+}
+
+.columnLeft p{
+    text-align: center;
+}
+
+#textScore{
+    width: 65%;
+    margin: auto;
+    padding-bottom: 10%;
+}
+
+.columnRight{
+    width: 50%;
+}
+
+.columnRight th{
+    text-align: left;
+    font-size: large;
+    padding: 5%;
+}
+
+.columnRight button{
+    background-color: black;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5%;
+    border-radius: 3rem;
+    padding: 4%;
+    margin-top: 5%;
+    margin-left: 8%;
+}
+
+.columnRight button a{
+    text-decoration: none;
+    color: white;
+    font-family: var(--font);
+}
