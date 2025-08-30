@@ -1,49 +1,47 @@
 var displayFrame = document.getElementById("frame");
 var largeName = "";
 var frameString;
+let namesArray = new Array();
 
 function defineLargeName(stringArray){
-    for(var i=0; i < stringArray.length; i++){
-        if (stringArray[i].length > largeName.length){
-            largeName = stringArray[i];
-        }
-        //console.log(largeName);
-    }
+    
+    namesArray = stringArray.slice();
+    namesArray = namesArray.sort((a,b) => a.length-b.length);
+
+    largeName = namesArray.at(-1);
+
+    //console.log(namesArray);
 }
 
 function createFrame(nameArray){
     var nameDifference;
+
     defineLargeName(nameArray);
     
     frameString = "";
-    createBorder();
-    for(var i=0; i < nameArray.length; i++){
 
-        frameString += '* ' + nameArray[i];
-        
-        nameDifference = (largeName.length - nameArray[i].length);
-        console.log(nameDifference);
-        for (var j=0; j<=nameDifference; j++){
-            frameString += " ";
-        }
-
-        //frameString += ' *' + '<br>';
-        frameString += '*' + '\n';
-        
-    }
     createBorder();
-    //displayFrame.innerHTML = frameString;
+
+    nameArray.forEach(element => {
+        frameString += '* ' + element;
+
+        nameDifference  = (largeName.length - element.length);
+
+        frameString += " ".repeat(nameDifference);
+
+        frameString += ' *' + '\n';
+    });
+
+    createBorder();
+    
     displayFrame.textContent = frameString;
+    console.log(frameString);
 
 }
 
 function createBorder(){
-    for(var i = 0; i <= largeName.length; i++){
-        
-        frameString += '*';
-        
-    }
+
+    frameString += "*".repeat(largeName.length + 4);
     
-    //frameString += '<br>';
     frameString += '\n';
 }
