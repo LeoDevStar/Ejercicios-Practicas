@@ -37,6 +37,7 @@ body{
 
 #generalValue{
     font-size: xxx-large;
+    font-weight: bold;
 }
 
 .dataInfo{
@@ -55,6 +56,10 @@ body{
     margin-left: auto;
     margin-right: 10%;
 
+}
+
+.dataValue span{
+    font-weight: bold;
 }
 
 .RecuadroInformacion h2{
@@ -76,7 +81,11 @@ body{
 }
 
 #reactionBox svg{
-    fill: rgba(240, 23, 23, 0.8);
+    fill: rgb(194, 18, 18);
+}
+
+#reactionTitle{
+    color: rgb(194, 18, 18);
 }
 
 #memoryBox{
@@ -84,7 +93,11 @@ body{
 }
 
 #memoryBox svg{
-    fill: rgba(232, 243, 84, 0.8);
+    fill: rgb(193, 202, 71);
+}
+
+#memoryTitle{
+    color: rgb(193, 202, 71)
 }
 
 #verbalBox{
@@ -92,8 +105,12 @@ body{
 }
 
 #verbalBox svg{
-    fill: rgba(103, 246, 81, 0.8);
+    fill: rgb(82, 196, 65);
 
+}
+
+#verbalTitle{
+    color: rgb(82, 196, 65);
 }
 
 #visualBox{
@@ -101,7 +118,11 @@ body{
 }
 
 #visualBox svg{
-    fill: rgba(100, 75, 238, 0.8);
+    fill: rgb(80, 61, 190);
+}
+
+#visualTitle{
+    color: rgb(80, 61, 190);
 }
 
 .columnLeft{
@@ -114,6 +135,7 @@ body{
 
 .columnLeft th{
     font-size: large;
+    padding: 5%;
 }
 
 .columnLeft p{
@@ -121,8 +143,9 @@ body{
 }
 
 #textScore{
-    width: 80%;
+    width: 65%;
     margin: auto;
+    padding-bottom: 10%;
 }
 
 .columnRight{
@@ -132,12 +155,14 @@ body{
 .columnRight th{
     text-align: left;
     font-size: large;
+    padding: 5%;
 }
 
 .columnRight button{
     background-color: black;
     width: 80%;
     margin: auto;
+    margin-bottom: 5%;
     border-radius: 3rem;
     padding: 4%;
     margin-top: 5%;
