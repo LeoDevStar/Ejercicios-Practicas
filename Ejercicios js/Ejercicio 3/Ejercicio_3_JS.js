@@ -4,21 +4,20 @@ const modified = 'abcde'
 function findWrongNote(originalNotes, modifiedNotes){
 
     let wrongNote = '';
-    let largeArray = '';
 
     if (originalNotes == modifiedNotes){
         return wrongNote;
     } else {
-        if (originalNotes.length > modifiedNotes.length){
-            largeArray = originalNotes;
-        } else{
-            largeArray = modifiedNotes;
+
+        if (modifiedNotes.length > originalNotes.length){
+            wrongNote = modifiedNotes[originalNotes.length];
+            return wrongNote
         }
-   
-        for (let i = 0; i < largeArray.length; i++) {
-            
+
+        for (let i = 0; i < originalNotes.length; i++) {
+    
             if (originalNotes[i] != modifiedNotes[i]){
-                wrongNote = modifiedNotes[i];
+                wrongNote = originalNotes[i];
                 break
             }
             
