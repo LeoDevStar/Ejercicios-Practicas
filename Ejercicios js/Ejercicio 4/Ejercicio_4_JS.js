@@ -5,6 +5,7 @@ const projects = [
     ["ChatApp", "React", "Firebase", "Node"]
 ]
 
+//Alphabetical Order Test
 const projects2 = [
     ["TaskManager", "React", "Node", "MongoDB"],
     ["Portfolio", "HTML", "CSS", "React"],
@@ -12,18 +13,35 @@ const projects2 = [
     ["ChatApp", "React", "Firebase", "Node"]
 ]
 
+//No Repeated Technology Test
+const projects3 = [
+    ["Portfolio", "HTML", "CSS", "React"],
+    ["FoodDelivery", "Node", "Express", "MySQL"]
+]
+
 let projectsArray = [];
 let technologiesArray = [];
 
 let projectTech = [];
 
-let organizedProjects = [];
+let preOrganizedProjects = [];
 let firstElementOrganizedProjects;
+let projectsWithinOrganized;
+let organizedProjects;
 
 
 function organizeProjects(projectArray){
-    
-    let projectName;
+    let projectsArray = [];
+    let technologiesArray = [];
+
+    let projectTech = [];
+
+    let preOrganizedProjects = [];
+    let firstElementOrganizedProjects = [];
+    let projectsWithinOrganized = [];
+    let organizedProjects = [];
+
+    let projectName = "";
     projectArray.forEach(element => {
 
         projectName = element.at(0);
@@ -43,16 +61,16 @@ function organizeProjects(projectArray){
 
     projectArray.forEach(element => {
         element.forEach(value => {
-            console.log("Checking value: " + value);
+            
             projectName = element.at(0);
             let techArray = new Array();
-            let techFound = organizedProjects.find(tech => tech[0] == value);
+            let techFound = preOrganizedProjects.find(tech => tech[0] == value);
             
             if(projectTech.includes(value) && !techFound){
                 techArray.push(value);
                 techArray.push(projectName);
-                console.log(techArray);
-                organizedProjects.push(techArray);
+                
+                preOrganizedProjects.push(techArray);
             }else if(techFound){
                 techFound.push(projectName);
             }
@@ -60,39 +78,37 @@ function organizeProjects(projectArray){
         });
     })
 
-    firstElementOrganizedProjects = organizedProjects.slice();
+    firstElementOrganizedProjects = preOrganizedProjects.slice();
     firstElementOrganizedProjects.sort();
 
-    //organizedProjects.copyWithin(-1, 1)
-    //organizedProjects.
-    projectsWithinOrganized = organizedProjects.slice();
+    
+    projectsWithinOrganized = preOrganizedProjects.slice();
     projectsWithinOrganized.forEach(array =>{
         let technologies = array.splice(1)
         technologies.sort();
         technologies.forEach(techValue => {
             array.push(techValue);
         })
-        //let finalArray = array.concat(technologies);
-        //array.push(technologies);
-        //array = finalArray;
+        
     })
+
+    organizedProjects = projectsWithinOrganized.slice();
+    organizedProjects.sort();
+
     
-    //projectsArray.c
-    console.log("Projects Name\n");
+    
+    /*console.log("Projects Name\n");
     console.log(projectsArray);
     console.log("Technologies Used\n");
     console.log(technologiesArray);
     console.log("Repeated Technologies\n");
     console.log(projectTech);
-    console.log("Organized Projects by Tech\n");
-    console.log(organizedProjects);
+    console.log("Pre Organized Projects by Tech\n");
+    console.log(preOrganizedProjects);
     console.log("Alfabetically Organized Projects by Tech\n");
     console.log(firstElementOrganizedProjects);
     console.log("Alfabetically Organized Within Projects by Name\n");
-    console.log(projectsWithinOrganized);
+    console.log(projectsWithinOrganized);*/
+
+    return organizedProjects;
 }
-
-
-
-//console.log(repeatedTech);
-//console.log(projectTechArray);
