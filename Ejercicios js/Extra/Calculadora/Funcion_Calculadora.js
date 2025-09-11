@@ -1,86 +1,157 @@
 var display = document.getElementById("texto");
-let values = [];
-let realValue = null;
 
-var activeOperation = false;
-var operation = null;
-var result;
+let operationData = [];
+let realNumber = '';
+var loadValues = [];
+
+var parenthesisAdded = false;
+var doingSubOperation = false;
+var subOperation = [];
+var subArray;
+
+let actualArray = [];
+var operationArray = [];
+var operatorsArray = [];
+let resultsArray = [];
 
 
 
-function addValue(value){
-    if (realValue == null){
-        realValue = value;
+var preOperationResult;
+var operationResult = 0;
+let doingOperation = false;
+
+let activeOperator;
+let subOperator;
+
+
+function addNumber(number){
+    
+    if(realNumber == ''){
+        realNumber = number;
     }else{
-        realValue += '' + value;
+        realNumber += number;
     }
-    showValues(realValue, value);
-}
-
-function valueZero(){
-    if (display.textContent == '0'){
-        realValue = 0;
-    }
-}
-
-function pushValue(pushingValue){
-    if (activeOperation == false){
-        values[0] = parseInt(pushingValue);
+    
+    if (doingOperation){
+        display.textContent += number;
     }else{
-        values.push(parseInt(pushingValue))
+        display.textContent = realNumber;
     }
+    
 }
 
-function showValues(fullValue, value){
-    if (activeOperation == false){
-        display.textContent = fullValue;
-    }else{
-        display.textContent += value;
+function addOperator(operator){
+    
+    if(operator == "()"){
+        if (!parenthesisAdded){
+            parenthesisAdded = true;
+            operator = '(';
+        }else{
+            parenthesisAdded = false;
+            operator = ')';
+        }
     }
-}
 
-function addOperation(operator){
-    valueZero();
-    pushValue(realValue);
+    if(realNumber != ''){
+        console.log("Pushing real number: " + realNumber);
+        operationData.push(parseInt(realNumber));
+        
+        realNumber = '';
+    }
+
+    operationData.push(operator);
     display.textContent += ' ' + operator + ' ';
-    activeOperation = true;
-    operation = operator;
-    realValue = null;
+    doingOperation = true;
 }
 
-function doOperation(){
-    pushValue(realValue);
-    if (values.length != 0 && operation != null){
-        switch(operation){
+
+function newOperation(){
+    if(realNumber != ''){
+        operationData.push(parseInt(realNumber));
+    }
+    
+    if (operationData.length >= 2){    
+        
+        operationData.forEach(value =>{
+
+            if (value>=0 && actualArray.length < 2){                
+                actualArray.push(value);
+            }else{
+                if(value == '('){
+                    
+                    operationArray.push(actualArray);
+                    
+                    actualArray = new Array();
+
+                }else if (value == ')'){
+                    console.log("SubOperation False");
+                    
+                    operationArray[0] = [...operationArray[0], ...actualArray];
+                    
+                    actualArray = operationArray.at(-1);
+                    
+                    operatorsArray.pop();
+
+                    operationArray.pop();
+                    
+                }else{
+                    operatorsArray.push(value);
+                }
+            }
+
+            doOperation(actualArray, operatorsArray.at(-1));
+            
+        })
+        
+        operationResult = actualArray[0];
+        actualArray.length = 0;
+        operationArray.length = 0;
+        operatorsArray.length = 0;
+    }else{
+        operationResult = operationData[0];
+        
+    }
+    
+    display.textContent = operationResult.toString();
+    
+    
+    operationData.length = 0;
+    realNumber = operationResult.toString();
+
+    doingOperation = false;
+    activeOperator = null;
+    subOperator = null;
+}
+
+function doOperation(valueArray, operator){
+    
+    if(valueArray.length == 2){
+        console.log("Doing calc");
+        console.log(valueArray[0]);
+        console.log(operator);
+        console.log(valueArray[1]);
+        switch (operator) {
             case '+':
-                result = values[0] + values[1];
+                preOperationResult = valueArray[0] + valueArray[1];
                 break;
             case '-':
-                result = values[0] - values[1];
+                preOperationResult = valueArray[0] - valueArray[1];
                 break;
             case 'x':
-                result = values[0] * values[1];
+                preOperationResult = valueArray[0] * valueArray[1];
                 break;
             case '/':
-                result = values[0] / values[1];
+                preOperationResult = valueArray[0] / valueArray[1];
+                break;
+            default:
                 break;
         }
-    }else{
-        result = values[0];
+
+        console.log("preOperationResult: " + preOperationResult);
+                
+        valueArray.length = 0;          
+        valueArray[0] = preOperationResult;    
+        
     }
-    display.textContent = result;
-    values.length = 0;
-    values[0] = result;
-    realValue = values[0];
-    activeOperation = false;
-    operation = null;
-}
-
-function resetValue(){
-    values.length = 0;
-    realValue = null;
-    activeOperation = false;
-    operation = null;
-
-    display.textContent = 0;
+    
 }

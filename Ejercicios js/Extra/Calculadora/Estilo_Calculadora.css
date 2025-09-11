@@ -4,6 +4,9 @@
 
 body{
     background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #espacioCalculadora{
@@ -11,17 +14,18 @@ body{
     height: 680px;
     
     background-color: gray;
-    border-radius: 5%;
+    border-radius: 1rem;
 
-    display: inline-grid;
+    display: flex;
+    flex-direction: column;
 
     margin-inline: 30%;
 }
 
 #texto{
     background-color: black;
-    border-radius: 5%;
-    height: fit-content;
+    border-radius: 1rem;
+    /*height: fit-content;*/
 
     color: aliceblue;
     font-size: x-large;
@@ -30,12 +34,42 @@ body{
     padding: 15%;
 }
 
-#botones{
+#espacioBotones{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+#numerosBotones{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.botones{
+    /*text-align: center;*/
+
+    /*display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;*/
+
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: space-evenly;
+    
+    flex-grow: 1;
+    min-height: 10%;
+    max-height: fit-content;
+
+    margin: 3%;
+    
 }
 
-#botones button{
-    background-color: darkgrey;
+.botones button{
+    /*background-color: darkgrey;
     border-radius: 20%;
     border: none;
 
@@ -44,22 +78,45 @@ body{
     margin: 2%;
     padding: 4%;
     
+    cursor: pointer;*/
+
+    background-color: darkgrey;
+    border-radius: 2rem;
+    border: none;
+    color: aliceblue;
+    width: 30%;
     cursor: pointer;
 }
 
 #funcionalidades{
+    /*text-align: center;*/
+    width:40%;
     text-align: center;
+    display: flex;
+    
+    flex-direction: column;
+    
+    /*max-width: 30%;*/
+
+    align-items: center;
+    justify-content: space-evenly;
+    
+    row-gap: 1rem;
+    margin-top: 2%;
 }
 
 #funcionalidades button{
     background-color: black;
-    border-radius: 20%;
+    border-radius: 2rem;
     border: none;
 
     color: aliceblue;
 
-    margin: 2%;
+    /*margin: 2%;*/
     padding: 4%;
     
     cursor: pointer;
+
+    width: 40%;
+    height: 10%;
 }
