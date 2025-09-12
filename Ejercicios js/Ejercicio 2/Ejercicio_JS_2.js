@@ -15,44 +15,47 @@ const inventory2 = [
 
 const inventory3 = []
 
+function Stack(name, objects){
+    this.name = name;
+    this.objects = objects;
+}
+
+function InventoryObject(name, quantity){
+    this.name = name;
+    this.quantity = quantity;
+}
+
+
 function organizeInventory(inventoryArray){
-    let organizedInventory = new Array();
 
-    let object;
-    
-    if(inventoryArray.length > 0){
-        inventoryArray.forEach(element => {
-        
-        let FindCategory = organizedInventory.find(category => category.name == element.category);
-        
-        
-        if (!FindCategory){
+    let organizedInventory = [];
 
-            object = new Object();
-            object.name = element.category;
-            object.toys = new Array();
+    let localObject;
+    let localStack;
 
-            toy = new Object();
-            toy.name = element.name;
-            toy.quantity = element.quantity;
-
-            object.toys.push(toy);
+    if (inventoryArray.length > 0){
+        inventoryArray.forEach(element =>{
+            let findStack = organizedInventory.find(stack => stack.name == element.category);
             
-            organizedInventory.push(object);
-            
-        }
-        else if(!FindCategory.toys.find(toy => toy.name == element.name)) {
-            toy = new Object();
-            toy.name = element.name;
-            toy.quantity = element.quantity;
 
-            FindCategory.toys.push(toy);
-        }else{
-            FindCategory.toys.find(toy => toy.name == element.name).quantity += element.quantity;
-        }
-    });
+            if (!findStack){
 
+                localObject = new InventoryObject(element.name, element.quantity);
+                localStack = new Stack(element.category, [localObject]);
+                organizedInventory.push(localStack);
+
+            }else if(!findStack.objects.find(object => object.name == element.name)){
+
+                localObject = new InventoryObject(element.name, element.quantity);
+                findStack.objects.push(localObject);
+
+            }else{
+
+                findStack.objects.find(object => object.name == element.name).quantity += element.quantity;
+                
+            }
+        })
     }
-    
-    console.log(organizedInventory);
+
+    console.log(organizedInventory);   
 }
