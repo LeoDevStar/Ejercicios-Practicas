@@ -1,5 +1,6 @@
-import { httpResource } from '@angular/common/http';
+import { httpResource, HttpResourceRef } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { PokeList } from '../models/poke-list.model';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class PokeService {
   readonly #pokeUrl = 'https://pokeapi.co/api/v2';
 
-  getPokeList() {
-    return httpResource(() => `${this.#pokeUrl}/pokemon?limit=151`);
+  getPokeList(): HttpResourceRef<PokeList | undefined> {
+    return httpResource<PokeList>(() => `${this.#pokeUrl}/pokemon?limit=151`);
   }
 }
