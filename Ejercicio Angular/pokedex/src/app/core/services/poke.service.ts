@@ -1,6 +1,7 @@
 import { httpResource, HttpResourceRef } from '@angular/common/http';
 import { Injectable, Signal } from '@angular/core';
 import { PokeList } from '../models/poke-list.model';
+import { Pokemon } from '../models/pokemon.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class PokeService {
     return httpResource<PokeList>(() => `${this.#pokeUrl}/pokemon?limit=151`);
   }
 
-  getPokemon(name: Signal<string>){
-    return httpResource(() => `${this.#pokeUrl}/pokemon/${name()}`);
+  getPokemon(name: Signal<string>): HttpResourceRef<Pokemon | undefined> {
+    return httpResource<Pokemon>(() => `${this.#pokeUrl}/pokemon/${name()}`);
   }
 }
