@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { PokeResult } from '../../core/models/poke-result.model';
 
 @Component({
   selector: 'app-card',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './card.scss'
 })
 export class Card {
-
+readonly pokeResult = input.required<PokeResult>();
 }

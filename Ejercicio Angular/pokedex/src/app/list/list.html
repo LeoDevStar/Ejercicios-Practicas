@@ -9,7 +9,7 @@
             @let pokeList = pokeListResource.value();
 
             @for (pokeResult of pokeList?.results; track pokeResult){
-                {{pokeResult.name}}
+                <app-card [pokeResult]="pokeResult"/>
             }
         </div>
     }    
