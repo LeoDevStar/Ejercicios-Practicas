@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-details',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './details.scss'
 })
 export default class Details {
-
+  readonly name = input<string>('');
 }
+ 
