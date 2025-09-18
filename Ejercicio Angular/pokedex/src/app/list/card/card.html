@@ -2,7 +2,7 @@
     <img 
     width="120" 
     height="120"
-    [src]="pokeResult().url | pokeImg"
+    [ngSrc]="pokeResult().url | pokeImg"
     [alt]="pokeResult().name"/>
     <p>{{pokeResult().name | titlecase}}</p>
 </a>
