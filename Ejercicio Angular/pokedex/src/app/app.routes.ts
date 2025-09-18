@@ -7,6 +7,10 @@ export const routes: Routes = [
         component: List
     },
     {
+        path: ':name',
+        loadComponent: () => import('./details/details')
+    },
+    {
         path: '**',
         redirectTo: '',
         pathMatch: 'full'
