@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { PokeService } from '../core/services/poke.service';
 
 @Component({
   selector: 'app-details',
@@ -8,5 +9,9 @@ import { Component, input } from '@angular/core';
 })
 export default class Details {
   readonly name = input<string>('');
+  
+  readonly #pokeService = inject(PokeService);
+
+  protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
 }
  
