@@ -8,19 +8,19 @@
             <img 
               width="200" 
               height="200" 
-              [src]="pokemon.sprites.front_default"
+              [ngSrc]="pokemon.sprites.front_default"
               [alt]="name()"
             />
 
-            <h1 class="title">{{name()}}</h1>
+            <h1 class="title">{{name() | titlecase}}</h1>
 
             <div>
                 @for (type of pokemon.types; track type){
-                    <span class="type-badge">{{ type.type.name }}</span>
+                    <span class="type-badge">{{ type.type.name | titlecase}}</span>
                 }
             </div>
 
-            <a class="back-link">Back to Pokémon List</a>
+            <a routerLink="/" class="back-link">Back to Pokémon List</a>
         </div>
     }
 }
