@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class SearchBar {
 
+  searchPokemon(){
+    let name = document.getElementById("searchInput")?.nodeValue;
+    console.log(name);
+  }
+
 }
