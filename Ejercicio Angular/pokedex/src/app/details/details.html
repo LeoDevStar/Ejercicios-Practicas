@@ -1,0 +1,26 @@
+@if (pokeResource.isLoading()){
+    <p>Loading...</p>
+} @else if(pokeResource.error()){
+    <p>Error loading Pokémon</p>
+} @else {
+    @if(pokeResource.value(); as pokemon){
+        <div class="poke-details">
+            <img 
+              width="200" 
+              height="200" 
+              [ngSrc]="pokemon.sprites.front_default"
+              [alt]="name()"
+            />
+
+            <h1 class="title">{{name() | titlecase}}</h1>
+
+            <div>
+                @for (type of pokemon.types; track type){
+                    <span class="type-badge">{{ type.type.name | titlecase}}</span>
+                }
+            </div>
+
+            <a routerLink="/" class="back-link">Back to Pokémon List</a>
+        </div>
+    }
+}
