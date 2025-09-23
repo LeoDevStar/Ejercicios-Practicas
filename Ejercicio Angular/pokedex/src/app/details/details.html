@@ -24,6 +24,9 @@
               [alt]="name()"
             />
 
+            @for (form of pokemon.forms; track form) {
+                    <p>{{form.name| titlecase}}</p>
+            }
             
 
             
