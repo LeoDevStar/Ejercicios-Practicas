@@ -4,13 +4,17 @@
     height="120"
     [ngSrc]="pokeResult().url | pokeImg"
     [alt]="pokeResult().name"/>
+    @if(pokeResource.value(); as pokemon){
+        <div class="poke-card-id">
+            <p>{{pokemon.id}}</p>
+        </div>
+    }
     <div class="poke-card-details">
         <p>{{pokeResult().name | titlecase}}</p>
         @if(pokeResource.value(); as pokemon){
             <div class="poke-card-types">
                 @for (type of pokemon.types; track type){
-                    <!--<span class="type-badge">{{ type.type.name | titlecase}}</span>-->
-                    <p>{{type.type.name}}</p>
+                    <p>{{type.type.name | titlecase}}</p>
                 }
             </div>
         }

@@ -3,8 +3,13 @@
     text-align: center;
 }
 
+.poke-details-header{
+    display: flex;
+    align-items: center;
+}
+
 .type-badge{
-    display: inline-block;
+    /*display: inline-block;*/
     background-color: #444;
     color: #fff;
     padding: 5px 12px;

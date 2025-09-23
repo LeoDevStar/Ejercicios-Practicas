@@ -18,4 +18,9 @@ export class Card {
   readonly name = input.required<string>();
 
   protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
+
+  //readonly pokeTypeStyle = document.documentElement;
+  //pokeTypeStyle.style.setProperty('')
+
+  
 }

@@ -1,3 +1,19 @@
+@use "sass:map";
+$poke-types: (
+      "Fire": #ed1a1a,
+      "Water": #1a92ed,
+      "Electric": #eded1a,
+      "Grass": #44ed1a,
+      "Ice": #1ad8ed,
+      "Fighting": #eda01a,
+      "Poison": #bf1aed,
+      "Rock": #68655d,
+      "Flying": #1aedb5,
+      "Psychic": #ed1ab5  
+);
+
+$poke-type-background: #fff;
+
 .poke-card{
     background-color: #fff;
     border: 1px solid #ddd;
@@ -23,6 +39,9 @@
     }
 }
 
+.poke-card-id{
+  font-size: small;
+}
 .poke-card-details{
   display: flex;
   align-items: center;
@@ -32,6 +51,8 @@
 .poke-card-types{
   display: flex;
   flex-direction: column;
+
+  //background-color: map.get($map: $poke-types, $key: );
 
   p{
     margin: 0px;
