@@ -1,1 +1,7 @@
-<p>forms works!</p>
+@if (pokeSpecies.isLoading()){
+        <p>Loading...</p>
+    }@else if(pokeSpecies.error()){
+        <p>Error loading Pokémon</p>
+    }@else{
+        <p>{{pokeSpecies.value()?.flavor_text_entries}}</p>
+    }

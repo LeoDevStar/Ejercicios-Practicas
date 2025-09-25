@@ -9,7 +9,7 @@ import { PokeService } from '../../core/services/poke.service';
 })
 export class Forms {
   readonly #pokeService = inject(PokeService);
-  readonly name = input.required<string>();
+  readonly name = input<string>('');
 
   protected readonly pokeSpecies = this.#pokeService.getPokemonSpecies(this.name);
 }
