@@ -3,6 +3,7 @@ import { Injectable, Signal } from '@angular/core';
 import { PokeList } from '../models/poke-list.model';
 import { Pokemon } from '../models/pokemon.model';
 import { PokeSpecies } from '../models/poke-species.model';
+import { PokeColor } from '../models/poke-color.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,9 @@ export class PokeService {
 
   getPokemonSpecies(name: Signal<string>): HttpResourceRef<PokeSpecies | undefined> {
     return httpResource<PokeSpecies>(() => `${this.#pokeUrl}/pokemon-species/${name()}`);
+  }
+
+  getPokemonColor(name: Signal<string>): HttpResourceRef<PokeColor | undefined>{
+    return httpResource<PokeColor>(() => `${this.#pokeUrl}/pokemon-color/${name()}`);
   }
 }
