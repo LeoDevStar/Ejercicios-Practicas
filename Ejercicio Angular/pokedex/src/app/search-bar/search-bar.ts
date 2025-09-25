@@ -8,9 +8,12 @@ import { Component } from '@angular/core';
 })
 export class SearchBar {
 
-  searchPokemon(){
-    let name = document.getElementById("searchInput")?.nodeValue;
-    console.log(name);
+  pokemon_name: string = "";
+
+  searchPokemon(value: string){
+    //let name = document.getElementById("searchInput");
+    this.pokemon_name = value;
+    console.log("Search Pokemon: " + this.pokemon_name);
   }
 
 }

@@ -44,7 +44,9 @@ $poke-types: (
 }
 
 .poke-card img{
-  background-color: map.get($map: $poke-types, $key: var(--type-background));
+  //background-color: map.get($map: $poke-types, $key: var(--type-background));
+  padding-inline: 30px;
+  border-radius: 15px;
 }
 
 .poke-card-id{
@@ -59,12 +61,17 @@ $poke-types: (
 .poke-card-types{
   display: flex;
   flex-direction: column;
-
+  //font-size: small;
   //background-color: map.get($map: $poke-types, $key: );
 
   p{
-    background-color: map.get($poke-types, var(--type-background));
+    //background-color: map.get($poke-types, var(--type-background));
+    color: #fff;
     margin: 0px;
+    border-radius: 6px;
+    font-size: smaller;
+    margin: 3px;
+    padding: 5px;
   }
 }
 
