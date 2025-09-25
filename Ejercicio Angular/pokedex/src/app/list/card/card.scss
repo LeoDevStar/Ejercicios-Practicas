@@ -1,4 +1,10 @@
 @use "sass:map";
+
+$poke-type-background: "Rock";
+:root{
+  --type-background: var($poke-type-background);
+}
+
 $poke-types: (
       "Fire": #ed1a1a,
       "Water": #1a92ed,
@@ -11,8 +17,6 @@ $poke-types: (
       "Flying": #1aedb5,
       "Psychic": #ed1ab5  
 );
-
-$poke-type-background: #fff;
 
 .poke-card{
     background-color: #fff;
@@ -39,6 +43,10 @@ $poke-type-background: #fff;
     }
 }
 
+.poke-card img{
+  background-color: map.get($map: $poke-types, $key: var(--type-background));
+}
+
 .poke-card-id{
   font-size: small;
 }
@@ -55,6 +63,7 @@ $poke-type-background: #fff;
   //background-color: map.get($map: $poke-types, $key: );
 
   p{
+    background-color: map.get($poke-types, var(--type-background));
     margin: 0px;
   }
 }

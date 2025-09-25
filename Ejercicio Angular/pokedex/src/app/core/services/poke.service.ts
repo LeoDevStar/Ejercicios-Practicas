@@ -23,7 +23,7 @@ export class PokeService {
     return httpResource<PokeSpecies>(() => `${this.#pokeUrl}/pokemon-species/${name()}`);
   }
 
-  getPokemonColor(name: Signal<string>): HttpResourceRef<PokeColor | undefined>{
+  /*getPokemonColor(name: Signal<string>): HttpResourceRef<PokeColor | undefined>{
     return httpResource<PokeColor>(() => `${this.#pokeUrl}/pokemon-color/${name()}`);
-  }
+  }*/
 }
