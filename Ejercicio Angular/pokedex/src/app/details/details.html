@@ -5,16 +5,18 @@
 } @else {
     @if(pokeResource.value(); as pokemon){
         <div class="poke-details">
-            <h4>{{pokemon.id}}</h4>
+            <div class="poke-content">
+                <a routerLink="/" class="back-link">Back to Pokémon List</a>
+                <h4>{{pokemon.id}}</h4>
 
-            <div class="poke-details-header">
-                <h1 class="title">{{name() | titlecase}}</h1>
-                <div>
-                    @for (type of pokemon.types; track type){
-                        <span [style.background-color]="setBackgroundColor(type.type.name | titlecase)" class="type-badge">{{ type.type.name | titlecase}}</span>
-                    }
+                <div class="poke-details-header">
+                    <h1 class="title">{{name() | titlecase}}</h1>
+                    <div class="poke-type-badges">
+                        @for (type of pokemon.types; track type){
+                            <span [style.background-color]="setBackgroundColor(type.type.name | titlecase)" class="type-badge">{{ type.type.name | titlecase}}</span>
+                        }
+                    </div>
                 </div>
-            </div>
             
 
             <img 
@@ -24,44 +26,21 @@
               [alt]="name()"
               [style.background-color]="setBackgroundColor(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"
             />
+            </div>
+            
 
-            @for (form of pokemon.forms; track form) {
+            <!--@for (form of pokemon.forms; track form) {
                     <p>{{form.name| titlecase}}</p>
-            }
-
-            <!--<app-forms [name]="pokemon.name"></app-forms>-->
+        }-->
+            <div class="poke-info">
+                <app-info [name]="pokemon.name"></app-info>
+            </div>
+            
             
 
             
 
-            <a routerLink="/" class="back-link">Back to Pokémon List</a>
+            
         </div>
     }
 }
-
-<!--@if (pokeResource.isLoading()){
-    <p>Loading...</p>
-} @else if(pokeResource.error()){
-    <p>Error loading Pokémon</p>
-} @else {
-    @if(pokeResource.value(); as pokemon){
-        <div class="poke-details">
-            <img 
-              width="200" 
-              height="200" 
-              [ngSrc]="pokemon.sprites.front_default"
-              [alt]="name()"
-            />
-
-            <h1 class="title">{{name() | titlecase}}</h1>
-
-            <div>
-                @for (type of pokemon.types; track type){
-                    <span class="type-badge">{{ type.type.name | titlecase}}</span>
-                }
-            </div>
-
-            <a routerLink="/" class="back-link">Back to Pokémon List</a>
-        </div>
-    }
-    }-->

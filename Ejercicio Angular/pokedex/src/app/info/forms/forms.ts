@@ -1,5 +1,4 @@
-import { Component, inject, input } from '@angular/core';
-import { PokeService } from '../../core/services/poke.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-forms',
@@ -8,8 +7,5 @@ import { PokeService } from '../../core/services/poke.service';
   styleUrl: './forms.scss'
 })
 export class Forms {
-  readonly #pokeService = inject(PokeService);
-  readonly name = input<string>('');
 
-  protected readonly pokeSpecies = this.#pokeService.getPokemonSpecies(this.name);
 }

@@ -3,10 +3,11 @@ import { PokeService } from '../core/services/poke.service';
 import { NgOptimizedImage, TitleCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Forms } from "../info/forms/forms";
+import { Info } from "../info/info";
 
 @Component({
   selector: 'app-details',
-  imports: [TitleCasePipe, NgOptimizedImage, RouterLink, Forms],
+  imports: [TitleCasePipe, NgOptimizedImage, RouterLink, Forms, Info],
   templateUrl: './details.html',
   styleUrl: './details.scss'
 })

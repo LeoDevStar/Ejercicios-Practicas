@@ -1,6 +1,7 @@
 .poke-details{
-    width: 350px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 30px;
     img{
         border-radius: 75px;
     }
@@ -9,6 +10,13 @@
 .poke-details-header{
     display: flex;
     align-items: center;
+}
+
+.poke-type-badges{
+    margin-left: 50px;
+}
+.poke-info{
+
 }
 
 .type-badge{
