@@ -11,7 +11,7 @@
                 <h1 class="title">{{name() | titlecase}}</h1>
                 <div>
                     @for (type of pokemon.types; track type){
-                        <span class="type-badge">{{ type.type.name | titlecase}}</span>
+                        <span [style.background-color]="setBackgroundColor(type.type.name | titlecase)" class="type-badge">{{ type.type.name | titlecase}}</span>
                     }
                 </div>
             </div>
@@ -22,6 +22,7 @@
               height="600" 
               [ngSrc]="pokemon.sprites.front_default"
               [alt]="name()"
+              [style.background-color]="setBackgroundColor(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"
             />
 
             @for (form of pokemon.forms; track form) {

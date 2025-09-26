@@ -1,6 +1,9 @@
 .poke-details{
     width: 350px;
     text-align: center;
+    img{
+        border-radius: 75px;
+    }
 }
 
 .poke-details-header{
@@ -10,7 +13,7 @@
 
 .type-badge{
     /*display: inline-block;*/
-    background-color: #444;
+    /*background-color: #444;*/
     color: #fff;
     padding: 5px 12px;
     border-radius: 20px;
