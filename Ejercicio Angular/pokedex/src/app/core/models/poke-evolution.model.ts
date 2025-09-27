@@ -1,4 +1,4 @@
-export interface pokeEvolution{
+export interface PokeEvolution{
     id: number;
     chain: {
         evolves_to: {

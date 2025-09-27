@@ -4,6 +4,7 @@ import { PokeList } from '../models/poke-list.model';
 import { Pokemon } from '../models/pokemon.model';
 import { PokeSpecies } from '../models/poke-species.model';
 import { PokeColor } from '../models/poke-color.model';
+import { PokeEvolution } from '../models/poke-evolution.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,10 @@ export class PokeService {
 
   getPokemonSpecies(name: Signal<string>): HttpResourceRef<PokeSpecies | undefined> {
     return httpResource<PokeSpecies>(() => `${this.#pokeUrl}/pokemon-species/${name()}`);
+  }
+
+  getPokemonEvolutionChain(id: Signal<number>): HttpResourceRef<PokeEvolution | undefined> {
+    return httpResource<PokeEvolution>(() => `${this.#pokeUrl}/evolution-chain/${id()}`);
   }
 
   /*getPokemonColor(name: Signal<string>): HttpResourceRef<PokeColor | undefined>{
