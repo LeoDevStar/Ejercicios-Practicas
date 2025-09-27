@@ -3,6 +3,10 @@
     }@else if(pokeSpecies.error()){
         <p>Error loading Pokémon</p>
     }@else{
-        <h1>{{pokeSpecies.value()?.name | titlecase}}</h1>
-        <p>{{pokeSpecies.value()?.flavor_text_entries?.at(0)?.flavor_text}}</p>
+        @if(pokeSpecies.value(); as pokemonSpecies){
+            <app-forms [evo_url]="pokemonSpecies.evolution_chain.url" [name]="pokemonSpecies.name"></app-forms>
+            <h1>{{pokemonSpecies.name | titlecase}}</h1>
+            <p>{{pokemonSpecies.flavor_text_entries.at(0)?.flavor_text}}</p>
+        }
+        
     }

@@ -24,8 +24,8 @@ export class PokeService {
     return httpResource<PokeSpecies>(() => `${this.#pokeUrl}/pokemon-species/${name()}`);
   }
 
-  getPokemonEvolutionChain(id: Signal<number>): HttpResourceRef<PokeEvolution | undefined> {
-    return httpResource<PokeEvolution>(() => `${this.#pokeUrl}/evolution-chain/${id()}`);
+  getPokemonEvolutionChain(evolution_chain_url: Signal<string>): HttpResourceRef<PokeEvolution | undefined> {
+    return httpResource<PokeEvolution>(() => `${evolution_chain_url()}`);
   }
 
   /*getPokemonColor(name: Signal<string>): HttpResourceRef<PokeColor | undefined>{

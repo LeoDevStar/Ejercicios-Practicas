@@ -1,0 +1,19 @@
+<p>{{evo_url()}}</p>
+@if (pokeEvolution_Chain.isLoading()){
+        <p>Loading...</p>
+    }@else if(pokeEvolution_Chain.error()){
+        <p>Error loading Pokémon</p>
+    }@else{
+        @if(pokeEvolution_Chain.value(); as pokemon){
+            @for(evolution of pokemon.chain.evolves_to; track evolution){
+                <p>{{evolution.species.name | titlecase}}</p>
+                <!--<p>{{evolution.evolves_to.at(0)}}</p>-->
+                <!--<p>{{checkEvolutionChain()}}</p>-->
+                <!--@for(evo of evolution.evolves_to; track evo){
+                    <p>{{evo}}</p>
+            }-->
+                
+                <!--<p>{{evolution.species.url | titlecase}}</p>-->
+            }
+        }
+    }

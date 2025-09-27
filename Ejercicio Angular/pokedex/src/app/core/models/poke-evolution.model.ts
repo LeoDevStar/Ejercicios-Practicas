@@ -5,7 +5,8 @@ export interface PokeEvolution{
             species: {
                 name: string;
                 url: string;
-            }
+            },
+            evolves_to: [];
         }[];
     };
 }
