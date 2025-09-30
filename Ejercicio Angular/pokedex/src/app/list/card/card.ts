@@ -23,7 +23,7 @@ export class Card {
   setBackgroundColor(type: string|null){
     switch (type) {
       case "Bug":
-        this.bgColor = "#13941eff";
+        this.bgColor = "rgba(161, 226, 167, 1)";
         break;
       case "Dark":
         this.bgColor = "#1b1c1bff";
@@ -41,7 +41,7 @@ export class Card {
         this.bgColor = "#eda01a";
         break;
       case "Fire":
-        this.bgColor = "#ed1a1a";
+        this.bgColor = "rgba(246, 219, 191, 1)";
         break;
       case "Flying":
         this.bgColor = "#55818fff";
@@ -50,7 +50,7 @@ export class Card {
         this.bgColor = "#363d8dff";
         break;
       case "Grass":
-        this.bgColor = "#44ed1a";
+        this.bgColor = "rgba(199, 239, 222, 1)";
         break;
       case "Ground":
         this.bgColor = "#786210ff";
@@ -74,7 +74,7 @@ export class Card {
         this.bgColor = "#72daa5ff";
         break;
       case "Water":
-        this.bgColor = "#1a92ed";
+        this.bgColor = "rgba(188, 233, 239, 1)";
         break;
       default:
         this.bgColor = "#fff"
@@ -83,6 +83,17 @@ export class Card {
     }
     return this.bgColor;
   }
-  
+
+  /*card = document.getElementById("poke-card");
+  switch (this.pokeResource) {
+    case value:
+      
+      break;
+
+    default:
+      break;
+  }*/
 }
+
+
 
