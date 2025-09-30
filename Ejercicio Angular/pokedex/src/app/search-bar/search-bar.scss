@@ -1,10 +1,30 @@
-.poke-search{
+p{
     text-align: center;
-    margin: 30px;
     font-family: sans-serif;
     color: #694086;
+}
+.poke-search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    gap: 20px;
 }
 
 .poke-search input{
     width:50%;
+    background-color: rgb(222, 221, 221);
+    border-radius: 12px;
+    border-style: none;
+    padding: 15px;
+}
+
+.poke-search button{
+    background-color: rgba(105, 64, 134, 1);
+    border-style: none;
+    border-radius: 12px;
+    padding-block: 15px;
+    color: rgba(255,255,255,1);
+    
+    cursor: pointer;
 }
