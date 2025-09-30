@@ -13,7 +13,7 @@
                     <h1 class="title">{{name() | titlecase}}</h1>
                     <div class="poke-type-badges">
                         @for (type of pokemon.types; track type){
-                            <span [style.background-color]="setBackgroundColor(type.type.name | titlecase)" class="type-badge">{{ type.type.name | titlecase}}</span>
+                            <span [ngClass]="typeStyles(type.type.name | titlecase)" class="type-badge">{{ type.type.name | titlecase}}</span>
                         }
                     </div>
                 </div>
@@ -24,7 +24,7 @@
               height="600" 
               [ngSrc]="pokemon.sprites.front_default"
               [alt]="name()"
-              [style.background-color]="setBackgroundColor(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"
+              [ngClass]="typeStyles(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"
             />
             </div>
             

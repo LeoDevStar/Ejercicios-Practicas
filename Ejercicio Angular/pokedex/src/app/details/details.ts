@@ -1,13 +1,13 @@
 import { Component, inject, input } from '@angular/core';
 import { PokeService } from '../core/services/poke.service';
-import { NgOptimizedImage, TitleCasePipe } from '@angular/common';
+import { NgClass, NgOptimizedImage, TitleCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Forms } from "../info/forms/forms";
 import { Info } from "../info/info";
 
 @Component({
   selector: 'app-details',
-  imports: [TitleCasePipe, NgOptimizedImage, RouterLink, Forms, Info],
+  imports: [TitleCasePipe, NgOptimizedImage, RouterLink, Forms, Info, NgClass],
   templateUrl: './details.html',
   styleUrl: './details.scss'
 })
@@ -18,69 +18,69 @@ export default class Details {
 
   protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
 
-  bgColor: string = "#fff";
-  setBackgroundColor(type: string|null){
+  type_css_class: string = '';
+  typeStyles(type: string|null){
     switch (type) {
       case "Bug":
-        this.bgColor = "#13941eff";
+        this.type_css_class = "poke-type-bug";
         break;
       case "Dark":
-        this.bgColor = "#1b1c1bff";
+        this.type_css_class = "poke-type-dark";
         break;
       case "Dragon":
-        this.bgColor = "#148095ff";
+        this.type_css_class = "poke-type-dragon";
         break;
       case "Electric":
-        this.bgColor = "#eded1a";
+        this.type_css_class = "poke-type-electric";
         break;
       case "Fairy":
-        this.bgColor = "#c9187fff";
+        this.type_css_class = "poke-type-fairy";
         break;
       case "Fighting":
-        this.bgColor = "#eda01a";
+        this.type_css_class = "poke-type-fighting";
         break;
       case "Fire":
-        this.bgColor = "#ed1a1a";
+        this.type_css_class = "poke-type-fire";
         break;
       case "Flying":
-        this.bgColor = "#55818fff";
+        this.type_css_class = "poke-type-flying";
         break;
       case "Ghost":
-        this.bgColor = "#363d8dff";
+        this.type_css_class = "poke-type-ghost";
         break;
       case "Grass":
-        this.bgColor = "#44ed1a";
+        this.type_css_class = "poke-type-grass";
         break;
       case "Ground":
-        this.bgColor = "#786210ff";
+        this.type_css_class = "poke-type-ground";
         break;
       case "Ice":
-        this.bgColor = "#1ad8ed";
+        this.type_css_class = "poke-type-ice";
         break;
       case "Normal":
-        this.bgColor = "#98417cff";
+        this.type_css_class = "poke-type-normal";
         break;
       case "Poison":
-        this.bgColor = "#751191ff";
+        this.type_css_class = "poke-type-poison";
         break;
       case "Psychic":
-        this.bgColor = "#ed1ab5";
+        this.type_css_class = "poke-type-psychic";
         break;
       case "Rock":
-        this.bgColor = "#603d0bff";
+        this.type_css_class = "poke-type-rock";
         break;
       case "Steel":
-        this.bgColor = "#72daa5ff";
+        this.type_css_class = "poke-type-steel";
         break;
       case "Water":
-        this.bgColor = "#1a92ed";
+        this.type_css_class = "poke-type-water";
         break;
       default:
-        this.bgColor = "#fff"
+        this.type_css_class = "poke-type-default"
         break;
 
     }
-    return this.bgColor;
+    return this.type_css_class;
   }
 }
  
