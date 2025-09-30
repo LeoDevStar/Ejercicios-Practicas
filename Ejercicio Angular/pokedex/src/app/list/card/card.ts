@@ -1,13 +1,13 @@
 import { Component, input, inject } from '@angular/core';
 import { PokeService } from '../../core/services/poke.service';
 import { PokeResult } from '../../core/models/poke-result.model';
-import { NgOptimizedImage, TitleCasePipe } from '@angular/common';
+import { NgClass, NgOptimizedImage, TitleCasePipe } from '@angular/common';
 import { PokeImgPipe } from './poke-img-pipe';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-card',
-  imports: [TitleCasePipe, PokeImgPipe, NgOptimizedImage, RouterLink],
+  imports: [TitleCasePipe, PokeImgPipe, NgOptimizedImage, RouterLink, NgClass],
   templateUrl: './card.html',
   styleUrl: './card.scss'
 })
@@ -19,69 +19,69 @@ export class Card {
 
   protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
 
-  bgColor: string = "#fff";
-  setBackgroundColor(type: string|null){
+  type_css_class: string = '';
+  typeStyles(type: string|null){
     switch (type) {
       case "Bug":
-        this.bgColor = "rgba(161, 226, 167, 1)";
+        this.type_css_class = "poke-type-bug";
         break;
       case "Dark":
-        this.bgColor = "#1b1c1bff";
+        this.type_css_class = "poke-type-dark";
         break;
       case "Dragon":
-        this.bgColor = "#148095ff";
+        this.type_css_class = "poke-type-dragon";
         break;
       case "Electric":
-        this.bgColor = "#eded1a";
+        this.type_css_class = "poke-type-electric";
         break;
       case "Fairy":
-        this.bgColor = "#c9187fff";
+        this.type_css_class = "poke-type-fairy";
         break;
       case "Fighting":
-        this.bgColor = "#eda01a";
+        this.type_css_class = "poke-type-fighting";
         break;
       case "Fire":
-        this.bgColor = "rgba(246, 219, 191, 1)";
+        this.type_css_class = "poke-type-fire";
         break;
       case "Flying":
-        this.bgColor = "#55818fff";
+        this.type_css_class = "poke-type-flying";
         break;
       case "Ghost":
-        this.bgColor = "#363d8dff";
+        this.type_css_class = "poke-type-ghost";
         break;
       case "Grass":
-        this.bgColor = "rgba(199, 239, 222, 1)";
+        this.type_css_class = "poke-type-grass";
         break;
       case "Ground":
-        this.bgColor = "#786210ff";
+        this.type_css_class = "poke-type-ground";
         break;
       case "Ice":
-        this.bgColor = "#1ad8ed";
+        this.type_css_class = "poke-type-ice";
         break;
       case "Normal":
-        this.bgColor = "#98417cff";
+        this.type_css_class = "poke-type-normal";
         break;
       case "Poison":
-        this.bgColor = "#751191ff";
+        this.type_css_class = "poke-type-poison";
         break;
       case "Psychic":
-        this.bgColor = "#ed1ab5";
+        this.type_css_class = "poke-type-psychic";
         break;
       case "Rock":
-        this.bgColor = "#603d0bff";
+        this.type_css_class = "poke-type-rock";
         break;
       case "Steel":
-        this.bgColor = "#72daa5ff";
+        this.type_css_class = "poke-type-steel";
         break;
       case "Water":
-        this.bgColor = "rgba(188, 233, 239, 1)";
+        this.type_css_class = "poke-type-water";
         break;
       default:
-        this.bgColor = "#fff"
+        this.type_css_class = "poke-type-default"
         break;
 
     }
-    return this.bgColor;
+    return this.type_css_class;
   }
 
   /*card = document.getElementById("poke-card");

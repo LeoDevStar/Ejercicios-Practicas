@@ -46,6 +46,7 @@ $poke-types: (
 .poke-card img{
   //background-color: map.get($map: $poke-types, $key: var(--type-background));
   padding-inline: 30px;
+  padding-block: 20px;
   border-radius: 15px;
 }
 
@@ -66,7 +67,7 @@ $poke-types: (
 
   p{
     //background-color: map.get($poke-types, var(--type-background));
-    color: #fff;
+    //color: #fff;
     margin: 0px;
     border-radius: 6px;
     font-size: smaller;
@@ -75,11 +76,97 @@ $poke-types: (
   }
 }
 
+.poke-type-bug{
+  background-color: rgba(161, 226, 167, 1);
+  color: #68655d;
+}
+
+.poke-type-dark{
+  background-color: rgba(27, 28, 27, 1);
+  color: #fff;
+}
+
+.poke-type-dragon{
+  background-color: rgba(20, 128, 149, 1);
+  color: #fff;
+}
+
+.poke-type-electric{
+  background-color: rgba(237, 237, 26, 1);
+  color: #68655d;
+}
+
+.poke-type-fairy{
+  background-color: rgba(201, 24, 127, 1);
+  color: #fff;
+}
+
+.poke-type-fighting{
+  background-color: rgba(237, 160, 26, 1);
+  color: #fff;
+}
+
 .poke-type-fire{
-  background-color: #ed1a1a;
+  background-color: rgba(246, 219, 191, 1);
+  color: #fff;
+}
+
+.poke-type-flying{
+  background-color: rgba(85, 129, 143, 1);
+  color: #fff;
+}
+
+.poke-type-ghost{
+  background-color: rgba(54, 61, 141, 1);
+  color: #fff;
+}
+
+.poke-type-grass{
+  background-color: rgba(199, 239, 222, 1);
+  color: #fff;
+}
+
+.poke-type-ground{
+  background-color: rgba(120, 98, 16, 1);
+  color: #fff;
+}
+
+.poke-type-ice{
+  background-color: rgba(26, 216, 237, 1);
+  color: #fff;
+}
+
+.poke-type-normal{
+  background-color: rgba(152, 65, 124, 1);
+  color: #fff;
+}
+
+.poke-type-poison{
+  background-color: rgba(117, 17, 145, 1);
+  color: #fff;
+}
+
+.poke-type-psychic{
+  background-color: rgba(237, 26, 181, 1);
+  color: #fff;
+}
+
+.poke-type-rock{
+  background-color: rgba(96, 61, 11);
+  color: #fff;
+}
+
+.poke-type-steel{
+  background-color: rgba(114, 218, 165);
+  color: #fff;
 }
 
 .poke-type-water{
-  background-color: #1a92ed;
+  background-color: rgba(188, 233, 239, 1);
+  color: #fff;
 }
 
+.poke-type-default{
+  background-color: rgba(255, 255, 255, 1);
+  color: #fff;
+}

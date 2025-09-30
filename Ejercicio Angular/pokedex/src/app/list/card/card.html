@@ -4,7 +4,7 @@
     height="150"
     [ngSrc]="pokeResult().url | pokeImg"
     [alt]="pokeResult().name"
-    [style.background-color]="setBackgroundColor(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"/>
+    [ngClass]="typeStyles(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"/>
     
     <div class="poke-card-details">
         <div>
@@ -19,8 +19,8 @@
         @if(pokeResource.value(); as pokemon){
             <div class="poke-card-types">
                 @for (type of pokemon.types; track type){
-                    <!--<p style="--type-background: {{type.type.name | titlecase}};">{{type.type.name | titlecase}}</p>-->                    
-                    <p [style.background-color]="setBackgroundColor(type.type.name | titlecase)">{{type.type.name | titlecase}}</p>
+                    
+                    <p [ngClass]="typeStyles(type.type.name | titlecase)">{{type.type.name | titlecase}}</p>
 
                 }
             </div>
