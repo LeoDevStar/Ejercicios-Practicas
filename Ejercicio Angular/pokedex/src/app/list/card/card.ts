@@ -16,9 +16,18 @@ export class Card {
   readonly #pokeService = inject(PokeService);
   readonly pokeResult = input.required<PokeResult>();
   readonly name = input.required<string>();
+  readonly pokeSearch = input<string>('');
 
   protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
 
+  showPokeCard: boolean = true;
+
+  hidePokeCard(hide:boolean){
+    if(hide){
+      this.showPokeCard = false;
+    }
+  }
+ 
   type_css_class: string = '';
   typeStyles(type: string|null){
     switch (type) {

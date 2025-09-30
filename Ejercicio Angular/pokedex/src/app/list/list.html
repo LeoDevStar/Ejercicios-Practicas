@@ -1,5 +1,5 @@
 <h1 class="title">Pokédex</h1>
-<app-search-bar></app-search-bar>
+<app-search-bar (pokemon_search)="getPokemonSearch($event)"></app-search-bar>
 <div class="poke-container">
     @if (pokeListResource.isLoading()){
         <p>Loading...</p>
@@ -10,7 +10,7 @@
             @let pokeList = pokeListResource.value();
 
             @for (pokeResult of pokeList?.results; track pokeResult){
-                <app-card [pokeResult]="pokeResult" [name]="pokeResult.name"/>
+                <app-card [pokeResult]="pokeResult" [name]="pokeResult.name" [pokeSearch]="pokemon_search_value"/>
             }
         </div>
     }    

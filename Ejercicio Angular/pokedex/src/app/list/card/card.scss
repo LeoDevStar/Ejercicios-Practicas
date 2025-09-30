@@ -1,8 +1,10 @@
 @use "sass:map";
 
 $poke-type-background: "Rock";
+$show-card: flex;
 :root{
   --type-background: var($poke-type-background);
+  
 }
 
 $poke-types: (
@@ -18,6 +20,9 @@ $poke-types: (
       "Psychic": #ed1ab5  
 );
 
+.poke-card-hide{
+  display: none;
+}
 .poke-card{
     /*background-color: #fff;
     border: 1px solid #ddd;*/

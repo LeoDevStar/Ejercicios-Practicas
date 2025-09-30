@@ -1,4 +1,4 @@
-<a class="poke-card" [routerLink]="pokeResult().name">
+<a [ngClass]="{'poke-card': showPokeCard, 'poke-card-hide': !showPokeCard}" [routerLink]="pokeResult().name">
     <img 
     width="150" 
     height="150"
@@ -27,5 +27,21 @@
             
         }
     </div>
+
+    @if(pokeSearch() != '' && !(pokeResult().name|titlecase).includes(pokeSearch())){        
+            <p>Not Similar</p>  
+            {{hidePokeCard(true)}}
+            {{showPokeCard}}
+            
+    }@else{
+            <!--<p>{{pokeSearch()}}</p>
+            <p>Similar</p>-->
+            {{hidePokeCard(false)}}
+            {{showPokeCard}}
+    }
+    
+        <!--<p>{{pokeResult().name}} / {{pokeSearch()}}</p>
+        <p>{{(pokeResult().name|titlecase).includes(pokeSearch())}}</p>-->
+        <!--<p>{{pokeSearch()}}</p>-->
     
 </a>

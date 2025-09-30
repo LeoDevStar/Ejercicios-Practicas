@@ -12,4 +12,10 @@ import { SearchBar } from '../search-bar/search-bar';
 export class List {
   readonly #pokeService = inject(PokeService);
   protected readonly pokeListResource = this.#pokeService.getPokeList();
+
+  pokemon_search_value: string = '';
+  getPokemonSearch(value: string){
+    console.log("List received: " + value);
+    this.pokemon_search_value = value;
+  }
 }
