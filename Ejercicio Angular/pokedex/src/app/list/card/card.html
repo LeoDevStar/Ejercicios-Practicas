@@ -1,7 +1,7 @@
 <a class="poke-card" [routerLink]="pokeResult().name">
     <img 
-    width="200" 
-    height="200"
+    width="150" 
+    height="150"
     [ngSrc]="pokeResult().url | pokeImg"
     [alt]="pokeResult().name"
     [style.background-color]="setBackgroundColor(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"/>
