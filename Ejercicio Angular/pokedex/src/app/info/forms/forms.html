@@ -6,6 +6,7 @@
     }@else{
         @if(pokeEvolution_Chain.value(); as pokemon){
             <p>{{pokemon.chain.species.name | titlecase}}</p>
+            <app-image [name]="pokemon.chain.species.name"></app-image>
             <p>{{pokemon.chain.evolves_to.at(0)?.species?.name| titlecase}}</p>
             <p>{{pokemon.chain.evolves_to.at(0)?.evolves_to?.at(0)?.species?.name| titlecase}}</p>
         }
