@@ -16,15 +16,16 @@ export class Forms {
 
   protected readonly pokeEvolution_Chain = this.#pokeService.getPokemonEvolutionChain(this.evo_url);
 
-  /*checkEvolutionChain(){
-    return this.pokeEvolution_Chain.value()?.chain.evolves_to.at(0)?.evolves_to.at(0);
-  }*/
-  /*evolution_chain:string|undefined[] = new Array();
-  checkEvolutionChain(evolution_chain_obj:PokeEvolution){
-    if(evolution_chain_obj.chain.evolves_to.length >= 1){
-      //this.evolution_chain.push(evolution_chain_obj.chain.evolves_to.at(0)?.species.name));
-      //evolution_chain_obj.chain.evolves_to.at(0)?.species.name
+  pokemonPointer = this.pokeEvolution_Chain.value()?.chain;
+  //pokeEvoArray:PokeEvolution["chain"] = [];
+  constructor(){
+    this.getPokemonEvolution();
+  }
+  getPokemonEvolution(){
+    while(this.pokemonPointer?.evolves_to.at(0) != undefined){
+      this.pokemonPointer = this.pokemonPointer?.evolves_to.at(0);
+      //this.pokeEvoArray.push(this.pokemonPointer);
+
     }
-    return evolution_chain_obj.chain.evolves_to.at(0)?.species.name;
-  }*/
+  }
 }

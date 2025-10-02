@@ -17,6 +17,7 @@ export default class Details {
   readonly #pokeService = inject(PokeService);
 
   protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
+  protected readonly pokeSpeciesResource = this.#pokeService.getPokemonSpecies(this.name);
 
   type_css_class: string = '';
   typeStyles(type: string|null){

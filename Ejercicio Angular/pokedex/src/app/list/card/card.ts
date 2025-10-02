@@ -92,16 +92,6 @@ export class Card {
     }
     return this.type_css_class;
   }
-
-  /*card = document.getElementById("poke-card");
-  switch (this.pokeResource) {
-    case value:
-      
-      break;
-
-    default:
-      break;
-  }*/
 }
 
 
