@@ -1,10 +1,12 @@
 .buttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /*text-align: center;*/
     button{
-        background-color:rgba(0,0,0,0);
+        width: 125px;
+        background-image:rgba(0,0,0,0);
         border-style: none;
-        border-radius: 12px;
         padding-block: 15px;
         color: rgb(129, 129, 129);
         font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -12,9 +14,12 @@
         cursor: pointer;
 
         &:hover{
+            /*background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.3));*/
             color: #694086;
         }
 
+        &.selected{
+            color: #694086;
+        }
     }
-    
 }
