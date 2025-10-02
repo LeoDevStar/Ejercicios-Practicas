@@ -1,12 +1,12 @@
 import { Component, inject, input } from '@angular/core';
 import { PokeService } from '../core/services/poke.service';
 import { NgClass, NgOptimizedImage, TitleCasePipe } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { Info } from "../info/info";
+import { SearchBar } from "../search-bar/search-bar";
 
 @Component({
   selector: 'app-details',
-  imports: [TitleCasePipe, NgOptimizedImage, RouterLink, Info, NgClass],
+  imports: [TitleCasePipe, NgOptimizedImage, Info, NgClass, SearchBar],
   templateUrl: './details.html',
   styleUrl: './details.scss'
 })
@@ -81,6 +81,11 @@ export default class Details {
 
     }
     return this.type_css_class;
+  }
+
+  pokemon_search_value: string = '';
+  getPokemonSearch(value: string){
+    this.pokemon_search_value = value;
   }
 }
  

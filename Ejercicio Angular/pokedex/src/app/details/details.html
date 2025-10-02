@@ -6,8 +6,9 @@
     @if(pokeResource.value(); as pokemon){
         <div class="poke-details">
             <div class="poke-content">
-                <a routerLink="/" class="back-link">Back to Pokémon List</a>
-                <h4>{{pokemon.id}}</h4>
+                <!-- <a routerLink="/" class="back-link">Back to Pokémon List</a>
+                <h4>{{pokemon.id}}</h4> -->
+                <app-search-bar (pokemon_search)="getPokemonSearch($event)"></app-search-bar>
 
                 <div class="poke-details-header">
                     <h1 class="title">{{name() | titlecase}}</h1>

@@ -1,3 +1,11 @@
+    <div class="buttons">
+        <button>Prueba 1</button>
+        <button>Prueba 2</button>
+        <button>Prueba 3</button>
+        <button>Prueba 4</button>
+        <button>Prueba 5</button>
+    </div>
+
 @if (pokeSpecies.isLoading()){
         <p>Loading...</p>
     }@else if(pokeSpecies.error()){
@@ -7,6 +15,5 @@
             <app-forms [evo_url]="pokemonSpecies.evolution_chain.url" [name]="pokemonSpecies.name"></app-forms>
             <h1>{{pokemonSpecies.name | titlecase}}</h1>
             <p>{{pokemonSpecies.flavor_text_entries.at(0)?.flavor_text}}</p>
-        }
-        
+        }   
     }

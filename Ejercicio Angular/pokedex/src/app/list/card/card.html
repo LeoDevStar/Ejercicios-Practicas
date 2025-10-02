@@ -10,7 +10,13 @@
         <div>
             @if(pokeResource.value(); as pokemon){
                 <div class="poke-card-id">
-                    <p>{{pokemon.id}}</p>
+                    @if(pokemon.id < 10){
+                        <p>n 00{{pokemon.id}}</p>    
+                    }@else if(pokemon.id >= 10 && pokemon.id < 100){
+                        <p>n 0{{pokemon.id}}</p>    
+                    }@else{
+                        <p>n {{pokemon.id}}</p>
+                    }
                 </div>
             }
             <p>{{pokeResult().name | titlecase}}</p>
@@ -29,8 +35,8 @@
     </div>
 
     @if((pokeResult().name|titlecase).includes(pokeSearch())){
-            <p>{{pokeSearch()}}</p>
-            <p>Similar</p>
+            <!--<p>{{pokeSearch()}}</p>
+            <p>Similar</p>-->
     }
     <!--@if(pokeSearch() != '' && !(pokeResult().name|titlecase).includes(pokeSearch())){        
             <p>Not Similar</p>  

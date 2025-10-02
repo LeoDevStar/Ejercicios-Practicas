@@ -28,7 +28,7 @@ $poke-types: (
     border: 1px solid #ddd;*/
     border-radius: 12px;
     /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-    padding: 20px;
+    /*padding: 20px;*/
     text-align: center;
     width: 210px;
     display: flex;
@@ -38,7 +38,7 @@ $poke-types: (
       transform 0.3s ease-in-out, 
       box-shadow 0.3s ease-in-out;
     font-size: 1.2rem;
-    color:#444;
+    color: #694086;
     font-weight: 600;
     text-decoration: none;
 
@@ -57,22 +57,20 @@ $poke-types: (
 
 .poke-card-id{
   font-size: small;
+  text-align: left;
 }
 .poke-card-details{
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 20px;
 }
 
 .poke-card-types{
   display: flex;
   flex-direction: column;
-  //font-size: small;
-  //background-color: map.get($map: $poke-types, $key: );
 
   p{
-    //background-color: map.get($poke-types, var(--type-background));
-    //color: #fff;
+    width: 65px;
     margin: 0px;
     border-radius: 6px;
     font-size: smaller;
