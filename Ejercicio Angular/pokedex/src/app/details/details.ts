@@ -2,12 +2,11 @@ import { Component, inject, input } from '@angular/core';
 import { PokeService } from '../core/services/poke.service';
 import { NgClass, NgOptimizedImage, TitleCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { Forms } from "../info/forms/forms";
 import { Info } from "../info/info";
 
 @Component({
   selector: 'app-details',
-  imports: [TitleCasePipe, NgOptimizedImage, RouterLink, Forms, Info, NgClass],
+  imports: [TitleCasePipe, NgOptimizedImage, RouterLink, Info, NgClass],
   templateUrl: './details.html',
   styleUrl: './details.scss'
 })

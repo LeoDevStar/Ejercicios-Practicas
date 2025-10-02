@@ -1,1 +1,15 @@
-<p>image works!</p>
+@if (pokeResource.isLoading()){
+    <p>Loading...</p>
+} @else if(pokeResource.error()){
+    <p>Error loading Pokémon</p>
+} @else {
+    @if(pokeResource.value(); as pokemon){
+        <img 
+              width="200" 
+              height="200" 
+              [ngSrc]="pokemon.sprites.front_default"
+              [alt]="name()"
+              [ngClass]="typeStyles(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"
+            />
+    }
+}

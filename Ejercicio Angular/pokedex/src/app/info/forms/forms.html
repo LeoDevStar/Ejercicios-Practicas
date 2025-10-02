@@ -8,17 +8,5 @@
             <p>{{pokemon.chain.species.name | titlecase}}</p>
             <p>{{pokemon.chain.evolves_to.at(0)?.species?.name| titlecase}}</p>
             <p>{{pokemon.chain.evolves_to.at(0)?.evolves_to?.at(0)?.species?.name| titlecase}}</p>
-
-            
-            <!--@if(getPokemonEvolution() != undefined){
-                <p>{{pokemonPointer?.species?.name | titlecase}}</p>
-        }-->
-            <!--<p>{{pokemonPointer?.species?.name | titlecase}}</p>-->
-            
-            <!--@if(pokemon.chain.evolves_to != undefined){
-                <p>{{pokemon.chain.evolves_to.at(0)?.species?.name | titlecase}}</p>
-        }-->
-            <!--<p>{{pokemon.chain.evolves_to.at(0)?.species?.name| titlecase}}</p>
-            <p>{{pokemon.chain.evolves_to.at(0)?.evolves_to?.at(0)?.species?.name| titlecase}}</p>-->
         }
     }
