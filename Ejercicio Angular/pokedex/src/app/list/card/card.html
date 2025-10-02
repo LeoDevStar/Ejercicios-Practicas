@@ -28,17 +28,19 @@
         }
     </div>
 
-    @if(pokeSearch() != '' && !(pokeResult().name|titlecase).includes(pokeSearch())){        
+    @if((pokeResult().name|titlecase).includes(pokeSearch())){
+            <p>{{pokeSearch()}}</p>
+            <p>Similar</p>
+    }
+    <!--@if(pokeSearch() != '' && !(pokeResult().name|titlecase).includes(pokeSearch())){        
             <p>Not Similar</p>  
             {{hidePokeCard(true)}}
             {{showPokeCard}}
             
     }@else{
-            <!--<p>{{pokeSearch()}}</p>
-            <p>Similar</p>-->
             {{hidePokeCard(false)}}
             {{showPokeCard}}
-    }
+}-->
     
         <!--<p>{{pokeResult().name}} / {{pokeSearch()}}</p>
         <p>{{(pokeResult().name|titlecase).includes(pokeSearch())}}</p>-->
