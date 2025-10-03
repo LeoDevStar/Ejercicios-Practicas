@@ -12,16 +12,13 @@
                 </a>
                 
                 <a>
-                    <app-image [name]="pokemon.chain.species.name" [width]="100" [height]="100"></app-image>
+                    <app-image [name]="pokemon.chain.evolves_to.at(0)?.species?.name?? ''" [width]="100" [height]="100"></app-image>
                 </a>
 
                 <a>
-                    <app-image [name]="pokemon.chain.species.name" [width]="100" [height]="100"></app-image>
+                    <app-image [name]="pokemon.chain.evolves_to.at(0)?.evolves_to?.at(0)?.species?.name ?? ''" [width]="100" [height]="100"></app-image>
                 </a>
 
-                <a>
-                    <app-image [name]="pokemon.chain.species.name" [width]="100" [height]="100"></app-image>
-                </a>
             </div>
             
             <!--<p>{{pokemon.chain.species.name | titlecase}}</p>
