@@ -16,7 +16,7 @@
                 <div class="info-content">
                     @switch (content) {
                         @case ('Forms') {
-                            <app-forms></app-forms>
+                            <app-forms [name]="pokemonSpecies.name"></app-forms>
                             <h1>{{pokemonSpecies.name | titlecase}}</h1>
                             <p>{{pokemonSpecies.flavor_text_entries.at(0)?.flavor_text}}</p>
                         }

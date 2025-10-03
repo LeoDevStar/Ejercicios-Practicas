@@ -1,1 +1,22 @@
-<p>Forms info</p>
+@if(pokeResource.value(); as pokemon){
+    @for(form of pokemon.forms; track form){
+        <p>{{form.name | titlecase}}</p>
+    }
+    <div class="pokemon-form-Images">
+        <a>
+            <app-image [name]="pokemon.name" [width]="100" [height]="100"></app-image>
+        </a>
+                
+        <a>
+            <app-image [name]="pokemon.name" [width]="100" [height]="100"></app-image>
+        </a>
+
+        <a>
+            <app-image [name]="pokemon.name" [width]="100" [height]="100"></app-image>
+        </a>
+
+        <a>
+            <app-image [name]="pokemon.name" [width]="100" [height]="100"></app-image>
+        </a>
+    </div>
+}

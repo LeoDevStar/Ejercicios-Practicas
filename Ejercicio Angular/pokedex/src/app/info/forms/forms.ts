@@ -10,5 +10,8 @@ import { Image } from '../../image/image';
   styleUrl: './forms.scss'
 })
 export class Forms {
-  
+  readonly name = input<string>('');
+  readonly #pokeService = inject(PokeService);
+
+  protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
 }
