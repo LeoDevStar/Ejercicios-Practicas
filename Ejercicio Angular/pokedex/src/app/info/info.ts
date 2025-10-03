@@ -14,4 +14,10 @@ export class Info {
   readonly name = input<string>('');
 
   protected readonly pokeSpecies = this.#pokeService.getPokemonSpecies(this.name);
+
+  content = "Forms";
+
+  switchContent(cont: string){
+    this.content = cont;
+  }
 }

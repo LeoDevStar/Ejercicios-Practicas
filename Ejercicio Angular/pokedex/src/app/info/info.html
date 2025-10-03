@@ -1,9 +1,9 @@
     <div class="buttons">
-        <button>Forms</button>
-        <button>Details</button>
-        <button>Types</button>
-        <button>Stats</button>
-        <button>Wear</button>
+        <button (click)="switchContent('Forms')">Forms</button>
+        <button (click)="switchContent('Details')">Details</button>
+        <button (click)="switchContent('Types')">Types</button>
+        <button (click)="switchContent('Stats')">Stats</button>
+        <button (click)="switchContent('Wear')">Wear</button>
     </div>
 
 <div class="details-info">
@@ -14,10 +14,40 @@
         }@else{
             @if(pokeSpecies.value(); as pokemonSpecies){
                 <div class="info-content">
-                    <app-forms [evo_url]="pokemonSpecies.evolution_chain.url" [name]="pokemonSpecies.name"></app-forms>
+                    @switch (content) {
+                        @case ('Forms') {
+                            <app-forms [evo_url]="pokemonSpecies.evolution_chain.url" [name]="pokemonSpecies.name"></app-forms>
+                            <h1>{{pokemonSpecies.name | titlecase}}</h1>
+                            <p>{{pokemonSpecies.flavor_text_entries.at(0)?.flavor_text}}</p>
+                        }
+
+                        @case ('Details'){
+                            <h1>Details</h1>
+                            <p>Details info</p>
+                        }
+
+                        @case ('Types'){
+                            <h1>Types</h1>
+                            <p>Types info</p>
+                        }
+
+                        @case ('Stats'){
+                            <h1>Stats</h1>
+                            <p>Stats info</p>
+                        }
+
+                        @case ('Wear'){
+                            <h1>Wear</h1>
+                            <p>Wear info</p>
+                        }
+
+                        @default {
+                            <h1>Default</h1>
+                            <p>Default info</p>
+                        }
+                    }    
                 </div>
-                <h1>{{pokemonSpecies.name | titlecase}}</h1>
-                <p>{{pokemonSpecies.flavor_text_entries.at(0)?.flavor_text}}</p>
+                
             }   
         }
 </div>
