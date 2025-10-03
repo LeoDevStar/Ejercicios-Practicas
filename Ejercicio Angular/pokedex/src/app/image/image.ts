@@ -15,6 +15,9 @@ export class Image {
 
   protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
 
+  readonly width = input<number>(0);
+  readonly height = input<number>(0);
+
   type_css_class: string = '';
   typeStyles(type: string|null){
     switch (type) {

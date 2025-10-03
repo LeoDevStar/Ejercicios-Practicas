@@ -5,8 +5,8 @@
 } @else {
     @if(pokeResource.value(); as pokemon){
         <img 
-              width="200" 
-              height="200" 
+              width={{width()}}
+              height={{height()}}
               [ngSrc]="pokemon.sprites.front_default"
               [alt]="name()"
               [ngClass]="typeStyles(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"
