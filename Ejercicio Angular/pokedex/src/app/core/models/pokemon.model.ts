@@ -1,12 +1,21 @@
 export interface Pokemon {
     id: number;
     name: string;
-    types: {
-        type: { name: string };
+    height: number;
+    weight: number;
+    abilities: {
+        ability:{
+            name: string;
+            url: string;
+        }
     }[];
-    sprites: { front_default: string };
     forms: {
         name: string,
         url: string
     }[];
+    types: {
+        type: { name: string };
+    }[];
+    sprites: { front_default: string };
+    
 }

@@ -1,1 +1,19 @@
-<p>info-details works!</p>
+@if(pokeResource.value(); as pokemon){
+    <div class="poke-info-details">
+        <h1>{{pokemon.name | titlecase}}</h1>
+        <div class="poke-height-weight">
+            <p>Height: {{pokemon.height}}</p>
+            <p>Weight: {{pokemon.weight}}</p>
+        </div>
+        <div class="poke-types">
+            @for(type of pokemon.types; track type){
+                <p>{{type.type.name | titlecase}}</p>
+            }
+        </div>
+        <div class="poke-abilities">
+            @for(ability of pokemon.abilities; track ability){
+                <p>{{ability.ability.name | titlecase}}</p>
+            }
+        </div>
+    </div>
+}

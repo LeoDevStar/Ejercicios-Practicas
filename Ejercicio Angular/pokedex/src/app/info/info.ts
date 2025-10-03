@@ -2,10 +2,11 @@ import { Component, inject, input } from '@angular/core';
 import { PokeService } from '../core/services/poke.service';
 import { TitleCasePipe } from '@angular/common';
 import { Forms } from "./forms/forms";
+import { InfoDetails } from './info-details/info-details';
 
 @Component({
   selector: 'app-info',
-  imports: [TitleCasePipe, Forms],
+  imports: [TitleCasePipe, Forms, InfoDetails],
   templateUrl: './info.html',
   styleUrl: './info.scss'
 })

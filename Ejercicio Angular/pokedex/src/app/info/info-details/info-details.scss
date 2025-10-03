@@ -1,0 +1,13 @@
+.poke-info-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.poke-height-weight, .poke-types, .poke-abilities{
+    width: 500px;
+    display: flex;
+    justify-content: space-evenly;
+}
