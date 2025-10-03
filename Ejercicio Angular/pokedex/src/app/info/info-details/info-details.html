@@ -5,11 +5,13 @@
             <p>Height: {{pokemon.height}}</p>
             <p>Weight: {{pokemon.weight}}</p>
         </div>
+        <h2>Types</h2>
         <div class="poke-types">
             @for(type of pokemon.types; track type){
                 <p>{{type.type.name | titlecase}}</p>
             }
         </div>
+        <h2>Abilities</h2>
         <div class="poke-abilities">
             @for(ability of pokemon.abilities; track ability){
                 <p>{{ability.ability.name | titlecase}}</p>
