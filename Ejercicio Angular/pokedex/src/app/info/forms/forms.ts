@@ -10,17 +10,5 @@ import { Image } from '../../image/image';
   styleUrl: './forms.scss'
 })
 export class Forms {
-  readonly evo_url = input<string>('');
-  readonly name = input<string>('');
-  readonly #pokeService = inject(PokeService);
-
-  protected readonly pokeEvolution_Chain = this.#pokeService.getPokemonEvolutionChain(this.evo_url);
-
-  pokemonPointer = this.pokeEvolution_Chain.value()?.chain;
   
-  getPokemonEvolution(){
-    while(this.pokemonPointer?.evolves_to.at(0) != undefined){
-      this.pokemonPointer = this.pokemonPointer?.evolves_to.at(0);
-    }
-  }
 }

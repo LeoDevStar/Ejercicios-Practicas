@@ -3,10 +3,11 @@ import { PokeService } from '../core/services/poke.service';
 import { TitleCasePipe } from '@angular/common';
 import { Forms } from "./forms/forms";
 import { InfoDetails } from './info-details/info-details';
+import { Types } from './types/types';
 
 @Component({
   selector: 'app-info',
-  imports: [TitleCasePipe, Forms, InfoDetails],
+  imports: [TitleCasePipe, Forms, InfoDetails, Types],
   templateUrl: './info.html',
   styleUrl: './info.scss'
 })

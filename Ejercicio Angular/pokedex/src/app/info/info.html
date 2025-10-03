@@ -16,7 +16,7 @@
                 <div class="info-content">
                     @switch (content) {
                         @case ('Forms') {
-                            <app-forms [evo_url]="pokemonSpecies.evolution_chain.url" [name]="pokemonSpecies.name"></app-forms>
+                            <app-forms></app-forms>
                             <h1>{{pokemonSpecies.name | titlecase}}</h1>
                             <p>{{pokemonSpecies.flavor_text_entries.at(0)?.flavor_text}}</p>
                         }
@@ -28,7 +28,7 @@
 
                         @case ('Types'){
                             <h1>Types</h1>
-                            <p>Types info</p>
+                            <app-types [evo_url]="pokemonSpecies.evolution_chain.url" [name]="pokemonSpecies.name"></app-types>
                         }
 
                         @case ('Stats'){
