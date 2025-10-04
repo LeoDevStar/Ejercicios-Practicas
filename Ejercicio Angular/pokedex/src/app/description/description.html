@@ -1,1 +1,10 @@
-<p>description works!</p>
+@if (pokeSpeciesResource.isLoading()){
+    <p>Loading...</p>
+} @else if(pokeSpeciesResource.error()){
+    <p>Error loading Pokémon</p>
+} @else {
+    @if(pokeSpeciesResource.value(); as pokemonSpecies){
+        <h1>{{pokemonSpecies.name}}</h1>
+        <p>{{pokemonSpecies.flavor_text_entries.at(0)?.flavor_text}}</p>
+    }
+}

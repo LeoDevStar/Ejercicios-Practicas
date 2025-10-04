@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { PokeService } from '../core/services/poke.service';
 
 @Component({
   selector: 'app-description',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './description.scss'
 })
 export class Description {
-
+  readonly name = input<string>('');
+  readonly #pokeService = inject(PokeService);
+  protected readonly pokeSpeciesResource = this.#pokeService.getPokemonSpecies(this.name);
 }
