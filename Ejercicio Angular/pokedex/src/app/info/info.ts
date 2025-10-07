@@ -1,6 +1,6 @@
 import { Component, inject, input, output } from '@angular/core';
 import { PokeService } from '../core/services/poke.service';
-import { TitleCasePipe } from '@angular/common';
+import { NgClass, TitleCasePipe } from '@angular/common';
 import { Forms } from "./forms/forms";
 import { InfoDetails } from './info-details/info-details';
 import { Types } from './types/types';
@@ -8,7 +8,7 @@ import { Stats } from './stats/stats';
 
 @Component({
   selector: 'app-info',
-  imports: [TitleCasePipe, Forms, InfoDetails, Types, Stats],
+  imports: [TitleCasePipe, Forms, InfoDetails, Types, Stats, NgClass],
   templateUrl: './info.html',
   styleUrl: './info.scss'
 })
@@ -20,6 +20,7 @@ export class Info {
 
   content = "Forms";
   switchedContent = output<Boolean>();
+  
   switchContent(cont: string){
     this.content = cont;
     this.switchedContent.emit(true);
