@@ -4,10 +4,11 @@ import { TitleCasePipe } from '@angular/common';
 import { Forms } from "./forms/forms";
 import { InfoDetails } from './info-details/info-details';
 import { Types } from './types/types';
+import { Stats } from './stats/stats';
 
 @Component({
   selector: 'app-info',
-  imports: [TitleCasePipe, Forms, InfoDetails, Types],
+  imports: [TitleCasePipe, Forms, InfoDetails, Types, Stats],
   templateUrl: './info.html',
   styleUrl: './info.scss'
 })

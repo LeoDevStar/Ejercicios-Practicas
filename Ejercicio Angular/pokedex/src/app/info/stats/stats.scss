@@ -1,0 +1,31 @@
+.poke-stats{
+    display:flex;
+    flex-direction: column;
+}
+.poke-stat{
+    display: flex;
+    justify-content: space-evenly;
+
+    p{
+        font-size: large;
+    }
+
+    hr{
+        width: 0%;
+        margin: 0%;
+    }
+}
+
+.poke-stat-info, .poke-effort-info{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.poke-base-stat, .poke-stat-effort{
+    font-weight: bold;
+}
+
+hr{
+    width: 100%;
+}
