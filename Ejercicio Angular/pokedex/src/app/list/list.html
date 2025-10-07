@@ -6,13 +6,13 @@
     }@else if(pokeListResource.error()){
         <p>Error loading Pokémon</p>
     }@else{
-        <div class="poke-container">
+        
             @let pokeList = pokeListResource.value();
 
             @for (pokeResult of pokeList?.results; track pokeResult){
                 <app-card [pokeResult]="pokeResult" [name]="pokeResult.name" [pokeSearch]="pokemon_search_value"/>
             }
-        </div>
+        
     }    
 </div>
 
