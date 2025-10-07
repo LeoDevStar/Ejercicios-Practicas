@@ -60,9 +60,10 @@ $poke-types: (
   text-align: left;
 }
 .poke-card-details{
+  width: 200px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
 }
 
 .poke-card-types{

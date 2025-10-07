@@ -16,9 +16,12 @@
                 <div class="info-content">
                     @switch (content) {
                         @case ('Forms') {
-                            <app-forms [name]="pokemonSpecies.name"></app-forms>
+                            <h1>Forms</h1>
+                            <!-- <app-forms [name]="pokemonSpecies.name"></app-forms>
                             <h1>{{pokemonSpecies.name | titlecase}}</h1>
-                            <p>{{pokemonSpecies.flavor_text_entries.at(0)?.flavor_text}}</p>
+                            <p>{{pokemonSpecies.flavor_text_entries.at(0)?.flavor_text}}</p> -->
+                            
+                            <app-forms (poke_name)="getPokeName($event)" [evo_url]="pokemonSpecies.evolution_chain.url"></app-forms>
                         }
 
                         @case ('Details'){
@@ -28,7 +31,7 @@
 
                         @case ('Types'){
                             <h1>Types</h1>
-                            <app-types (poke_name)="getPokeName($event)" [evo_url]="pokemonSpecies.evolution_chain.url"></app-types>
+                            <app-types [name]="pokemonSpecies.name"></app-types>
                         }
 
                         @case ('Stats'){
