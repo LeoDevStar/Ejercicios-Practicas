@@ -2,12 +2,12 @@
     <div class="poke-stats">
         @for(stat of pokemon.stats; track stat){
             <div class="poke-stat">
-                <div class="poke-stat-info">
+                <div [ngClass]="['poke-stat-info', applyStyle(stat.stat.name | titlecase)]">
                     <p>{{stat.stat.name | titlecase}}:</p>
                     <p class="poke-base-stat">{{stat.base_stat}}</p>
                 </div>
                 <hr>
-                <div class="poke-effort-info">
+                <div [ngClass]="['poke-effort-info']">
                     <p>Effort:</p>
                     <p class="poke-stat-effort">{{stat.effort}}</p>
                 </div>
