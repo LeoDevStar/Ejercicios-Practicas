@@ -19,14 +19,13 @@
                     </div>
                 </div>
             
+                @if(pokemon_name != ''){
+                    <app-image [name]="pokemon_name" [width]="600" [height]="600"></app-image>
+                }@else {
+                    <app-image [name]="pokemon.name" [width]="600" [height]="600"></app-image>
+                }
+                
 
-            <img 
-              width="600" 
-              height="600" 
-              [ngSrc]="pokemon.sprites.front_default"
-              [alt]="name()"
-              [ngClass]="typeStyles(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"
-            />
             </div>
             
 
@@ -34,7 +33,9 @@
                     <p>{{form.name| titlecase}}</p>
         }-->
             <div class="poke-info">
-                <app-info [name]="pokemon.name"></app-info>
+                <app-info (switchedContent)="resetPokemonName($event)"
+                (info_pokemon_name)="getPokemonName($event)" 
+                [name]="pokemon.name"></app-info>
             </div>
 
             

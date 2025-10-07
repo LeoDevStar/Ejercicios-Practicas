@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { PokeService } from '../core/services/poke.service';
 import { TitleCasePipe } from '@angular/common';
 import { Forms } from "./forms/forms";
@@ -18,8 +18,14 @@ export class Info {
   protected readonly pokeSpecies = this.#pokeService.getPokemonSpecies(this.name);
 
   content = "Forms";
-
+  switchedContent = output<Boolean>();
   switchContent(cont: string){
     this.content = cont;
+    this.switchedContent.emit(true);
+  }
+
+  info_pokemon_name = output<string>();
+  getPokeName(name: string){
+    this.info_pokemon_name.emit(name);
   }
 }

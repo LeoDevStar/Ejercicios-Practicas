@@ -3,10 +3,11 @@ import { PokeService } from '../core/services/poke.service';
 import { NgClass, NgOptimizedImage, TitleCasePipe } from '@angular/common';
 import { Info } from "../info/info";
 import { SearchBar } from "../search-bar/search-bar";
+import { Image } from '../image/image';
 
 @Component({
   selector: 'app-details',
-  imports: [TitleCasePipe, NgOptimizedImage, Info, NgClass, SearchBar],
+  imports: [TitleCasePipe, NgOptimizedImage, Info, NgClass, SearchBar, Image],
   templateUrl: './details.html',
   styleUrl: './details.scss'
 })
@@ -86,6 +87,19 @@ export default class Details {
   pokemon_search_value: string = '';
   getPokemonSearch(value: string){
     this.pokemon_search_value = value;
+  }
+
+
+  pokemon_name: string = "";
+  getPokemonName(name: string){
+    this.pokemon_name = name;
+  }
+
+  resetPokemonName(resetName: Boolean){
+    if(resetName){
+      this.pokemon_name = "";
+    }
+    
   }
 }
  

@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { PokeService } from '../../core/services/poke.service';
 import { Image } from '../../image/image';
 import { Description } from '../../description/description';
@@ -15,9 +15,14 @@ export class Types {
   protected readonly pokeEvolution_Chain = this.#pokeService.getPokemonEvolutionChain(this.evo_url);
 
   description = 0;
+  poke_name = output<string>();
 
   switchDescription(desc: number){
     this.description = desc;
+  }
+
+  switchPokeName(name: string){
+    this.poke_name.emit(name);
   }
   
 }

@@ -28,7 +28,7 @@
 
                         @case ('Types'){
                             <h1>Types</h1>
-                            <app-types [evo_url]="pokemonSpecies.evolution_chain.url"></app-types>
+                            <app-types (poke_name)="getPokeName($event)" [evo_url]="pokemonSpecies.evolution_chain.url"></app-types>
                         }
 
                         @case ('Stats'){

@@ -1,9 +1,10 @@
 import { Component, inject, input } from '@angular/core';
 import { PokeService } from '../core/services/poke.service';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-description',
-  imports: [],
+  imports: [TitleCasePipe],
   templateUrl: './description.html',
   styleUrl: './description.scss'
 })
