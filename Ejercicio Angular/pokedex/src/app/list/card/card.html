@@ -7,7 +7,7 @@
     [ngClass]="typeStyles(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"/>
     
     <div class="poke-card-details">
-        <div>
+        <div class="poke-card-info">
             @if(pokeResource.value(); as pokemon){
                 <div class="poke-card-id">
                     @if(pokemon.id < 10){
