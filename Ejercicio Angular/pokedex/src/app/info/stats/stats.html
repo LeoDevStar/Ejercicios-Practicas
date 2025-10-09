@@ -1,6 +1,6 @@
-@if (pokeResource.value(); as pokemon){
+<!-- @if (pokeResource.value(); as pokemon){ -->
     <div class="poke-stats">
-        @for(stat of pokemon.stats; track stat){
+        @for(stat of pokeResource()?.stats; track stat){
             <div class="poke-stat">
                 <div [ngClass]="['poke-stat-info', applyStyle(stat.stat.name | titlecase)]">
                     <p>{{stat.stat.name | titlecase}}:</p>
@@ -15,4 +15,4 @@
             <hr>
         }
     </div>
-}
+<!-- } -->

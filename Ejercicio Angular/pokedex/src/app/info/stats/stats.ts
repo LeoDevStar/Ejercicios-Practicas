@@ -1,6 +1,7 @@
 import { Component, inject, input } from '@angular/core';
 import { PokeService } from '../../core/services/poke.service';
 import { NgClass, TitleCasePipe } from '@angular/common';
+import { Pokemon } from '../../core/models/pokemon.model';
 
 @Component({
   selector: 'app-stats',
@@ -9,10 +10,8 @@ import { NgClass, TitleCasePipe } from '@angular/common';
   styleUrl: './stats.scss'
 })
 export class Stats {
-  readonly #pokeService = inject(PokeService);
-  readonly name = input<string>('');
-
-  protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
+  
+  readonly pokeResource = input.required<Pokemon|undefined>();
 
   applyStyle(stat_name: string){
     let class_name = '';

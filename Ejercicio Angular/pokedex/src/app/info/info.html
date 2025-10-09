@@ -31,17 +31,17 @@
 
                         @case ('Details'){
                             <h1>Details</h1>
-                            <app-info-details [name]="pokemonSpecies.name"></app-info-details>
+                            <app-info-details [pokeResource]="pokemonResource.value()"></app-info-details>
                         }
 
                         @case ('Types'){
                             <h1>Types</h1>
-                            <app-types [name]="pokemonSpecies.name"></app-types>
+                            <app-types [pokeResource]="pokemonResource.value()"></app-types>
                         }
 
                         @case ('Stats'){
                             <h1>Stats</h1>
-                            <app-stats [name]="pokemonSpecies.name"></app-stats>
+                            <app-stats [pokeResource]="pokemonResource.value()"></app-stats>
                         }
 
                         @case ('Wear'){

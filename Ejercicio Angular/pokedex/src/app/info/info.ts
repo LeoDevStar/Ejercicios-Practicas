@@ -17,6 +17,7 @@ export class Info {
   readonly name = input<string>('');
 
   protected readonly pokeSpecies = this.#pokeService.getPokemonSpecies(this.name);
+  protected readonly pokemonResource = this.#pokeService.getPokemon(this.name);
 
   content = "Forms";
   switchedContent = output<Boolean>();

@@ -1,6 +1,7 @@
 import { Component, inject, input } from '@angular/core';
 import { PokeService } from '../../core/services/poke.service';
 import { NgClass, TitleCasePipe } from '@angular/common';
+import { Pokemon } from '../../core/models/pokemon.model';
 
 @Component({
   selector: 'app-info-details',
@@ -10,11 +11,7 @@ import { NgClass, TitleCasePipe } from '@angular/common';
 })
 export class InfoDetails {
 
-  readonly #pokeService = inject(PokeService);
-
-  readonly name = input.required<string>();
-
-  protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
+  readonly pokeResource = input.required<Pokemon|undefined>();
 
   type_css_class: string = '';
   typeStyles(type: string|null){

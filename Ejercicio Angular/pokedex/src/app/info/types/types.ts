@@ -3,6 +3,7 @@ import { PokeService } from '../../core/services/poke.service';
 import { Image } from '../../image/image';
 import { Description } from '../../description/description';
 import { TitleCasePipe } from '@angular/common';
+import { Pokemon } from '../../core/models/pokemon.model';
 
 @Component({
   selector: 'app-types',
@@ -11,9 +12,7 @@ import { TitleCasePipe } from '@angular/common';
   styleUrl: './types.scss'
 })
 export class Types {
-  readonly name = input<string>('');
-  readonly #pokeService = inject(PokeService);
 
-  protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
+  readonly pokeResource = input.required<Pokemon|undefined>();
   
 }
