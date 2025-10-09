@@ -4,6 +4,7 @@ import { NgClass, NgOptimizedImage, TitleCasePipe } from '@angular/common';
 import { Info } from "../info/info";
 import { SearchBar } from "../search-bar/search-bar";
 import { Image } from '../image/image';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -12,6 +13,8 @@ import { Image } from '../image/image';
   styleUrl: './details.scss'
 })
 export default class Details {
+  //constructor(private router: Router){}
+  private router = inject(Router);
   readonly name = input<string>('');
   
   readonly #pokeService = inject(PokeService);
@@ -84,9 +87,9 @@ export default class Details {
     return this.type_css_class;
   }
 
-  pokemon_search_value: string = '';
   getPokemonSearch(value: string){
-    this.pokemon_search_value = value;
+    console.log(value);
+    this.router.navigate([value]);
   }
 
 

@@ -3,10 +3,10 @@
 } @else if(pokeResource.error()){
     <p>Error loading Pokémon</p>
 } @else {
+    <div class="poke-search-bar">
+        <app-search-bar [css_class]="'poke-search-left'" (pokemon_search)="getPokemonSearch($event)"></app-search-bar>
+    </div>
     @if(pokeResource.value(); as pokemon){
-        <div class="poke-search-bar">
-            <app-search-bar [css_class]="'poke-search-left'" (pokemon_search)="getPokemonSearch($event)"></app-search-bar>
-        </div>
         <div class="poke-details">
             <div class="poke-content">
                 <!-- <a routerLink="/" class="back-link">Back to Pokémon List</a>
