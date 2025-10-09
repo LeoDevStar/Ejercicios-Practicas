@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    color: rgb(129, 129, 129);
+    
     /*text-align: center;*/
     button{
         width: 125px;
@@ -30,6 +30,10 @@
     color: #694086;
     font-weight: bold;
     font-size: medium;
+}
+
+.button-not-selected{
+    color: rgb(129, 129, 129);
 }
 
 .details-info{

@@ -1,13 +1,13 @@
     <div class="buttons">
-        <button [ngClass]="{'button-selected': content=='Forms'}"
+        <button [ngClass]="{'button-selected': content=='Forms', 'button-not-selected': content != 'Forms'}"
         (click)="switchContent('Forms')">Forms</button>
-        <button [ngClass]="{'button-selected': content=='Details'}"
+        <button [ngClass]="{'button-selected': content=='Details', 'button-not-selected': content != 'Details'}"
         (click)="switchContent('Details')">Details</button>
-        <button [ngClass]="{'button-selected': content=='Types'}"
+        <button [ngClass]="{'button-selected': content=='Types',  'button-not-selected': content != 'Types'}"
         (click)="switchContent('Types')">Types</button>
-        <button [ngClass]="{'button-selected': content=='Stats'}"
+        <button [ngClass]="{'button-selected': content=='Stats', 'button-not-selected': content != 'Stats'}"
         (click)="switchContent('Stats')">Stats</button>
-        <button [ngClass]="{'button-selected': content=='Wear'}"
+        <button [ngClass]="{'button-selected': content=='Wear', 'button-not-selected': content != 'Wear'}"
         (click)="switchContent('Wear')">Wear</button>
     </div>
 
