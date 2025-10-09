@@ -16,7 +16,6 @@ export class Card {
   readonly #pokeService = inject(PokeService);
   readonly pokeResult = input.required<PokeResult>();
   readonly name = input.required<string>();
-  readonly pokeSearch = input<string>('');
 
   protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
 

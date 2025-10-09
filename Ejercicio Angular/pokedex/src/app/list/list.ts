@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { PokeService } from '../core/services/poke.service';
 import { Card } from './card/card';
 import { SearchBar } from '../search-bar/search-bar';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-list',
-  imports: [Card, SearchBar],
+  imports: [Card, SearchBar, TitleCasePipe],
   templateUrl: './list.html',
   styleUrl: './list.scss'
 })

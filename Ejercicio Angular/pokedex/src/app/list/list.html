@@ -7,11 +7,19 @@
         <p>Error loading Pokémon</p>
     }@else{
         
-            @let pokeList = pokeListResource.value();
-
+        @let pokeList = pokeListResource.value();
+        @if(pokemon_search_value != ''){
             @for (pokeResult of pokeList?.results; track pokeResult){
-                <app-card [pokeResult]="pokeResult" [name]="pokeResult.name" [pokeSearch]="pokemon_search_value"/>
+                @if((pokeResult.name|titlecase).includes(pokemon_search_value)){
+                    <app-card [pokeResult]="pokeResult" [name]="pokeResult.name"></app-card>
+                }
             }
+        }@else {
+            @for (pokeResult of pokeList?.results; track pokeResult){
+                <app-card [pokeResult]="pokeResult" [name]="pokeResult.name"/>
+            }
+        }
+            
         
     }    
 </div>
