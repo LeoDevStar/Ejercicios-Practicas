@@ -41,6 +41,7 @@ $poke-types: (
     color: #694086;
     font-weight: 600;
     text-decoration: none;
+    margin-inline: 3%;
 
     &:hover{
         transform: translateY(-8px) scale(1.02);
@@ -78,6 +79,7 @@ $poke-types: (
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  margin-top: 5%;
 }
 
 .poke-card-types{
