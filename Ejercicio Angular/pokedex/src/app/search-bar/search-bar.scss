@@ -6,6 +6,13 @@
         border-radius: 12px;
         border-style: none;
         padding: 15px;
+
+        background-image: url("/Icons/PokeGlass.svg");
+        background-repeat: no-repeat;
+        background-position: 5px center;
+        background-size: 20px 20px;
+
+        padding-left: 30px;
     }
     button{
         width: 50px;
@@ -52,21 +59,21 @@
 }
 
 
-.poke-search input{
-    width:50%;
-    background-color: rgb(222, 221, 221);
-    border-radius: 12px;
-    border-style: none;
-    padding: 15px;
-}
+// .poke-search input{
+//     width:50%;
+//     background-color: rgb(222, 221, 221);
+//     border-radius: 12px;
+//     border-style: none;
+//     padding: 15px;
+// }
 
-.poke-search button{
-    width: 50px;
-    background-color: rgba(105, 64, 134, 1);
-    border-style: none;
-    border-radius: 12px;
-    padding-block: 15px;
-    color: rgba(255,255,255,1);
+// .poke-search button{
+//     width: 50px;
+//     background-color: rgba(105, 64, 134, 1);
+//     border-style: none;
+//     border-radius: 12px;
+//     padding-block: 15px;
+//     color: rgba(255,255,255,1);
     
-    cursor: pointer;
-}
+//     cursor: pointer;
+// }
