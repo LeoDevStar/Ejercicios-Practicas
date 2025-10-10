@@ -21,7 +21,7 @@
                 <div class="info-content">
                     @switch (content) {
                         @case ('Forms') {
-                            <h1>Forms</h1>
+                            
                             <!-- <app-forms [name]="pokemonSpecies.name"></app-forms>
                             <h1>{{pokemonSpecies.name | titlecase}}</h1>
                             <p>{{pokemonSpecies.flavor_text_entries.at(0)?.flavor_text}}</p> -->
@@ -30,27 +30,27 @@
                         }
 
                         @case ('Details'){
-                            <h1>Details</h1>
+                            
                             <app-info-details [pokeResource]="pokemonResource.value()"></app-info-details>
                         }
 
                         @case ('Types'){
-                            <h1>Types</h1>
+                            
                             <app-types [pokeResource]="pokemonResource.value()"></app-types>
                         }
 
                         @case ('Stats'){
-                            <h1>Stats</h1>
+                            
                             <app-stats [pokeResource]="pokemonResource.value()"></app-stats>
                         }
 
                         @case ('Wear'){
-                            <h1>Wear</h1>
+                            
                             <p>Wear info</p>
                         }
 
                         @default {
-                            <h1>Default</h1>
+                            
                             <p>Default info</p>
                         }
                     }    

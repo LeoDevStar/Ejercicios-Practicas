@@ -10,18 +10,20 @@
         border-style: none;
         padding-block: 15px;
         font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 20px;
     
         cursor: pointer;
 
         &:hover{
             /*background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.3));*/
             color: #694086;
-            font-weight: bold;
+            //font-weight: bold;
         }
 
         &.selected{
             color: #694086;
-            font-weight: bold;
+            //font-weight: bold;
         }
     }
 }
@@ -37,5 +39,6 @@
 }
 
 .details-info{
+    margin-top: 10%;
     color: #694086;
 }
