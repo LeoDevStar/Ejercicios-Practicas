@@ -1,39 +1,45 @@
-<a class="poke-card" [routerLink]="name()">
-    <!-- <img 
-    width="150" 
-    height="150"
-    [ngSrc]="pokeResult()?.url?? '' | pokeImg"
-    [alt]="pokeResult()?.name"
-    [ngClass]="typeStyles(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"/> -->
+@if (pokeResource.isLoading()){
+    <p>Loading...</p>
+} @else if(pokeResource.error()){
+    <p>Error loading Pokémon</p>
+} @else {
+    <a class="poke-card" [routerLink]="name()">
+        <!-- <img 
+        width="150" 
+        height="150"
+        [ngSrc]="pokeResult()?.url?? '' | pokeImg"
+        [alt]="pokeResult()?.name"
+        [ngClass]="typeStyles(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"/> -->
 
-    <app-image [name]="name()" [width]="200" [height]="200"></app-image>
-    
-    <div class="poke-card-details">
-        <div class="poke-card-info">
-            @if(pokeResource.value(); as pokemon){
-                <div class="poke-card-id">
-                    @if(pokemon.id < 10){
-                        <p>n 00{{pokemon.id}}</p>    
-                    }@else if(pokemon.id >= 10 && pokemon.id < 100){
-                        <p>n 0{{pokemon.id}}</p>    
-                    }@else{
-                        <p>n {{pokemon.id}}</p>
-                    }
-                </div>
-            }
-            <p>{{name() | titlecase}}</p>
-        </div>
+        <app-image [name]="name()" [width]="200" [height]="200"></app-image>
         
-        @if(pokeResource.value(); as pokemon){
-            <div class="poke-card-types">
-                @for (type of pokemon.types; track type){
-                    
-                    <p [ngClass]="typeStyles(type.type.name | titlecase)">{{type.type.name | titlecase}}</p>
-
+        <div class="poke-card-details">
+            <div class="poke-card-info">
+                @if(pokeResource.value(); as pokemon){
+                    <div class="poke-card-id">
+                        @if(pokemon.id < 10){
+                            <p>n 00{{pokemon.id}}</p>    
+                        }@else if(pokemon.id >= 10 && pokemon.id < 100){
+                            <p>n 0{{pokemon.id}}</p>    
+                        }@else{
+                            <p>n {{pokemon.id}}</p>
+                        }
+                    </div>
                 }
+                <p>{{name() | titlecase}}</p>
             </div>
             
-        }
-    </div>
-    
-</a>
+            @if(pokeResource.value(); as pokemon){
+                <div class="poke-card-types">
+                    @for (type of pokemon.types; track type){
+                        
+                        <p [ngClass]="typeStyles(type.type.name | titlecase)">{{type.type.name | titlecase}}</p>
+
+                    }
+                </div>
+                
+            }
+        </div>
+        
+    </a>
+}
