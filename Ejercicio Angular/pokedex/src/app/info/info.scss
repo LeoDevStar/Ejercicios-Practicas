@@ -1,0 +1,44 @@
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+    /*text-align: center;*/
+    button{
+        width: 125px;
+        background-color: rgba(0,0,0,0);
+        border-style: none;
+        padding-block: 15px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+    
+        cursor: pointer;
+
+        &:hover{
+            /*background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.3));*/
+            color: #694086;
+            //font-weight: bold;
+        }
+
+        &.selected{
+            color: #694086;
+            //font-weight: bold;
+        }
+    }
+}
+
+.button-selected{
+    color: #694086;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.button-not-selected{
+    color: rgb(129, 129, 129);
+}
+
+.details-info{
+    margin-top: 5%;
+    color: #694086;
+}

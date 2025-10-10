@@ -1,0 +1,60 @@
+.poke-stats{
+    display:flex;
+    flex-direction: column;
+}
+.poke-stat{
+    display: flex;
+    justify-content: space-evenly;
+
+    p{
+        font-size: large;
+    }
+
+    hr{
+        width: 0%;
+        margin: 0%;
+    }
+}
+
+.poke-stat-info, .poke-effort-info{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.poke-stat-info{
+    padding-inline: 20px;
+    border-radius: 15px;
+}
+
+.poke-base-stat, .poke-stat-effort{
+    font-weight: bold;
+}
+
+hr{
+    width: 100%;
+}
+
+.hp-stat{
+    background-color: rgb(244, 110, 110);
+}
+
+.attack-stat{
+    background-color: rgb(234, 188, 80);
+}
+
+.defense-stat{
+    background-color: rgb(230, 230, 87);
+}
+
+.special-attack-stat{
+    background-color: rgb(109, 177, 236);
+}
+
+.special-defense-stat{
+    background-color: rgb(109, 236, 113);
+}
+
+.speed-stat{
+    background-color: rgb(219, 118, 237);
+}

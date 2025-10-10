@@ -1,0 +1,61 @@
+    <div class="buttons">
+        <button [ngClass]="{'button-selected': content=='Forms', 'button-not-selected': content != 'Forms'}"
+        (click)="switchContent('Forms')">Forms</button>
+        <button [ngClass]="{'button-selected': content=='Details', 'button-not-selected': content != 'Details'}"
+        (click)="switchContent('Details')">Details</button>
+        <button [ngClass]="{'button-selected': content=='Types',  'button-not-selected': content != 'Types'}"
+        (click)="switchContent('Types')">Types</button>
+        <button [ngClass]="{'button-selected': content=='Stats', 'button-not-selected': content != 'Stats'}"
+        (click)="switchContent('Stats')">Stats</button>
+        <button [ngClass]="{'button-selected': content=='Wear', 'button-not-selected': content != 'Wear'}"
+        (click)="switchContent('Wear')">Wear</button>
+    </div>
+
+<div class="details-info">
+    @if (pokeSpecies.isLoading()){
+            <p>Loading...</p>
+        }@else if(pokeSpecies.error()){
+            <p>Error loading Pokémon</p>
+        }@else{
+            @if(pokeSpecies.value(); as pokemonSpecies){
+                <div class="info-content">
+                    @switch (content) {
+                        @case ('Forms') {
+                            
+                            <!-- <app-forms [name]="pokemonSpecies.name"></app-forms>
+                            <h1>{{pokemonSpecies.name | titlecase}}</h1>
+                            <p>{{pokemonSpecies.flavor_text_entries.at(0)?.flavor_text}}</p> -->
+                            
+                            <app-forms (poke_name)="getPokeName($event)" [evo_url]="pokemonSpecies.evolution_chain.url"></app-forms>
+                        }
+
+                        @case ('Details'){
+                            
+                            <app-info-details [pokeResource]="pokemonResource.value()"></app-info-details>
+                        }
+
+                        @case ('Types'){
+                            
+                            <app-types [pokeResource]="pokemonResource.value()"></app-types>
+                        }
+
+                        @case ('Stats'){
+                            
+                            <app-stats [pokeResource]="pokemonResource.value()"></app-stats>
+                        }
+
+                        @case ('Wear'){
+                            
+                            <p>Wear info</p>
+                        }
+
+                        @default {
+                            
+                            <p>Default info</p>
+                        }
+                    }    
+                </div>
+                
+            }   
+        }
+</div>

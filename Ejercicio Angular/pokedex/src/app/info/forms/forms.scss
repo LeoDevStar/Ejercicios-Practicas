@@ -1,0 +1,20 @@
+.pokemon-Images{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    a{
+        cursor: pointer;  
+    }
+}
+
+.selection-triangle{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #694086;
+    margin-left: 35%;
+    margin-bottom: 5%;
+}

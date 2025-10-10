@@ -1,26 +1,17 @@
 import { Component, inject, input } from '@angular/core';
-import { PokeService } from '../core/services/poke.service';
-import { NgClass, NgOptimizedImage, TitleCasePipe } from '@angular/common';
-import { Info } from "../info/info";
-import { SearchBar } from "../search-bar/search-bar";
-import { Image } from '../image/image';
-import { Router } from '@angular/router';
+import { PokeService } from '../../core/services/poke.service';
+import { NgClass, TitleCasePipe } from '@angular/common';
+import { Pokemon } from '../../core/models/pokemon.model';
 
 @Component({
-  selector: 'app-details',
-  imports: [TitleCasePipe, NgOptimizedImage, Info, NgClass, SearchBar, Image],
-  templateUrl: './details.html',
-  styleUrl: './details.scss'
+  selector: 'app-info-details',
+  imports: [TitleCasePipe, NgClass],
+  templateUrl: './info-details.html',
+  styleUrl: './info-details.scss'
 })
-export default class Details {
-  //constructor(private router: Router){}
-  private router = inject(Router);
-  readonly name = input<string>('');
-  
-  readonly #pokeService = inject(PokeService);
+export class InfoDetails {
 
-  protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
-  protected readonly pokeSpeciesResource = this.#pokeService.getPokemonSpecies(this.name);
+  readonly pokeResource = input.required<Pokemon|undefined>();
 
   type_css_class: string = '';
   typeStyles(type: string|null){
@@ -87,22 +78,4 @@ export default class Details {
     return this.type_css_class;
   }
 
-  getPokemonSearch(value: string){
-    console.log(value);
-    this.router.navigate([value]);
-  }
-
-
-  pokemon_name: string = "";
-  getPokemonName(name: string){
-    this.pokemon_name = name;
-  }
-
-  resetPokemonName(resetName: Boolean){
-    if(resetName){
-      this.pokemon_name = "";
-    }
-    
-  }
 }
- 

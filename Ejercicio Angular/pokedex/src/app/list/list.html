@@ -1,18 +1,27 @@
 <h1 class="title">Pokédex</h1>
-<app-search-bar></app-search-bar>
+<app-search-bar [css_class]="'poke-search-center'" (pokemon_search)="getPokemonSearch($event)"></app-search-bar>
 <div class="poke-container">
     @if (pokeListResource.isLoading()){
         <p>Loading...</p>
     }@else if(pokeListResource.error()){
         <p>Error loading Pokémon</p>
     }@else{
-        <div class="poke-container">
-            @let pokeList = pokeListResource.value();
-
+        
+        @let pokeList = pokeListResource.value();
+        @if(pokemon_search_value != ''){
+            <!-- @for (pokeResult of pokeList?.results; track pokeResult){
+                @if((pokeResult.name|titlecase).includes(pokemon_search_value)){
+                    <app-card [name]="pokeResult.name"></app-card>
+                }
+            } -->
+                <app-card [name]="pokemon_search_value"></app-card>
+        }@else {
             @for (pokeResult of pokeList?.results; track pokeResult){
-                <app-card [pokeResult]="pokeResult"/>
+                <app-card [name]="pokeResult.name"/>
             }
-        </div>
+        }
+            
+        
     }    
 </div>
 

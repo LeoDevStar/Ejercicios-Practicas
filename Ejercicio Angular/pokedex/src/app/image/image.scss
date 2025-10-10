@@ -1,56 +1,6 @@
-.poke-search-bar{
-  width: 700px;
+img{
+  border-radius: 12px;
 }
-.poke-details{
-    display: flex;
-    
-    gap: 30px;
-
-    border: #694086;
-    border-style: solid;
-    border-radius: 15px;
-    padding: 20px;
-
-    background-color: rgb(237, 235, 235);
-
-    img{
-        border-radius: 75px;
-    }
-
-}
-
-.poke-details-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.poke-type-badges{
-    margin-left: 50px;
-}
-
-.type-badge{
-    /*display: inline-block;*/
-    /*background-color: #444;*/
-    color: #fff;
-    padding: 5px 12px;
-    border-radius: 3px;
-    margin: 2px 4px;
-    font-weight: bold;
-}
-
-.back-link{
-    margin-top: 20px;
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    font-size: 0.75rem;
-
-    &:hover{
-        text-decoration: underline;
-    }
-}
-
 .poke-type-bug{
   background-color: rgba(161, 226, 167, 1);
   color: #68655d;
@@ -144,8 +94,4 @@
 .poke-type-default{
   background-color: rgba(255, 255, 255, 1);
   color: #000000;
-}
-
-.poke-info{
-  margin-top: 10%;
 }

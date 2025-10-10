@@ -1,54 +1,27 @@
-.poke-search-bar{
-  width: 700px;
-}
-.poke-details{
+.poke-info-details{
     display: flex;
-    
-    gap: 30px;
-
-    border: #694086;
-    border-style: solid;
-    border-radius: 15px;
-    padding: 20px;
-
-    background-color: rgb(237, 235, 235);
-
-    img{
-        border-radius: 75px;
-    }
-
-}
-
-.poke-details-header{
-    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.poke-type-badges{
-    margin-left: 50px;
+.poke-height-weight, .poke-types, .poke-abilities{
+    width: 500px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.type-badge{
-    /*display: inline-block;*/
-    /*background-color: #444;*/
-    color: #fff;
-    padding: 5px 12px;
-    border-radius: 3px;
-    margin: 2px 4px;
-    font-weight: bold;
-}
-
-.back-link{
-    margin-top: 20px;
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    font-size: 0.75rem;
-
-    &:hover{
-        text-decoration: underline;
-    }
+.poke-types{
+    text-align: center;
+  p{
+    width: 65px;
+    margin: 0px;
+    border-radius: 6px;
+    font-size: smaller;
+    margin: 3px;
+    padding: 5px;
+  }
 }
 
 .poke-type-bug{
@@ -98,7 +71,7 @@
 
 .poke-type-grass{
   background-color: rgba(199, 239, 222, 1);
-  color: #fff;
+  color: #525252;
 }
 
 .poke-type-ground{
@@ -138,14 +111,10 @@
 
 .poke-type-water{
   background-color: rgba(188, 233, 239, 1);
-  color: #fff;
+  color: #525252;
 }
 
 .poke-type-default{
   background-color: rgba(255, 255, 255, 1);
   color: #000000;
-}
-
-.poke-info{
-  margin-top: 10%;
 }

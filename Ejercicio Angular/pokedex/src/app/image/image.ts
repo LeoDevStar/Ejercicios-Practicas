@@ -1,26 +1,22 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, input, inject } from '@angular/core';
 import { PokeService } from '../core/services/poke.service';
 import { NgClass, NgOptimizedImage, TitleCasePipe } from '@angular/common';
-import { Info } from "../info/info";
-import { SearchBar } from "../search-bar/search-bar";
-import { Image } from '../image/image';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-details',
-  imports: [TitleCasePipe, NgOptimizedImage, Info, NgClass, SearchBar, Image],
-  templateUrl: './details.html',
-  styleUrl: './details.scss'
+  selector: 'app-image',
+  imports: [NgOptimizedImage, NgClass, TitleCasePipe],
+  templateUrl: './image.html',
+  styleUrl: './image.scss'
 })
-export default class Details {
-  //constructor(private router: Router){}
-  private router = inject(Router);
+export class Image {
   readonly name = input<string>('');
   
   readonly #pokeService = inject(PokeService);
 
   protected readonly pokeResource = this.#pokeService.getPokemon(this.name);
-  protected readonly pokeSpeciesResource = this.#pokeService.getPokemonSpecies(this.name);
+
+  readonly width = input<number>(0);
+  readonly height = input<number>(0);
 
   type_css_class: string = '';
   typeStyles(type: string|null){
@@ -86,23 +82,4 @@ export default class Details {
     }
     return this.type_css_class;
   }
-
-  getPokemonSearch(value: string){
-    console.log(value);
-    this.router.navigate([value]);
-  }
-
-
-  pokemon_name: string = "";
-  getPokemonName(name: string){
-    this.pokemon_name = name;
-  }
-
-  resetPokemonName(resetName: Boolean){
-    if(resetName){
-      this.pokemon_name = "";
-    }
-    
-  }
 }
- 

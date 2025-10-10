@@ -1,0 +1,21 @@
+<!-- @if(pokeResource.value(); as pokemon){ -->
+    <div class="poke-info-details">
+        <h1>{{pokeResource()?.name | titlecase}}</h1>
+        <div class="poke-height-weight">
+            <p>Height: {{pokeResource()?.height}}</p>
+            <p>Weight: {{pokeResource()?.weight}}</p>
+        </div>
+        <h2>Types</h2>
+        <div class="poke-types">
+            @for(type of pokeResource()?.types; track type){
+                <p [ngClass]="typeStyles(type.type.name | titlecase)">{{type.type.name | titlecase}}</p>
+            }
+        </div>
+        <h2>Abilities</h2>
+        <div class="poke-abilities">
+            @for(ability of pokeResource()?.abilities; track ability){
+                <p>{{ability.ability.name | titlecase}}</p>
+            }
+        </div>
+    </div>
+<!-- } -->

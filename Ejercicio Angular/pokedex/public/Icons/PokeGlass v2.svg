@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="249.99998"
+   height="250.00002"
+   viewBox="0 0 66.145828 66.145837"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="PokeGlass Gray ori.svg"
+   inkscape:export-filename="PokeGlass Gray"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.4410569"
+     inkscape:cx="72.863188"
+     inkscape:cy="149.54302"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1" />
+  <circle
+     style="fill:none;fill-opacity:1;stroke:#433d3d;stroke-width:4.23292;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+     id="path4"
+     cx="30.809425"
+     cy="28.992958"
+     r="26.026958" />
+  <rect
+     style="fill:#433d3d;fill-opacity:1;stroke-width:1.07174;paint-order:fill markers stroke"
+     id="rect1"
+     width="7.2930689"
+     height="22.649155"
+     x="2.1616514"
+     y="66.712234"
+     transform="rotate(-40.26721)"
+     ry="3.6639493" />
+</svg>

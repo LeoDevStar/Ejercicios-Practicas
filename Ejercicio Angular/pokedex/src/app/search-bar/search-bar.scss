@@ -1,10 +1,80 @@
+
 .poke-search{
-    text-align: center;
-    margin: 30px;
-    font-family: sans-serif;
-    color: #694086;
+    input{
+        width:50%;
+        background-color: rgb(222, 221, 221);
+        border-radius: 12px;
+        border-style: none;
+        padding: 15px;
+
+        background-image: url("/Icons/PokeGlass v2.svg");
+        background-repeat: no-repeat;
+        background-position: 5px center;
+        background-size: 20px 20px;
+
+        padding-left: 30px;
+    }
+    button{
+        width: 50px;
+        background-color: rgba(105, 64, 134, 1);
+        border-style: none;
+        border-radius: 12px;
+        padding-block: 15px;
+        color: rgba(255,255,255,1);
+        
+        cursor: pointer;
+    }
+}
+.poke-search-center{
+    p{
+        text-align: center;
+        font-family: sans-serif;
+        color: #694086;
+    }
+
+    .poke-search{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 30px;
+        gap: 20px;
+    }
+    
 }
 
-.poke-search input{
-    width:50%;
+.poke-search-left{
+    p{
+        text-align: left;
+        font-family: sans-serif;
+        color: #694086;
+    }
+    .poke-search{
+        display: flex;
+        align-items: left;
+        justify-content: left;
+        margin: 30px;
+        margin-left: 0px;
+        gap: 20px;
+    }
+    
 }
+
+
+// .poke-search input{
+//     width:50%;
+//     background-color: rgb(222, 221, 221);
+//     border-radius: 12px;
+//     border-style: none;
+//     padding: 15px;
+// }
+
+// .poke-search button{
+//     width: 50px;
+//     background-color: rgba(105, 64, 134, 1);
+//     border-style: none;
+//     border-radius: 12px;
+//     padding-block: 15px;
+//     color: rgba(255,255,255,1);
+    
+//     cursor: pointer;
+// }
