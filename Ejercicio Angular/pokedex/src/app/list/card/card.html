@@ -1,10 +1,12 @@
-<a class="poke-card" [routerLink]="pokeResult().name">
-    <img 
+<a class="poke-card" [routerLink]="name()">
+    <!-- <img 
     width="150" 
     height="150"
-    [ngSrc]="pokeResult().url | pokeImg"
-    [alt]="pokeResult().name"
-    [ngClass]="typeStyles(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"/>
+    [ngSrc]="pokeResult()?.url?? '' | pokeImg"
+    [alt]="pokeResult()?.name"
+    [ngClass]="typeStyles(pokeResource.value()?.types?.at(0)?.type?.name| titlecase)"/> -->
+
+    <app-image [name]="name()" [width]="150" [height]="150"></app-image>
     
     <div class="poke-card-details">
         <div class="poke-card-info">
@@ -19,7 +21,7 @@
                     }
                 </div>
             }
-            <p>{{pokeResult().name | titlecase}}</p>
+            <p>{{name() | titlecase}}</p>
         </div>
         
         @if(pokeResource.value(); as pokemon){

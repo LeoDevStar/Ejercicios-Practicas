@@ -4,17 +4,18 @@ import { PokeResult } from '../../core/models/poke-result.model';
 import { NgClass, NgOptimizedImage, TitleCasePipe } from '@angular/common';
 import { PokeImgPipe } from './poke-img-pipe';
 import { RouterLink } from '@angular/router';
+import { Image } from '../../image/image';
 
 @Component({
   selector: 'app-card',
-  imports: [TitleCasePipe, PokeImgPipe, NgOptimizedImage, RouterLink, NgClass],
+  imports: [TitleCasePipe, PokeImgPipe, NgOptimizedImage, RouterLink, NgClass, Image],
   templateUrl: './card.html',
   styleUrl: './card.scss'
 })
 export class Card {
 
   readonly #pokeService = inject(PokeService);
-  readonly pokeResult = input.required<PokeResult>();
+  //readonly pokeResult = input<PokeResult>();
   readonly name = input.required<string>();
 
   protected readonly pokeResource = this.#pokeService.getPokemon(this.name);

@@ -9,14 +9,15 @@
         
         @let pokeList = pokeListResource.value();
         @if(pokemon_search_value != ''){
-            @for (pokeResult of pokeList?.results; track pokeResult){
+            <!-- @for (pokeResult of pokeList?.results; track pokeResult){
                 @if((pokeResult.name|titlecase).includes(pokemon_search_value)){
-                    <app-card [pokeResult]="pokeResult" [name]="pokeResult.name"></app-card>
+                    <app-card [name]="pokeResult.name"></app-card>
                 }
-            }
+            } -->
+                <app-card [name]="pokemon_search_value"></app-card>
         }@else {
             @for (pokeResult of pokeList?.results; track pokeResult){
-                <app-card [pokeResult]="pokeResult" [name]="pokeResult.name"/>
+                <app-card [name]="pokeResult.name"/>
             }
         }
             
