@@ -1,12 +1,13 @@
 import { Component, inject, input, output } from '@angular/core';
 import { PokeService } from '../../core/services/poke.service';
-import { TitleCasePipe } from '@angular/common';
+import { NgClass, TitleCasePipe } from '@angular/common';
 import { Image } from '../../image/image';
 import { Description } from '../../description/description';
 
+
 @Component({
   selector: 'app-forms',
-  imports: [Description, Image],
+  imports: [Description, Image, NgClass],
   templateUrl: './forms.html',
   styleUrl: './forms.scss'
 })
