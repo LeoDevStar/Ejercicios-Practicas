@@ -1,5 +1,5 @@
 .list-container{
-    width: 500px;
+    width: 700px;
     height: 500px;
 }
 .date{
@@ -22,4 +22,18 @@
         height: 30px;
         padding-inline: 2%;
     }
+}
+
+.list{
+    li{
+        display: flex;
+        //align-items: center;
+    }
+}
+
+.square{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid black;
 }
