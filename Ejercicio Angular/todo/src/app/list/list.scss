@@ -1,0 +1,25 @@
+.list-container{
+    width: 500px;
+    height: 500px;
+}
+.date{
+    display: flex;
+    #day{
+        color:gray;
+    }
+}
+
+.list-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    button{
+        border: none;
+        background-color: rgb(255 204 44);
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: large;
+        height: 30px;
+        padding-inline: 2%;
+    }
+}
