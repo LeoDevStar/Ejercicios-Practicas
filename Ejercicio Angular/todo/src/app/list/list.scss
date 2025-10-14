@@ -23,7 +23,7 @@
 .list{
     li{
         display: flex;
-        //align-items: center;
+        align-items: center;
     }
 }
 
@@ -32,6 +32,28 @@
     height: 30px;
     border-radius: 5px;
     border: 2px solid black;
+}
+
+.activity-checkbox{
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.activity-checkbox:checked{
+    //background-color: aqua;
+}
+
+.activity-checkbox:checked::before{
+    content: '/';
+    display: block;
+    text-align: center;
+    line-height: 38px;
+    color: gray;
+    font-size: 28px;
 }
 
 .activity-content{
