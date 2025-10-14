@@ -37,3 +37,20 @@
     border-radius: 5px;
     border: 2px solid black;
 }
+
+.activity-content{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 5%;
+    p{
+        margin: 0;
+    }
+    span{
+        background-color: rgb(175 219 251);
+        border-radius: 15px;
+        padding: 10%;
+        margin-block: 10%;
+    }
+    
+}
