@@ -12,6 +12,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     button{
         border: none;
         background-color: rgb(255 204 44);
@@ -40,8 +41,8 @@
 
 .activity-checkbox{
     appearance: none;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border: 2px solid gray;
     border-radius: 5px;
     cursor: pointer;
@@ -55,9 +56,9 @@
     content: '/';
     display: block;
     text-align: center;
-    line-height: 38px;
+    line-height: 28px;
     color: gray;
-    font-size: 28px;
+    font-size: 15px;
 }
 
 .activity-content{
