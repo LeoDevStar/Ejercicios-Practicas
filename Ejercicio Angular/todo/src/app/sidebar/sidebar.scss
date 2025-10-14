@@ -45,6 +45,15 @@
     }
 }
 
+.list-options{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a{
+        margin-right: 5%;
+    }
+}
+
 .subtitle{
     font-size: 15px;
     font-weight: bold;
