@@ -1,8 +1,9 @@
 .sidebar{
     width: 300px;
-    height: max-content;
+    height: 690px;
     background-color: rgb(255 246 217);
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
 }
 
 .profile{
@@ -60,4 +61,10 @@
     padding: 0;
     padding-left: 2%;
     margin: 2%;
+}
+
+.account-opt{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
