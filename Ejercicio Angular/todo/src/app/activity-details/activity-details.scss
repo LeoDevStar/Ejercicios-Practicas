@@ -1,5 +1,7 @@
 .activity-details-container{
     width: 350px;
+    position: relative;
+    height: 670px;
 }
 
 .activity-details-inputs{
@@ -7,16 +9,43 @@
     flex-direction: column;
     .detail-input, .detail-textarea{
         appearance: none;
-        width: 350px;
+        width: 320px;
         border: 2px solid gray;
         margin-block: 5%;
+        padding: 5%;
     }
     .detail-textarea{
         height: 100px;
     }
 }
 
+span{
+    background-color: rgb(175 219 251);
+    border-radius: 15px;
+    padding: 2%;
+    margin-block: 10%;
+}
+
 .activity-details-buttons{
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
+.text-button{
+    appearance: none;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+.save-button{
+    appearance: none;
+    background: rgb(249 203 69);
+    border: none;
+    border-radius: 5px;
+    padding: 3%;
+    cursor: pointer;
 }
