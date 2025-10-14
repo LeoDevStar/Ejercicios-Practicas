@@ -24,6 +24,7 @@
     li{
         display: flex;
         align-items: center;
+        position: relative;
     }
 }
 
@@ -71,4 +72,9 @@
         margin-block: 10%;
     }
     
+}
+
+.activity-arrow{
+    position: absolute;
+    right: 0;
 }
