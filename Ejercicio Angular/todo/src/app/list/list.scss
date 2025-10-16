@@ -55,7 +55,7 @@
 }
 
 .activity-checkbox:checked::before{
-    content: '/';
+    content: '✓';
     display: block;
     text-align: center;
     line-height: 28px;
