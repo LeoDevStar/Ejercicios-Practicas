@@ -1,0 +1,53 @@
+.activity-container{
+    width: 700px;
+    display: flex;
+    align-items: center;
+    
+    margin-block: 2%;
+    a{
+        cursor: pointer;  
+    }
+    position: relative;
+}
+.activity-checkbox{
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.activity-checkbox:checked{
+    //background-color: aqua;
+}
+
+.activity-checkbox:checked::before{
+    content: '✓';
+    display: block;
+    text-align: center;
+    line-height: 23px;
+    color: gray;
+    font-size: 15px;
+}
+.activity-content{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 3%;
+    p{
+        margin: 0;
+    }
+    span{
+        background-color: rgb(175 219 251);
+        border-radius: 5px;
+        padding: 10%;
+        margin-block: 10%;
+    }
+    
+}
+
+.activity-arrow{
+    position: absolute;
+    right: 0;
+}
