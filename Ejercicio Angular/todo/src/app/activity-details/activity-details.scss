@@ -16,7 +16,8 @@
     }
     .detail-textarea{
         height: 100px;
-        resize: vertical;
+        //resize: vertical;
+        resize: none;
     }
 }
 
@@ -31,9 +32,9 @@ span{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    position: relative;
-    top: 13rem;
-    //bottom: 10px;
+    position: absolute;
+    //top: 13rem;
+    bottom: 10px;
 }
 
 .text-button{
