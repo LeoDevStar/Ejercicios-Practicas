@@ -7,5 +7,6 @@ import { Component, input } from '@angular/core';
   styleUrl: './activity.scss'
 })
 export class Activity {
-  readonly name= input.required<string>();
+  readonly name = input.required<string>();
+  readonly type = input.required<string>();
 }
