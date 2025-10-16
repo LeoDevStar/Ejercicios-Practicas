@@ -2,7 +2,7 @@
     <input type="checkbox" class="activity-checkbox">
     <div class="activity-content">
         <p>{{name()}}</p>
-        <span>{{type()}}</span>
+        <span [ngClass]="typeStyles(type())">{{type()}}</span>
     </div>
     <a>
         <img 
