@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-activity',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './activity.scss'
 })
 export class Activity {
-
+  readonly name= input.required<string>();
 }
