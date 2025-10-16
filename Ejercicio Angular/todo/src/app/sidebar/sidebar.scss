@@ -47,7 +47,7 @@
         background-image: none;
     }
 }
-.options{
+.options, .list-options{
     padding-block: 2%;
     ul{
         list-style-type: none;
@@ -83,6 +83,13 @@
     }
 }
 
+.list-options{
+    ul{
+        height: 15rem;
+        overflow: auto;
+        scrollbar-color: none;
+    }
+}
 .subtitle-sidebar{
     font-size: 15px;
     font-weight: bold;
