@@ -24,6 +24,19 @@
     }
 }
 
+.search{
+    display: flex;
+    justify-content: center;
+    input{
+        appearance: none;
+        border-radius: 3rem;
+        width: 80%;
+        text-align: center;
+        border: none;
+        background-color: rgb(255, 238, 187);
+        //margin-left: 10%;
+    }
+}
 .options{
     ul{
         list-style-type: none;
