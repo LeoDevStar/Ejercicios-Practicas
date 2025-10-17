@@ -1,8 +1,8 @@
-export interface Activity{
+export interface ActivityModel{
     name: string;
     description: string;
-    type: string;
-    date: Date;
-    important: boolean;
-    overdue: boolean;
+    // type: string;
+    // date: Date;
+    // important: boolean;
+    // overdue: boolean;
 }

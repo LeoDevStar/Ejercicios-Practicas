@@ -1,5 +1,7 @@
 import { NgClass } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { TodoService } from '../core/services/todo-service';
+import { ActivityModel } from '../core/models/activity-model';
 
 @Component({
   selector: 'app-activity-details',
@@ -9,4 +11,20 @@ import { Component, input } from '@angular/core';
 })
 export class ActivityDetails {
   showDetails = input.required<boolean>();
+  todo_service = inject(TodoService);
+  //activity = input<Activity>();
+  activity:ActivityModel ={
+    name: '',
+    description: ''
+  };
+  
+  newActivity(name_received: string, description_received:string){
+    this.activity = {
+      name: name_received,
+      description: description_received
+    };
+    this.todo_service.createActivity(this.activity);
+  }
+
+
 }
