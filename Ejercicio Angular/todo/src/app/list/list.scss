@@ -1,9 +1,13 @@
-:host{
-    margin-inline: 5%;
+// :host{
+//     margin-inline: 5%;
+// }
+.page-container{
+    display:flex;
 }
 .list-container{
     width: 700px;
     height: 500px;
+    margin-left: 5rem;
     //padding-inline: 5%;
 }
 

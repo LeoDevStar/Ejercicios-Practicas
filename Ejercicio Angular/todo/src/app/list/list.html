@@ -1,22 +1,25 @@
-<div class="list-container">
-    <app-date-and-progress></app-date-and-progress>
-    <div class="list-header">
-        <h2 class="subtitle">Today</h2>
-        <button>+</button>
+<div class="page-container">
+    <div class="list-container">
+        <app-date-and-progress></app-date-and-progress>
+        <div class="list-header">
+            <h2 class="subtitle">Today</h2>
+            <button (click)="showActivityDetails()">+</button>
+        </div>
+        <div class="list">
+            
+            <!-- <app-activity [name]="'Schedule team meeting'" [type]="'Work'"></app-activity>
+            <app-activity [name]="'Call my sister to catch up'" [type]="'Personal'"></app-activity>
+            <app-activity [name]="'Take out the trash'" [type]="'Household'"></app-activity>
+            <app-activity [name]="'Vacuum the living room'" [type]="'Household'"></app-activity>
+            <app-activity [name]="'Schedule team meeting'" [type]="'Work'"></app-activity>
+            <app-activity [name]="'Call my sister to catch up'" [type]="'Personal'"></app-activity>
+            <app-activity [name]="'Take out the trash'" [type]="'Household'"></app-activity>
+            <app-activity [name]="'Vacuum the living room'" [type]="'Household'"></app-activity>
+            <app-activity [name]="'Schedule team meeting'" [type]="'Work'"></app-activity>
+            <app-activity [name]="'Call my sister to catch up'" [type]="'Personal'"></app-activity>
+            <app-activity [name]="'Take out the trash'" [type]="'Household'"></app-activity>
+            <app-activity [name]="'Vacuum the living room'" [type]="'Household'"></app-activity> -->
+        </div>
     </div>
-    <div class="list">
-        
-        <!-- <app-activity [name]="'Schedule team meeting'" [type]="'Work'"></app-activity>
-        <app-activity [name]="'Call my sister to catch up'" [type]="'Personal'"></app-activity>
-        <app-activity [name]="'Take out the trash'" [type]="'Household'"></app-activity>
-        <app-activity [name]="'Vacuum the living room'" [type]="'Household'"></app-activity>
-        <app-activity [name]="'Schedule team meeting'" [type]="'Work'"></app-activity>
-        <app-activity [name]="'Call my sister to catch up'" [type]="'Personal'"></app-activity>
-        <app-activity [name]="'Take out the trash'" [type]="'Household'"></app-activity>
-        <app-activity [name]="'Vacuum the living room'" [type]="'Household'"></app-activity>
-        <app-activity [name]="'Schedule team meeting'" [type]="'Work'"></app-activity>
-        <app-activity [name]="'Call my sister to catch up'" [type]="'Personal'"></app-activity>
-        <app-activity [name]="'Take out the trash'" [type]="'Household'"></app-activity>
-        <app-activity [name]="'Vacuum the living room'" [type]="'Household'"></app-activity> -->
-    </div>
+    <app-activity-details [showDetails]="show"></app-activity-details>
 </div>
