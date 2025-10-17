@@ -6,8 +6,8 @@
          <textarea rows="5" cols="40" #inputDescription class="detail-textarea"></textarea>
     </div>
     <div class="list-container">
-        <!-- <label for="list">List</label> -->
-         <p>List: </p>
+        <label for="list">List:</label>
+         <!-- <p>List: </p> -->
         <select name="list" id="list" #inputList>
             <option value="Work">Work</option>
             <option value="Personal">Personal</option>
@@ -15,11 +15,16 @@
             <option value="Business">Business</option>
         </select>
     </div>
+
+    <div class="list-container">
+        <label for="date">Due Date:</label>
+        <input type="date" id="datefield" name="datefield" #inputDate required>
+    </div>
     
     <!-- <p>List: <span>Work</span> </p> -->
-    <p>Due Date: June 25, 2025</p>
+    <!-- <p>Due Date: June 25, 2025</p> -->
     <div class="activity-details-buttons">
         <button class="text-button">Delete Task</button>
-        <button class="save-button" (click)="newActivity(inputName.value, inputDescription.value, inputList.value)">Save Changes</button>
+        <button class="save-button" (click)="newActivity(inputName.value, inputDescription.value, inputList.value, inputDate.value)">Save Changes</button>
     </div>
 </div>

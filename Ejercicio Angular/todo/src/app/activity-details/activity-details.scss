@@ -30,6 +30,7 @@
     display: flex;
     align-items: center;
     //justify-content: space-around;
+    margin-block: 2rem;
 }
 #list{
     appearance: none;
@@ -40,7 +41,17 @@
     margin-left: 5%;
     background-color: rgb(175 219 251);
     padding: 2%;
+}
 
+#datefield{
+    appearance: none;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius: 0.5rem;
+    margin-left: 5%;
+    background-color: rgb(175, 251, 229);
+    padding: 2%;
 }
 
 span{

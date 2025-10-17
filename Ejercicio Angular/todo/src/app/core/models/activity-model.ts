@@ -2,7 +2,7 @@ export interface ActivityModel{
     name: string;
     description: string;
     list: string;
-    // date: Date;
+    date: string;
     // important: boolean;
     // overdue: boolean;
 }
