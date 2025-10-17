@@ -25,6 +25,24 @@
     }
 }
 
+.list-container{
+    //width: 320px;
+    display: flex;
+    align-items: center;
+    //justify-content: space-around;
+}
+#list{
+    appearance: none;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius: 0.5rem;
+    margin-left: 5%;
+    background-color: rgb(175 219 251);
+    padding: 2%;
+
+}
+
 span{
     background-color: rgb(175 219 251);
     border-radius: 5px;

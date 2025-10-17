@@ -15,13 +15,15 @@ export class ActivityDetails {
   //activity = input<Activity>();
   activity:ActivityModel ={
     name: '',
-    description: ''
+    description: '',
+    list: ''
   };
   
-  newActivity(name_received: string, description_received:string){
+  newActivity(name_received: string, description_received:string, list_received: string){
     this.activity = {
       name: name_received,
-      description: description_received
+      description: description_received,
+      list: list_received
     };
     this.todo_service.createActivity(this.activity);
   }
