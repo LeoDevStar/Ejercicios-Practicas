@@ -29,14 +29,9 @@ export class ActivityDetails {
       date: date_received
     };
 
-    // if(this.todo_service.activity_list.activities.length = 0){
-    //   this.todo_service.setList("Lista test");
-    //   this.todo_service.createActivity(this.activity);
-    // }else{
-    //   this.todo_service.createActivity(this.activity);
-    // }
-
     this.todo_service.createActivity(this.activity);
+    this.todo_service.setList("Test List");
+    
     this.update_activity.emit(true);
   }
 

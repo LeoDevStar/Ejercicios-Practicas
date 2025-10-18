@@ -12,11 +12,9 @@ import { TodoService } from '../core/services/todo-service';
 })
 export class List {
   readonly todo_service = inject(TodoService);
-
-  //activity = this.todo_service.getActivity("Test activity 3");
-  list = this.todo_service.activity_list;
   
-  //updatedActivity: boolean = false;
+  list = this.todo_service.getList("Test List");
+  
 
   show: boolean = false;
   showActivityDetails(){
@@ -29,11 +27,8 @@ export class List {
 
   updateList(value: boolean){
     if(value){
-      this.list = this.todo_service.activity_list;
+      this.list = this.todo_service.getList("Test List");
     }
-    // if(value){
-    //   this.activity = this.todo_service.getActivity("Test activity 3");
-    // }
   }
 
 
