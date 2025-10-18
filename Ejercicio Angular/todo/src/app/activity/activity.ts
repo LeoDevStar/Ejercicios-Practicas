@@ -1,5 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component, input } from '@angular/core';
+import { ActivityModel } from '../core/models/activity-model';
 
 @Component({
   selector: 'app-activity',
@@ -8,8 +9,9 @@ import { Component, input } from '@angular/core';
   styleUrl: './activity.scss'
 })
 export class Activity {
-  readonly name = input.required<string>();
-  readonly type = input.required<string>();
+  // readonly name = input.required<string>();
+  // readonly type = input.required<string>();
+  readonly activity = input.required<ActivityModel>();
 
   css_class:string = ''
   typeStyles(typename: string){

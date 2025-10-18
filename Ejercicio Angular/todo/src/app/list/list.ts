@@ -1,7 +1,8 @@
-import { Component, output } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Activity } from '../activity/activity';
 import { DateAndProgress } from '../date-and-progress/date-and-progress';
 import { ActivityDetails } from '../activity-details/activity-details';
+import { TodoService } from '../core/services/todo-service';
 
 @Component({
   selector: 'app-list',
@@ -10,7 +11,12 @@ import { ActivityDetails } from '../activity-details/activity-details';
   styleUrl: './list.scss'
 })
 export class List {
+  readonly todo_service = inject(TodoService);
+
+  activity = this.todo_service.getActivity("Test activity 3");
   
+  //updatedActivity: boolean = false;
+
   show: boolean = false;
   showActivityDetails(){
     if(this.show==false){
@@ -20,6 +26,11 @@ export class List {
     }
   }
 
+  updateList(value: boolean){
+    if(value){
+      this.activity = this.todo_service.getActivity("Test activity 3");
+    }
+  }
 
 
 }

@@ -1,5 +1,5 @@
 import { DatePipe, NgClass } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { TodoService } from '../core/services/todo-service';
 import { ActivityModel } from '../core/models/activity-model';
 
@@ -20,6 +20,7 @@ export class ActivityDetails {
     date: ''
   };
   
+  update_activity = output<boolean>();
   newActivity(name_received: string, description_received:string, list_received: string, date_received: string){
     this.activity = {
       name: name_received,
@@ -28,6 +29,7 @@ export class ActivityDetails {
       date: date_received
     };
     this.todo_service.createActivity(this.activity);
+    this.update_activity.emit(true);
   }
 
 

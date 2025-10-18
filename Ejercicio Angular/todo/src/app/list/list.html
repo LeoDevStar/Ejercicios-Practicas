@@ -6,7 +6,9 @@
             <button (click)="showActivityDetails()">+</button>
         </div>
         <div class="list">
-            
+            @if(activity != null){
+                <app-activity [activity]="activity"></app-activity>
+            }
             <!-- <app-activity [name]="'Schedule team meeting'" [type]="'Work'"></app-activity>
             <app-activity [name]="'Call my sister to catch up'" [type]="'Personal'"></app-activity>
             <app-activity [name]="'Take out the trash'" [type]="'Household'"></app-activity>
@@ -21,5 +23,5 @@
             <app-activity [name]="'Vacuum the living room'" [type]="'Household'"></app-activity> -->
         </div>
     </div>
-    <app-activity-details [showDetails]="show"></app-activity-details>
+    <app-activity-details [showDetails]="show" (update_activity)="updateList($event)"></app-activity-details>
 </div>
