@@ -6,9 +6,21 @@
             <button (click)="showActivityDetails()">+</button>
         </div>
         <div class="list">
-            @if(activity != null){
-                <app-activity [activity]="activity"></app-activity>
+
+            @if(list != null){
+                @for(activity of list.activities; track activity){
+                    <app-activity [activity]="activity"></app-activity>
+                }
+
             }
+
+
+
+            <!-- @if(activity != null){
+                <app-activity [activity]="activity"></app-activity>
+            } -->
+
+
             <!-- <app-activity [name]="'Schedule team meeting'" [type]="'Work'"></app-activity>
             <app-activity [name]="'Call my sister to catch up'" [type]="'Personal'"></app-activity>
             <app-activity [name]="'Take out the trash'" [type]="'Household'"></app-activity>
