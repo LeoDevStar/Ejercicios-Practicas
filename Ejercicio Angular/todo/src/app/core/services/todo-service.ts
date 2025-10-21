@@ -9,6 +9,7 @@ import { List } from '../models/list-model';
 export class TodoService {
   
   activity_list: List = {
+    id: 0,
     total: 0,
     progress: 0,
     activities: []

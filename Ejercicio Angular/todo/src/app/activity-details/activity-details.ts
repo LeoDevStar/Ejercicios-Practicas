@@ -15,6 +15,7 @@ export class ActivityDetails {
   todo_service = inject(TodoService);
   //activity = input<Activity>();
   activity:ActivityModel ={
+    id: 0,
     name: '',
     description: '',
     list: '',
@@ -24,6 +25,7 @@ export class ActivityDetails {
   update_activity = output<boolean>();
   newActivity(name_received: string, description_received:string, list_received: string, date_received: string){
     this.activity = {
+      id: this.todo_service.activity_list.activities.length,
       name: name_received,
       description: description_received,
       list: list_received,
