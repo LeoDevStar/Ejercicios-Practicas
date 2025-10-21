@@ -19,9 +19,13 @@ export class TodoService {
     this.activity_list.activities.push(activity);
   }
 
-  getActivity(key: number){    
-    const act = this.activity_list.activities.find(acti => acti.id = key);
+  getActivity(search_id: number){    
+    const act = this.activity_list.activities.find(acti => acti.id == search_id);
     return act;
+  }
+
+  updateActivity(search_id: number, activity: ActivityModel){
+    this.activity_list.activities.splice(this.activity_list.activities.findIndex(element => element.id == search_id), 1, activity);
   }
 
   setList(list_id: number){

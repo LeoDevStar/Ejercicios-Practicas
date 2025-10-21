@@ -8,7 +8,7 @@
         <div class="list">
 
             @if(list != null){
-                @for(activity of list.activities; track activity){
+                @for(activity of list.activities; track activity.id){
                     <app-activity [activity]="activity" (activity_selected)="loadActivity($event)"></app-activity>
                 }
 
@@ -35,5 +35,10 @@
             <app-activity [name]="'Vacuum the living room'" [type]="'Household'"></app-activity> -->
         </div>
     </div>
-    <app-activity-details [showDetails]="show" [load_activity]="activity" (update_activity)="updateList($event)"></app-activity-details>
+    @if(activity != undefined){
+        <app-activity-details [showDetails]="show" [load_activity]="activity" (update_activity)="updateList($event)"></app-activity-details>
+    }@else {
+        <app-activity-details [showDetails]="show" (update_activity)="updateList($event)"></app-activity-details>
+    }
+    
 </div>
