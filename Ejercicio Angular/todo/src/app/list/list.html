@@ -9,7 +9,7 @@
 
             @if(list != null){
                 @for(activity of list.activities; track activity){
-                    <app-activity [activity]="activity"></app-activity>
+                    <app-activity [activity]="activity" (activity_selected)="loadActivity($event)"></app-activity>
                 }
 
             }
@@ -35,5 +35,5 @@
             <app-activity [name]="'Vacuum the living room'" [type]="'Household'"></app-activity> -->
         </div>
     </div>
-    <app-activity-details [showDetails]="show" (update_activity)="updateList($event)"></app-activity-details>
+    <app-activity-details [showDetails]="show" [load_activity]="activity" (update_activity)="updateList($event)"></app-activity-details>
 </div>

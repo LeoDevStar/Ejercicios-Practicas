@@ -11,6 +11,7 @@ import { ActivityModel } from '../core/models/activity-model';
 })
 export class ActivityDetails {
   showDetails = input.required<boolean>();
+  load_activity = input<ActivityModel>({} as ActivityModel);
   todo_service = inject(TodoService);
   //activity = input<Activity>();
   activity:ActivityModel ={

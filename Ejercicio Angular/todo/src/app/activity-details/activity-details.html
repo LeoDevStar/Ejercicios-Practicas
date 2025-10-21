@@ -1,9 +1,17 @@
 <div [ngClass]="{'activity-details-container': showDetails() == true, 'no-show': showDetails() == false}">
     <p class="subtitle">To-do:</p>
     <div class="activity-details-inputs">
-        <input type="text" #inputName class="detail-input">
+        <!-- @if(load_activity(); as activity){
+            <input type="text" #inputName class="detail-input" value={{activity.name}}>
+            <textarea rows="5" cols="40" #inputDescription class="detail-textarea">{{activity.description}}</textarea>
+        }@else {
+            <input type="text" #inputName name="titleInput" class="detail-input" value="">
+            <textarea rows="5" cols="40" #inputDescription class="detail-textarea"></textarea>
+        } -->
+        <input type="text" #inputName class="detail-input" value={{load_activity().name}}>
+        <textarea rows="5" cols="40" #inputDescription class="detail-textarea" value={{load_activity().description}}></textarea>
         <!-- <input type="text" class="detail-input"> -->
-         <textarea rows="5" cols="40" #inputDescription class="detail-textarea"></textarea>
+         
     </div>
     <div class="list-container">
         <label for="list">List:</label>

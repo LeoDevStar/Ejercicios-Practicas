@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { ActivityModel } from '../core/models/activity-model';
 
 @Component({
@@ -12,6 +12,12 @@ export class Activity {
   // readonly name = input.required<string>();
   // readonly type = input.required<string>();
   readonly activity = input.required<ActivityModel>();
+
+  activity_selected = output<ActivityModel>();
+
+  activity_show(){
+    this.activity_selected.emit(this.activity());
+  }
 
   css_class:string = ''
   typeStyles(typename: string){
