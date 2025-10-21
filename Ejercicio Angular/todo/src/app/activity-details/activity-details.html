@@ -8,15 +8,15 @@
             <input type="text" #inputName name="titleInput" class="detail-input" value="">
             <textarea rows="5" cols="40" #inputDescription class="detail-textarea"></textarea>
         } -->
-        <input type="text" [(ngModel)]="activity.name" class="detail-input" value={{load_activity().name}}>
-        <textarea rows="5" cols="40" [(ngModel)]="activity.description" class="detail-textarea" value={{load_activity().description}}></textarea>
+        <input type="text" [(ngModel)]="activity.name" class="detail-input" [value]="load_activity().name">
+        <textarea rows="5" cols="40" [(ngModel)]="activity.description" class="detail-textarea" [value]="load_activity().description"></textarea>
         <!-- <input type="text" class="detail-input"> -->
          
     </div>
     <div class="list-container">
         <label for="list">List:</label>
          <!-- <p>List: </p> -->
-        <select name="list" id="list" [(ngModel)]="activity.list">
+        <select name="list" id="list" [(ngModel)]="activity.list" [value]="load_activity().list">
             <option value="Work">Work</option>
             <option value="Personal">Personal</option>
             <option value="Household">Household</option>
@@ -26,7 +26,7 @@
 
     <div class="list-container">
         <label for="datefield">Due Date:</label>
-        <input type="date" id="datefield" name="datefield" [(ngModel)]="activity.date" required>
+        <input type="date" id="datefield" name="datefield" [(ngModel)]="activity.date" [value]="load_activity().date" required>
     </div>
     
     <!-- <p>List: <span>Work</span> </p> -->
