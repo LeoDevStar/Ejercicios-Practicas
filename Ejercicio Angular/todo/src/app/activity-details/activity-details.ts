@@ -33,7 +33,7 @@ export class ActivityDetails {
     };
 
     this.todo_service.createActivity(this.activity);
-    this.todo_service.setList("Test List");
+    this.todo_service.setList(0);
     
     this.update_activity.emit(true);
   }

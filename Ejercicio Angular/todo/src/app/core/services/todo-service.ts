@@ -19,17 +19,17 @@ export class TodoService {
     this.activity_list.activities.push(activity);
   }
 
-  getActivity(key: string){    
-    const act = this.activity_list.activities.find(acti => acti.name = key);
+  getActivity(key: number){    
+    const act = this.activity_list.activities.find(acti => acti.id = key);
     return act;
   }
 
-  setList(list_name: string){
-    localStorage.setItem(list_name, JSON.stringify(this.activity_list));
+  setList(list_id: number){
+    localStorage.setItem(list_id.toString(), JSON.stringify(this.activity_list));
   }
 
-  getList(key: string){
-    const item_list = localStorage.getItem(key);
+  getList(key: number){
+    const item_list = localStorage.getItem(key.toString());
     this.activity_list = item_list ? JSON.parse(item_list): this.activity_list;
     return this.activity_list;
   }
