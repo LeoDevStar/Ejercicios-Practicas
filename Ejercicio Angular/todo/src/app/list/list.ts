@@ -19,10 +19,22 @@ export class List {
   show: boolean = false;
 
   activity: ActivityModel = {} as ActivityModel;
+
   loadActivity(activity_received: ActivityModel){
     this.show = true;
     this.activity = activity_received;
   }
+
+  checkActivity(value: boolean){
+    if(value){
+      this.list.progress += 1;
+    }else{
+      this.list.progress -= 1;
+    }
+    this.todo_service.setList('todo-list');
+    
+  }
+
   showActivityDetails(){
     
       this.show = true;

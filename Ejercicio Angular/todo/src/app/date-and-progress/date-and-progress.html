@@ -13,5 +13,5 @@
     <div class="progress-bar">
         <div class="progress-made"></div>
     </div>
-    <p class="detail-text">40% completed</p>
+    <p class="detail-text">{{(list().progress/list().total) * 100 | number: '1.0-0'}}% completed</p>
 </div>
