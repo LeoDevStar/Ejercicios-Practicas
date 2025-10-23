@@ -41,6 +41,10 @@ export class ActivityDetails {
   //     this._allowDay = value;;
   // }
 
+  hideDetails(){
+    this.close_activity.emit(true);
+  }
+
   setActivity(){
 
     //console.log(this.activity);
@@ -56,16 +60,17 @@ export class ActivityDetails {
       this.todo_service.createActivity(this.activity);
 
     }
-    //this.activity = {} as ActivityModel;
     
     this.todo_service.setList('todo-list');
     
     this.update_activity.emit(true);
   }
 
-  hideDetails(){
-    //console.log("Close Details");
-    this.close_activity.emit(true);
+  deleteActivity(){
+    //console.log("Delete Activity");
+    this.todo_service.deleteActivity(this.load_activity().id);
+    this.todo_service.setList('todo-list');
+    this.hideDetails();
   }
 
 

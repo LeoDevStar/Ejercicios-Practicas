@@ -27,6 +27,21 @@ export class TodoService {
     this.activity_list.activities.splice(this.activity_list.activities.findIndex(element => element.id == search_id), 1, activity);
   }
 
+  deleteActivity(search_id: number){
+    if(this.activity_list.activities.find(element => element.id == search_id) != undefined){
+      this.activity_list.activities.splice(search_id, 1);
+      this.activity_list.total -= 1;
+
+      this.activity_list.activities.forEach((element)=>{
+        if(element.id > search_id){
+          element.id -= 1;
+        }
+        
+      });
+    }
+    
+  }
+
   setList(name: string){
     localStorage.setItem(name, JSON.stringify(this.activity_list));
   }
