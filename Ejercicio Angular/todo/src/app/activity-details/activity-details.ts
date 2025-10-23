@@ -1,5 +1,5 @@
 import { DatePipe, NgClass } from '@angular/common';
-import { Component, effect, inject, input, OnChanges, output, SimpleChanges } from '@angular/core';
+import { Component, effect, inject, input, output } from '@angular/core';
 import { TodoService } from '../core/services/todo-service';
 import { ActivityModel } from '../core/models/activity-model';
 import { FormsModule } from '@angular/forms';
