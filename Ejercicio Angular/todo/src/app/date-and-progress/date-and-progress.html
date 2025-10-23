@@ -4,8 +4,8 @@
  src="/icons/emoji_nature_icon.svg"
  alt="Bee icon" > -->
 <div class="date">
-    <h1>June 23, 2025</h1>
-    <h1 id="day">Monday</h1>
+    <h1>{{currentDate | date: 'longDate'}}</h1>
+    <h1 id="day">{{currentDate| date: 'EEEE'}}</h1>
 </div>
 <div class="progress">
     <h2>{{list().progress}}/{{list().total}}</h2>
