@@ -58,7 +58,7 @@ export class ActivityDetails {
     }
     //this.activity = {} as ActivityModel;
     
-    this.todo_service.setList(0);
+    this.todo_service.setList('todo-list');
     
     this.update_activity.emit(true);
   }

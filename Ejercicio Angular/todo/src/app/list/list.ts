@@ -14,7 +14,7 @@ import { ActivityModel } from '../core/models/activity-model';
 export class List {
   readonly todo_service = inject(TodoService);
   
-  list = this.todo_service.getList(0);
+  list = this.todo_service.getList('todo-list');
 
   show: boolean = false;
 
@@ -38,7 +38,7 @@ export class List {
 
   updateList(value: boolean){
     if(value){
-      this.list = this.todo_service.getList(0);
+      this.list = this.todo_service.getList('todo-list');
       this.show = false;
       //this.activity = {} as ActivityModel;
     }

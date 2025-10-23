@@ -9,7 +9,6 @@ import { List } from '../models/list-model';
 export class TodoService {
   
   activity_list: List = {
-    id: 0,
     total: 0,
     progress: 0,
     activities: []
@@ -28,12 +27,12 @@ export class TodoService {
     this.activity_list.activities.splice(this.activity_list.activities.findIndex(element => element.id == search_id), 1, activity);
   }
 
-  setList(list_id: number){
-    localStorage.setItem(list_id.toString(), JSON.stringify(this.activity_list));
+  setList(name: string){
+    localStorage.setItem(name, JSON.stringify(this.activity_list));
   }
 
-  getList(key: number){
-    const item_list = localStorage.getItem(key.toString());
+  getList(name: string){
+    const item_list = localStorage.getItem(name);
     this.activity_list = item_list ? JSON.parse(item_list): this.activity_list;
     return this.activity_list;
   }
