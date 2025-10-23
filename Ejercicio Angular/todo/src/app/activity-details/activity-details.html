@@ -2,15 +2,15 @@
     <p class="subtitle">To-do:</p>
     <div class="activity-details-inputs">
         
-        <input type="text" [(ngModel)]="activity.name" class="detail-input" [value]="activity.name">
-        <textarea rows="5" cols="40" [(ngModel)]="activity.description" class="detail-textarea" [value]="activity.description"></textarea>
+        <input type="text" [(ngModel)]="activity.name" class="detail-input">
+        <textarea rows="5" cols="40" [(ngModel)]="activity.description" class="detail-textarea" [value]="load_activity().description"></textarea>
         
          
     </div>
     <div class="list-container">
         <label for="list">List:</label>
         
-        <select name="list" id="list" [(ngModel)]="activity.list" [value]="activity.list">
+        <select name="list" id="list" [(ngModel)]="activity.list" [value]="load_activity().list">
             <option value="Work">Work</option>
             <option value="Personal">Personal</option>
             <option value="Household">Household</option>
@@ -21,7 +21,7 @@
 
     <div class="list-container">
         <label for="datefield">Due Date:</label>
-        <input type="date" id="datefield" name="datefield" [(ngModel)]="activity.date" [value]="activity.date" required>
+        <input type="date" id="datefield" name="datefield" [(ngModel)]="activity.date" [value]="load_activity().date" required>
     </div>
     
     
