@@ -33,6 +33,6 @@
         </div>
     </div>
 
-    <app-activity-details [showDetails]="show" [load_activity]="activity" (update_activity)="updateList($event)"></app-activity-details>
+    <app-activity-details [showDetails]="show" [load_activity]="activity" (update_activity)="updateList($event)" (close_activity)="hideActivityDetails()"></app-activity-details>
     
 </div>

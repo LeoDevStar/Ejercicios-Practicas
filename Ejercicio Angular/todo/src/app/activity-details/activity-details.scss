@@ -8,6 +8,15 @@
     margin-left: 5rem;
 }
 
+.details-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a{
+        cursor: pointer;
+    }
+}
+
 .activity-details-inputs{
     display: flex;
     flex-direction: column;

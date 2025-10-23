@@ -1,5 +1,9 @@
 <div [ngClass]="{'activity-details-container': showDetails() == true, 'no-show': showDetails() == false}">
-    <p class="subtitle">To-do:</p>
+    <div class="details-header">
+        <p class="subtitle">To-do:</p>
+        <a (click)="hideDetails()">X</a>
+    </div>
+    
     <div class="activity-details-inputs">
         
         <input type="text" [(ngModel)]="activity.name" class="detail-input">

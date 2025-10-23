@@ -20,21 +20,27 @@ export class List {
 
   activity: ActivityModel = {} as ActivityModel;
   loadActivity(activity_received: ActivityModel){
-    
+    this.show = true;
     this.activity = activity_received;
-
   }
   showActivityDetails(){
-    if(this.show==false){
+    
       this.show = true;
-    }else{
-      this.show = false;
-    }
+      if(this.activity != undefined){
+        this.activity = {} as ActivityModel;
+      }
+    
+  }
+
+  hideActivityDetails(){
+    this.show = false;
   }
 
   updateList(value: boolean){
     if(value){
       this.list = this.todo_service.getList(0);
+      this.show = false;
+      //this.activity = {} as ActivityModel;
     }
   }
 

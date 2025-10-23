@@ -31,6 +31,7 @@ export class ActivityDetails {
   
   
   update_activity = output<boolean>();
+  close_activity = output<boolean>();
 
   // _allowDay: boolean;
   // get allowDay(): boolean {
@@ -60,6 +61,11 @@ export class ActivityDetails {
     this.todo_service.setList(0);
     
     this.update_activity.emit(true);
+  }
+
+  hideDetails(){
+    //console.log("Close Details");
+    this.close_activity.emit(true);
   }
 
 
