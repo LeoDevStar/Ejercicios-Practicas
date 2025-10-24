@@ -15,10 +15,12 @@
         <label for="list">List:</label>
         
         <select name="list" id="list" [(ngModel)]="activity.list">
-            <option value="Work">Work</option>
-            <option value="Personal">Personal</option>
-            <option value="Household">Household</option>
-            <option value="Business">Business</option>
+            @if(list_categories != undefined){
+                @for(category of list_categories; track category.id){
+                    <option value="{{category.name}}" [style.background-color]="category.color">{{category.name}}</option>
+                }
+            }
+            
         </select>
         
     </div>

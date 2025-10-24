@@ -14,6 +14,10 @@ export class ActivityDetails {
   showDetails = input.required<boolean>();
   load_activity = input<ActivityModel>({} as ActivityModel);
   todo_service = inject(TodoService);
+
+  list_categories = this.todo_service.getCategoryList('todo-categories');
+
+
   activity: ActivityModel = {} as ActivityModel;
 
   constructor(){
