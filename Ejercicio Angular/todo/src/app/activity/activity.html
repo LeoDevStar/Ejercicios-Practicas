@@ -3,7 +3,7 @@
     
     <div class="activity-content">
         <p>{{activity().name}}</p>
-        <span [ngClass]="typeStyles(activity().list)">{{activity().list}}</span>
+        <span [style.background-color]="checkStyle(activity().list)">{{activity().list}}</span>
     </div>
     <a (click)="activity_show()">
         <img 

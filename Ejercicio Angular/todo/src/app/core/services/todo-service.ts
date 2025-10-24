@@ -21,6 +21,11 @@ export class TodoService {
     this.category_list.push(category);
   }
 
+  getCategory(search_name: string){
+    const cate = this.category_list.find(cate => cate.name == search_name);
+    return cate;
+  }
+
   setCategoryList(name: string){
     localStorage.setItem(name, JSON.stringify(this.category_list));
   }
@@ -30,6 +35,7 @@ export class TodoService {
     this.category_list = item_list ? JSON.parse(item_list): this.category_list;
     return this.category_list;
   }
+
 
   createActivity(activity: ActivityModel){
     this.activity_list.total += 1;
