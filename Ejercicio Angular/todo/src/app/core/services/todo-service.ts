@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivityModel } from '../models/activity-model';
 import { List } from '../models/list-model';
+import { CategoryModel } from '../models/category-model';
 
 
 @Injectable({
@@ -12,8 +13,24 @@ export class TodoService {
     total: 0,
     progress: 0,
     activities: [],
-    categories: []
   };
+
+  category_list: CategoryModel[] = [];
+
+  createCategory(category: CategoryModel){
+    this.category_list.push(category);
+  }
+
+  setCategoryList(name: string){
+    localStorage.setItem(name, JSON.stringify(this.category_list));
+  }
+
+  getCategoryList(name: string){
+    const item_list = localStorage.getItem(name);
+    this.category_list = item_list ? JSON.parse(item_list): this.category_list;
+    return this.category_list;
+  }
+
   createActivity(activity: ActivityModel){
     this.activity_list.total += 1;
     this.activity_list.activities.push(activity);

@@ -48,21 +48,22 @@
         <ul>
             @if(create_category){
                 <li>
-                    <!-- <input type="color"  -->
+                    <div class="create-category-container">
+                        <input type="color" [(ngModel)]="category_obj.color" required>
+                        <input type="text" [(ngModel)]="category_obj.name" required>
+                        <a (click)="saveCategory()">Add</a>
+                    </div>
                 </li>
             }
-            <li>
-                <app-category [color]="'rgb(175 219 251)'" [name]="'Work'"></app-category>
-            </li>
-            <li>
-                <app-category [color]="'rgb(255 174 190)'" [name]="'Personal'"></app-category>
-            </li>
-            <li>
-                <app-category [color]="'rgb(185 175 255)'" [name]="'Household'"></app-category>
-            </li>
-            <li>
-                <app-category [color]="'rgb(173 255 175)'" [name]="'Business'"></app-category>
-            </li>
+
+            @if(category_list != null){
+                @for(category of category_list; track category.id){
+                    <li>
+                        <app-category [color]="category.color" [name]="category.name"></app-category>
+                    </li>
+                }
+            }
+
         </ul>
     </div>
     <div [ngClass]="['options', 'account-opt']">

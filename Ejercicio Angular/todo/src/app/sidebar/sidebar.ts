@@ -1,19 +1,47 @@
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Category } from '../category/category';
+import { CategoryModel } from '../core/models/category-model';
+import { FormsModule } from '@angular/forms';
+import { TodoService } from '../core/services/todo-service';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [NgClass, Category],
+  imports: [NgClass, Category, FormsModule],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss'
 })
 export class Sidebar {
+  readonly todo_service = inject(TodoService);
+
+  category_list = this.todo_service.getCategoryList('todo-categories');
+
   create_category: boolean = false;
   
+  category_obj: CategoryModel = {
+    id: this.todo_service.category_list.length,
+    name: '',
+    color: ''
+  };
+
 
   createCategory(){
+    if(this.create_category == false){
+      this.create_category = true;
+    }else{
+      this.create_category = false;
+    }
+  }
 
+  saveCategory(){
+    
+    this.category_obj.id = this.todo_service.category_list.length;
+
+    this.todo_service.createCategory(this.category_obj);
+    this.todo_service.setCategoryList('todo-categories');
+
+    this.category_list = this.todo_service.getCategoryList('todo-categories');
+    this.create_category = false;
   }
 
 }
