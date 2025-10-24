@@ -106,10 +106,13 @@
         height: 40px;
 
         border: none;
-        // border-radius: 50%;
+        border-radius: 50%;
         
         cursor: pointer;
     }
+    // input[type="color"]::webkit-color{
+    //     border: none;
+    // }
     input[type="text"]{
         margin-inline: 4%;
         appearance: none;
