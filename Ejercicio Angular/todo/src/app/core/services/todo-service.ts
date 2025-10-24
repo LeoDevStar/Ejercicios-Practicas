@@ -11,7 +11,8 @@ export class TodoService {
   activity_list: List = {
     total: 0,
     progress: 0,
-    activities: []
+    activities: [],
+    categories: []
   };
   createActivity(activity: ActivityModel){
     this.activity_list.total += 1;

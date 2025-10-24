@@ -42,73 +42,26 @@
     <div class="list-options">
         <div class="list-header-options">
             <p class="subtitle-sidebar">List</p>
-            <a>+</a>
+            <a (click)="createCategory()">+</a>
         </div>
     
         <ul>
+            @if(create_category){
+                <li>
+                    <!-- <input type="color"  -->
+                </li>
+            }
             <li>
-                <div class="circle" style="background-color: rgb(175 219 251);"></div>
-                <a>Work</a>
+                <app-category [color]="'rgb(175 219 251)'" [name]="'Work'"></app-category>
             </li>
             <li>
-                <div class="circle" style="background-color: rgb(255 174 190);"></div>
-                <a>Personal</a>
+                <app-category [color]="'rgb(255 174 190)'" [name]="'Personal'"></app-category>
             </li>
             <li>
-                <div class="circle" style="background-color: rgb(185 175 255);"></div>
-                <a>Household</a>
+                <app-category [color]="'rgb(185 175 255)'" [name]="'Household'"></app-category>
             </li>
             <li>
-                <div class="circle" style="background-color: rgb(173 255 175);"></div>
-                <a>Business</a>
-            </li>
-            <li>
-                <div class="circle" style="background-color: rgb(175 219 251);"></div>
-                <a>Work</a>
-            </li>
-            <li>
-                <div class="circle" style="background-color: rgb(255 174 190);"></div>
-                <a>Personal</a>
-            </li>
-            <li>
-                <div class="circle" style="background-color: rgb(185 175 255);"></div>
-                <a>Household</a>
-            </li>
-            <li>
-                <div class="circle" style="background-color: rgb(173 255 175);"></div>
-                <a>Business</a>
-            </li>
-            <li>
-                <div class="circle" style="background-color: rgb(175 219 251);"></div>
-                <a>Work</a>
-            </li>
-            <li>
-                <div class="circle" style="background-color: rgb(255 174 190);"></div>
-                <a>Personal</a>
-            </li>
-            <li>
-                <div class="circle" style="background-color: rgb(185 175 255);"></div>
-                <a>Household</a>
-            </li>
-            <li>
-                <div class="circle" style="background-color: rgb(173 255 175);"></div>
-                <a>Business</a>
-            </li>
-            <li>
-                <div class="circle" style="background-color: rgb(175 219 251);"></div>
-                <a>Work</a>
-            </li>
-            <li>
-                <div class="circle" style="background-color: rgb(255 174 190);"></div>
-                <a>Personal</a>
-            </li>
-            <li>
-                <div class="circle" style="background-color: rgb(185 175 255);"></div>
-                <a>Household</a>
-            </li>
-            <li>
-                <div class="circle" style="background-color: rgb(173 255 175);"></div>
-                <a>Business</a>
+                <app-category [color]="'rgb(173 255 175)'" [name]="'Business'"></app-category>
             </li>
         </ul>
     </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-category',
@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './category.scss'
 })
 export class Category {
+  readonly color = input.required<string>();
+  readonly name = input.required<string>();
 
 }
