@@ -14,7 +14,7 @@
     <div class="list-container">
         <label for="list">List:</label>
         
-        <select name="list" id="list" [(ngModel)]="activity.list">
+        <select name="list" id="list" [(ngModel)]="activity.list" [style.background-color]="checkStyle(activity.list)">
             @if(list_categories != undefined){
                 @for(category of list_categories; track category.id){
                     <option value="{{category.name}}" [style.background-color]="category.color">{{category.name}}</option>

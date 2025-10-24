@@ -3,6 +3,7 @@ import { Component, effect, inject, input, output } from '@angular/core';
 import { TodoService } from '../core/services/todo-service';
 import { ActivityModel } from '../core/models/activity-model';
 import { FormsModule } from '@angular/forms';
+import { CategoryModel } from '../core/models/category-model';
 
 @Component({
   selector: 'app-activity-details',
@@ -17,6 +18,7 @@ export class ActivityDetails {
 
   list_categories = this.todo_service.getCategoryList('todo-categories');
 
+  activity_category: CategoryModel = {} as CategoryModel;
 
   activity: ActivityModel = {} as ActivityModel;
 
@@ -44,6 +46,11 @@ export class ActivityDetails {
   // @Input() set allowDay(value: boolean) {
   //     this._allowDay = value;;
   // }
+
+  checkStyle(category_name: string){
+    this.activity_category = this.todo_service.getCategory(category_name)?? {} as CategoryModel;
+    return this.activity_category.color;
+  }
 
   hideDetails(){
     this.close_activity.emit(true);
