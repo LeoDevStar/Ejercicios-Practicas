@@ -18,11 +18,7 @@ export class Sidebar {
 
   create_category: boolean = false;
   
-  category_obj: CategoryModel = {
-    id: this.todo_service.category_list.length,
-    name: '',
-    color: ''
-  };
+  category_obj: CategoryModel = {} as CategoryModel;
 
 
   createCategory(){
@@ -35,13 +31,18 @@ export class Sidebar {
 
   saveCategory(){
     
-    this.category_obj.id = this.todo_service.category_list.length;
+    if(this.category_obj.name != undefined && this.category_obj.color != undefined){
+      this.category_obj.id = this.todo_service.category_list.length;
 
-    this.todo_service.createCategory(this.category_obj);
-    this.todo_service.setCategoryList('todo-categories');
+      this.todo_service.createCategory(this.category_obj);
+      this.todo_service.setCategoryList('todo-categories');
 
-    this.category_list = this.todo_service.getCategoryList('todo-categories');
-    this.create_category = false;
+      this.category_list = this.todo_service.getCategoryList('todo-categories');
+      this.create_category = false;
+
+      this.category_obj = {} as CategoryModel;
+    }
+    
   }
 
 }
