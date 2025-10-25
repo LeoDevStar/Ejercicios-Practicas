@@ -1,9 +1,10 @@
 import { NgClass } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { Category } from '../category/category';
 import { CategoryModel } from '../core/models/category-model';
 import { FormsModule } from '@angular/forms';
 import { TodoService } from '../core/services/todo-service';
+import { ActivityModel } from '../core/models/activity-model';
 
 @Component({
   selector: 'app-sidebar',
@@ -20,6 +21,19 @@ export class Sidebar {
   
   category_obj: CategoryModel = {} as CategoryModel;
 
+  activities = output<ActivityModel[]>();
+
+  getActivities(){
+    console.log("Check Activities");
+    this.activities.emit(this.todo_service.getActivities());
+    //this.todo_service.getActivities();
+  }
+
+  getImportantActivities(){
+    console.log("Check Important Activities");
+    this.activities.emit(this.todo_service.getImportantActivities());
+    //this.todo_service.getImportantActivities();
+  }
 
   createCategory(){
     if(this.create_category == false){

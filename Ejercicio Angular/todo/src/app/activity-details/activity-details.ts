@@ -29,7 +29,9 @@ export class ActivityDetails {
       name: this.load_activity().name?? 'New Activity',
       description: this.load_activity().description?? 'Add Description',
       list: this.load_activity().list?? 'Work',
-      date: this.load_activity().date?? '2025-10-30'
+      date: this.load_activity().date?? '2025-10-30',
+      important: this.load_activity().important?? "False",
+      checked: this.load_activity().checked?? "False"
   };
     })
   }

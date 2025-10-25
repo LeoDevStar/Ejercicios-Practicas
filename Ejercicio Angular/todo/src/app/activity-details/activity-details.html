@@ -29,6 +29,14 @@
         <label for="datefield">Due Date:</label>
         <input type="date" id="datefield" name="datefield" [(ngModel)]="activity.date" required>
     </div>
+
+    <div class="list-container">
+        <label for="important-select">Important:</label>
+        <select id="important-select" name="important-select"  [(ngModel)]="activity.important">
+            <option value=True>True</option>
+            <option value=False>False</option>
+        </select>
+    </div>
     
     
     <div class="activity-details-buttons">

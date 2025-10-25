@@ -13,10 +13,12 @@ export class TodoService {
     total: 0,
     progress: 0,
     activities: [],
+    filter: "All"
   };
 
   category_list: CategoryModel[] = [];
 
+  ////Category
   createCategory(category: CategoryModel){
     this.category_list.push(category);
   }
@@ -36,6 +38,7 @@ export class TodoService {
     return this.category_list;
   }
 
+  /////Activity
 
   createActivity(activity: ActivityModel){
     this.activity_list.total += 1;
@@ -66,6 +69,8 @@ export class TodoService {
     
   }
 
+  ////List
+
   setList(name: string){
     localStorage.setItem(name, JSON.stringify(this.activity_list));
   }
@@ -76,4 +81,30 @@ export class TodoService {
     return this.activity_list;
   }
 
+  updateProgress(act_id: number){
+    if(this.activity_list.activities.find(activity => activity.id == act_id)?.checked == "True"){
+      this.activity_list.progress += 1;
+    }else{
+      this.activity_list.progress -= 1;
+    }
+  }
+
+  /////Filters
+
+  getActivities(){
+    //this.getList('todo-list');
+    this.activity_list.filter = "All";
+    return this.activity_list.activities;
+  }
+  getImportantActivities(){
+    let important_activities: ActivityModel[] = [];
+    important_activities = this.activity_list.activities.filter(activity => activity.important == "True");
+    this.activity_list.filter = "Important";
+    // this.activity_list = {
+    //   total: important_activities.length,
+    //   progress: 0,
+    //   activities: important_activities
+    // }
+    return important_activities;
+  }
 }

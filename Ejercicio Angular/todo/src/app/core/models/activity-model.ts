@@ -4,6 +4,7 @@ export interface ActivityModel{
     description: string;
     list: string;
     date: string;
-    // important: boolean;
+    important: string;
+    checked: string;
     // overdue: boolean;
 }

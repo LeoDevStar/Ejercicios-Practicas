@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject, input } from '@angular/core';
 import { Activity } from '../activity/activity';
 import { DateAndProgress } from '../date-and-progress/date-and-progress';
 import { ActivityDetails } from '../activity-details/activity-details';
@@ -16,22 +16,28 @@ export class List {
   
   list = this.todo_service.getList('todo-list');
 
+  activities = input<ActivityModel[]>();
+
   show: boolean = false;
 
   activity: ActivityModel = {} as ActivityModel;
+
 
   loadActivity(activity_received: ActivityModel){
     this.show = true;
     this.activity = activity_received;
   }
 
-  checkActivity(value: boolean){
-    if(value){
-      this.list.progress += 1;
-    }else{
-      this.list.progress -= 1;
-    }
-    this.todo_service.setList('todo-list');
+  checkActivity(activity: ActivityModel){
+    //if(this.filter_activities == undefined){
+    this.todo_service.updateProgress(activity.id);
+      // if(value){
+      //   this.list.progress += 1;
+      // }else{
+      //   this.list.progress -= 1;
+      // }
+      this.todo_service.setList('todo-list');
+    //}
     
   }
 
