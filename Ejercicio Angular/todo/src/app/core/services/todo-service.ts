@@ -2,7 +2,6 @@ import { inject, Injectable } from '@angular/core';
 import { ActivityModel } from '../models/activity-model';
 import { List } from '../models/list-model';
 import { CategoryModel } from '../models/category-model';
-import { DatePipe } from '@angular/common';
 
 
 @Injectable({
@@ -18,7 +17,6 @@ export class TodoService {
 
   category_list: CategoryModel[] = [];
   currentDate = new Date();
-  //datePipe = inject(DatePipe);
 
   ////Category
   createCategory(category: CategoryModel){
