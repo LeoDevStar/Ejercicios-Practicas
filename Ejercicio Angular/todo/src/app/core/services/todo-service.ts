@@ -136,7 +136,7 @@ export class TodoService {
     let day, month, year: number = 0;
     
 
-    let final_week_date = this.getWeekDate(this.currentDate.getDate(), this.currentDate.getMonth(), this.currentDate.getFullYear());
+    let final_week_date = this.getWeekDate(this.currentDate.getDate(), this.currentDate.getMonth()+1, this.currentDate.getFullYear());
     let auxDay: number;
 
     this.activity_list.activities.forEach((activity)=>{
@@ -145,6 +145,14 @@ export class TodoService {
       month = parseInt(dateDivision[1], 10);
       year = parseInt(dateDivision[0], 10);
       
+      console.log("Activity Day: " + day);
+      console.log("Activity Month: " + month);
+      console.log("Activity Year: " + year);
+      console.log("///////")
+      console.log("End Week Day: " + final_week_date.end_day);
+      console.log("End Week Month: " + final_week_date.end_month);
+      console.log("End Week Year: " + final_week_date.end_year);
+
       if(final_week_date.end_day < day && final_week_date.end_month > month){
         auxDay = day + final_week_date.end_day;
       }else{
@@ -161,14 +169,18 @@ export class TodoService {
   private getWeekDate(day: number, month: number, year: number){
     let checkMonth, checkDay: boolean;
 
+    //It's important that if the month received is a month retreived by the Date Pipe, it should have a +1 in it because:
+    //Date Pipe treats the months with index zero and
+    //The Date Inputs treats the months with index 1
 
-    //Even or odd months, months are index-zero, for example: January is 0, 
-    //In this case July and August are 7 and 8 respectively and these months have 31 days
+
+    //Even or odd months, this is being treated as how the Date Inputs treat the months (starting with index 1)
+    //In this case July and August are 8 and 9 respectively and these months have 31 days
     //That's the reason of this check to change the condition according of the months that are after July
-    if(month < 7){
-      checkMonth = month % 2 == 0;
-    }else{
+    if(month < 8){
       checkMonth = month % 2 == 1;
+    }else{
+      checkMonth = month % 2 == 0;
     }
 
     //if the final date of the week plus 1 is over 32 or 31 depending of the month, establish the endDay with modules
@@ -186,13 +198,11 @@ export class TodoService {
       checkDay = (day + 8) > 30;
     }
     
-    //In the next cases the amount of months allowed are 11 because they're indexed starting with zero
+    
     //If it does, change the month into the next 
-    //And also add +1 because if we pass the current Date it will return a number less than the actual month, 
-    //For example if we were in October that would be 10 but the getDate function of the Pipe Date returns 9
-    let endMonth = checkDay? ((month + 1) % 11) + 1: month;
+    let endMonth = checkDay? (month + 1) % 12: month;
     //If the month surpasses the amount of months allowed in a year then change the year
-    let endYear = (month + 1) > 11? year + 1: year;
+    let endYear = (month + 1) > 12? year + 1: year;
 
     return {end_day: endDay, end_month: endMonth, end_year: endYear};
   }
