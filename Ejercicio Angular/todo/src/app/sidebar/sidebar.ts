@@ -35,6 +35,11 @@ export class Sidebar {
     //this.todo_service.getImportantActivities();
   }
 
+  getOverdueActivities(){
+    console.log("Check Overdue Activities");
+    this.activities.emit(this.todo_service.getOverdueActivities());
+  }
+
   createCategory(){
     if(this.create_category == false){
       this.create_category = true;

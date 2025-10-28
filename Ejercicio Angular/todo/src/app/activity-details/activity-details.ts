@@ -25,14 +25,15 @@ export class ActivityDetails {
   constructor(){
     effect(()=>{
       this.activity={
-      id: this.todo_service.activity_list.activities.length,
-      name: this.load_activity().name?? 'New Activity',
-      description: this.load_activity().description?? 'Add Description',
-      list: this.load_activity().list?? 'Work',
-      date: this.load_activity().date?? '2025-10-30',
-      important: this.load_activity().important?? "False",
-      checked: this.load_activity().checked?? "False"
-  };
+        id: this.todo_service.activity_list.activities.length,
+        name: this.load_activity().name?? 'New Activity',
+        description: this.load_activity().description?? 'Add Description',
+        list: this.load_activity().list?? 'Work',
+        date: this.load_activity().date?? '2025-10-30',
+        important: this.load_activity().important?? "False",
+        checked: this.load_activity().checked?? "False"
+      };
+      this.list_categories = this.todo_service.getCategoryList('todo-categories');
     })
   }
   
