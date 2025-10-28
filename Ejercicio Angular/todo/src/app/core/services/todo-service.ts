@@ -111,8 +111,17 @@ export class TodoService {
       year = parseInt(dateDivision[0], 10);
       
 
-      if(this.currentDate.getDate() > day || this.currentDate.getMonth() > month || this.currentDate.getFullYear() > year){
-        overdue_activities.push(activity);
+      if(this.currentDate.getFullYear() >= year){
+        if(this.currentDate.getMonth() + 1 >= month){
+          if(this.currentDate.getDate() < day && this.currentDate.getMonth() > month){  
+            auxDay = day + this.currentDate.getDate();
+          }else{
+            auxDay = day;
+          }
+          if(this.currentDate.getDate() > auxDay){
+            overdue_activities.push(activity);
+          }
+        }
       }
 
 
@@ -141,7 +150,7 @@ export class TodoService {
       }else{
         auxDay = final_week_date.end_day;
       }
-      if(day <= auxDay){
+      if(day >= this.currentDate.getDate() && day <= auxDay){
         week_activities.push(activity);
       }
     });
