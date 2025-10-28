@@ -13,8 +13,7 @@ export class TodoService {
   activity_list: List = {
     total: 0,
     progress: 0,
-    activities: [],
-    filter: "All"
+    activities: []
   };
 
   category_list: CategoryModel[] = [];
@@ -95,19 +94,11 @@ export class TodoService {
   /////Filters
 
   getActivities(){
-    //this.getList('todo-list');
-    //this.activity_list.filter = "All";
     return this.activity_list.activities;
   }
   getImportantActivities(){
     let important_activities: ActivityModel[] = [];
     important_activities = this.activity_list.activities.filter(activity => activity.important == "True");
-    //this.activity_list.filter = "Important";
-    // this.activity_list = {
-    //   total: important_activities.length,
-    //   progress: 0,
-    //   activities: important_activities
-    // }
     return important_activities;
   }
   getOverdueActivities(){
@@ -120,13 +111,6 @@ export class TodoService {
       month = parseInt(dateDivision[1], 10);
       year = parseInt(dateDivision[0], 10);
       
-      // console.log("Activity Day: " + day);
-      // console.log("Activity Month: " + month);
-      // console.log("Activity Year: " + year);
-      
-      // console.log("Current Day: " + this.currentDate.getDate());
-      // console.log("Current Month: " + this.currentDate.getMonth());
-      // console.log("Current Year: " + this.currentDate.getFullYear());
 
       if(year >= this.currentDate.getFullYear()){
         if(month >= this.currentDate.getMonth()){
@@ -156,14 +140,6 @@ export class TodoService {
       day = parseInt(dateDivision[2], 10);
       month = parseInt(dateDivision[1], 10);
       year = parseInt(dateDivision[0], 10);
-
-      console.log("End Date Day: " + final_week_date.end_day);
-      console.log("End Date Month: " + final_week_date.end_month);
-      console.log("End Date Year: " + final_week_date.end_year);
-
-      console.log("Activity Date Day: " + day);
-      console.log("Activity Date Month: " + month);
-      console.log("Activity Date Year: " + year);
       
       if(final_week_date.end_day < day && final_week_date.end_month > month){
         auxDay = day + final_week_date.end_day;

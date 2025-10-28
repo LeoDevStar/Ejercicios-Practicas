@@ -6,8 +6,8 @@
     
     <div class="activity-details-inputs">
         
-        <input type="text" [(ngModel)]="activity.name" class="detail-input">
-        <textarea rows="5" cols="40" [(ngModel)]="activity.description" class="detail-textarea"></textarea>
+        <input type="text" (ngModel)="activity.name" class="detail-input" [placeholder]="activity.name">
+        <textarea rows="5" cols="40" (ngModel)="activity.description" class="detail-textarea" [placeholder]="activity.description"></textarea>
         
          
     </div>
