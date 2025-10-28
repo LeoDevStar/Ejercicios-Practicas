@@ -103,6 +103,7 @@ export class TodoService {
     let overdue_activities: ActivityModel[] = [];
     let dateDivision : string[] = [];
     let day, month, year: number = 0;
+    let auxDay: number;
     this.activity_list.activities.forEach((activity)=>{
       dateDivision = activity.date.split("-");
       day = parseInt(dateDivision[2], 10);
@@ -110,12 +111,8 @@ export class TodoService {
       year = parseInt(dateDivision[0], 10);
       
 
-      if(year >= this.currentDate.getFullYear()){
-        if(month >= this.currentDate.getMonth()){
-          if(day > this.currentDate.getDate()){
-            overdue_activities.push(activity);
-          }
-        }  
+      if(this.currentDate.getDate() > day || this.currentDate.getMonth() > month || this.currentDate.getFullYear() > year){
+        overdue_activities.push(activity);
       }
 
 
