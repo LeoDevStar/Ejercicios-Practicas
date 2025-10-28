@@ -179,12 +179,19 @@ export class TodoService {
       endDay = 1;
     }
 
+    //Depending of the month check if the endDate (day + 8) surpass the final day of the month
     if(checkMonth){
       checkDay = (day + 8) > 31;
     }else{
       checkDay = (day + 8) > 30;
     }
+    
+    //In the next cases the amount of months allowed are 11 because they're indexed starting with zero
+    //If it does, change the month into the next 
+    //And also add +1 because if we pass the current Date it will return a number less than the actual month, 
+    //For example if we were in October that would be 10 but the getDate function of the Pipe Date returns 9
     let endMonth = checkDay? ((month + 1) % 11) + 1: month;
+    //If the month surpasses the amount of months allowed in a year then change the year
     let endYear = (month + 1) > 11? year + 1: year;
 
     return {end_day: endDay, end_month: endMonth, end_year: endYear};
