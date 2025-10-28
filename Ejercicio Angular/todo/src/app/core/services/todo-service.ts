@@ -141,4 +141,72 @@ export class TodoService {
     
     return overdue_activities;
   }
+
+  getWeekActivities(){
+    let week_activities: ActivityModel[] = [];
+    let dateDivision : string[] = [];
+    let day, month, year: number = 0;
+    
+
+    let final_week_date = this.getWeekDate(this.currentDate.getDate(), this.currentDate.getMonth(), this.currentDate.getFullYear());
+    let auxDay: number;
+
+    this.activity_list.activities.forEach((activity)=>{
+      dateDivision = activity.date.split("-");
+      day = parseInt(dateDivision[2], 10);
+      month = parseInt(dateDivision[1], 10);
+      year = parseInt(dateDivision[0], 10);
+
+      console.log("End Date Day: " + final_week_date.end_day);
+      console.log("End Date Month: " + final_week_date.end_month);
+      console.log("End Date Year: " + final_week_date.end_year);
+
+      console.log("Activity Date Day: " + day);
+      console.log("Activity Date Month: " + month);
+      console.log("Activity Date Year: " + year);
+      
+      if(final_week_date.end_day < day && final_week_date.end_month > month){
+        auxDay = day + final_week_date.end_day;
+      }else{
+        auxDay = final_week_date.end_day;
+      }
+      if(day <= auxDay){
+        week_activities.push(activity);
+      }
+    });
+    
+    return week_activities;
+  }
+
+  private getWeekDate(day: number, month: number, year: number){
+    let checkMonth, checkDay: boolean;
+
+
+    //Even or odd months, months are index-zero, for example: January is 0, 
+    //In this case July and August are 7 and 8 respectively and these months have 31 days
+    //That's the reason of this check to change the condition according of the months that are after July
+    if(month < 7){
+      checkMonth = month % 2 == 0;
+    }else{
+      checkMonth = month % 2 == 1;
+    }
+
+    //if the final date of the week plus 1 is over 32 or 31 depending of the month, establish the endDay with modules
+    let endDay = checkMonth? (day + 8) % 32: (day + 8) % 31;
+    //If the day is over 31 o 30 depending of the month the day would be 0,
+    //So this check reestablishes the day as 1
+    if(endDay == 0){
+      endDay = 1;
+    }
+
+    if(checkMonth){
+      checkDay = (day + 8) > 31;
+    }else{
+      checkDay = (day + 8) > 30;
+    }
+    let endMonth = checkDay? ((month + 1) % 11) + 1: month;
+    let endYear = (month + 1) > 11? year + 1: year;
+
+    return {end_day: endDay, end_month: endMonth, end_year: endYear};
+  }
 }

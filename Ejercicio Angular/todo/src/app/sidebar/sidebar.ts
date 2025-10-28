@@ -40,6 +40,11 @@ export class Sidebar {
     this.activities.emit(this.todo_service.getOverdueActivities());
   }
 
+  getWeekActivities(){
+    console.log("Check Week Activities");
+    this.activities.emit(this.todo_service.getWeekActivities());
+  }
+
   createCategory(){
     if(this.create_category == false){
       this.create_category = true;
