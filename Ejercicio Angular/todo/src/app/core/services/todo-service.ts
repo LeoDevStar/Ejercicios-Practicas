@@ -145,13 +145,6 @@ export class TodoService {
       month = parseInt(dateDivision[1], 10);
       year = parseInt(dateDivision[0], 10);
       
-      console.log("Activity Day: " + day);
-      console.log("Activity Month: " + month);
-      console.log("Activity Year: " + year);
-      console.log("///////")
-      console.log("End Week Day: " + final_week_date.end_day);
-      console.log("End Week Month: " + final_week_date.end_month);
-      console.log("End Week Year: " + final_week_date.end_year);
 
       if(final_week_date.end_day < day && final_week_date.end_month > month){
         auxDay = day + final_week_date.end_day;
@@ -183,7 +176,7 @@ export class TodoService {
       checkMonth = month % 2 == 0;
     }
 
-    //if the final date of the week plus 1 is over 32 or 31 depending of the month, establish the endDay with modules
+    //if the final date of the week is over 32 or 31 depending of the month, establish the endDay with modules
     let endDay = checkMonth? (day + 8) % 32: (day + 8) % 31;
     //If the day is over 31 o 30 depending of the month the day would be 0,
     //So this check reestablishes the day as 1
@@ -200,9 +193,9 @@ export class TodoService {
     
     
     //If it does, change the month into the next 
-    let endMonth = checkDay? (month + 1) % 12: month;
+    let endMonth = checkDay? (month + 1) % 13: month;
     //If the month surpasses the amount of months allowed in a year then change the year
-    let endYear = (month + 1) > 12? year + 1: year;
+    let endYear = endMonth != month && (month + 1) > 12? year + 1: year;
 
     return {end_day: endDay, end_month: endMonth, end_year: endYear};
   }
