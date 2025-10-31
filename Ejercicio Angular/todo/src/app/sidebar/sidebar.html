@@ -1,0 +1,86 @@
+<div class="sidebar">
+    <div class="profile">
+        <img 
+        width="50" 
+        height="50"
+        src="/icons/user_gray_icon.svg"
+        alt="Image Profile">
+        <p>Juan Dela Cruz</p>
+    </div>
+    <div class="search">
+        <input type="search" #searchInput placeholder="Search">
+    </div>
+    <div class="options">
+    <p class="subtitle-sidebar">Tasks</p>
+        <ul>
+            <li>
+                <img 
+                src="/icons/note_add_icon.svg" 
+                alt="Add Task Icon">
+                <a (click)="getActivities()">All tasks</a>
+            </li>
+            <li>
+                <img 
+                src="/icons/star_icon.svg" 
+                alt="Add Task Icon">
+                <a (click)="getImportantActivities()">Important</a>
+            </li>
+            <li>
+                <img 
+                src="/icons/hourglass_bottom_icon.svg" 
+                alt="Add Task Icon">
+                <a (click)="getOverdueActivities()">Overdue</a>
+            </li>
+            <li>
+                <img 
+                src="/icons/next_week_icon.svg" 
+                alt="Add Task Icon">
+                <a (click)="getWeekActivities()">This Week</a>
+            </li>
+        </ul>
+    </div>
+    <div class="list-options">
+        <div class="list-header-options">
+            <p class="subtitle-sidebar">List</p>
+            <a (click)="createCategory()">+</a>
+        </div>
+    
+        <ul>
+            @if(create_category){
+                <li>
+                    <div class="create-category-container">
+                        <input type="color" [(ngModel)]="category_obj.color" [style.background-color]="category_obj.color || 'rgb(0,0,0)'" required>
+                        <input type="text" [(ngModel)]="category_obj.name" required>
+                        <a (click)="saveCategory()">✓</a>
+                    </div>
+                </li>
+            }
+
+            @if(category_list != null){
+                @for(category of category_list; track category.id){
+                    <li>
+                        <app-category [color]="category.color" [name]="category.name"></app-category>
+                    </li>
+                }
+            }
+
+        </ul>
+    </div>
+    <div [ngClass]="['options', 'account-opt']">
+        <ul>
+            <li>
+                
+                <img 
+                src="/icons/settings_icon.svg"
+                alt="settings icon">
+                <a><p>Settings</p></a>
+            </li>
+            <li>
+                <img 
+                src="/icons/logout_icon.svg"
+                alt="log out icon">
+                <a><p>Log Out</p></a>
+            </li>
+        </ul>
+    </div>
+</div>

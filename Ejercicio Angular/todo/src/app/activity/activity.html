@@ -1,0 +1,14 @@
+<div class="activity-container">
+    <input type="checkbox" class="activity-checkbox" [(ngModel)]="check_value" (click)="activityCheck()">
+    
+    <div class="activity-content">
+        <p>{{activity().name}}</p>
+        <span [style.background-color]="checkStyle(activity().list)">{{activity().list}}</span>
+    </div>
+    <a (click)="activity_show()">
+        <img 
+            src="/icons/chevron_right_icon.svg"
+            alt="Right Arrow"
+            class="activity-arrow">
+    </a>
+</div>

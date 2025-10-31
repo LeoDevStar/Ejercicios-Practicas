@@ -1,0 +1,42 @@
+img{
+    margin-left: 47%;
+}
+.date{
+    display: flex;
+    #day{
+        color:gray;
+        margin-left: 3%;
+    }
+    h1{
+        margin-bottom: 0;
+    }
+}
+.progress{
+    margin-bottom: 3%;
+    p{
+        margin: 0;
+        text-align: center;
+    }
+    h2{
+        margin-bottom: 1%;
+    }
+    h3{
+        margin-top: 0;
+    }
+}
+.progress-bar{
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgb(250 238 193);
+    .progress-made{
+        // width: 40%;
+        height: 10px;
+        border-radius: 5px;
+        background-color: rgb(249 203 69);
+    }
+}
+
+.detail-text{
+    font-size: 0.8rem;
+}

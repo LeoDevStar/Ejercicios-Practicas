@@ -1,0 +1,37 @@
+<div class="page-container">
+    <div class="list-container">
+        <app-date-and-progress [list]="list"></app-date-and-progress>
+        <div class="list-header">
+            <h2 class="subtitle">Today</h2>
+            <button (click)="showActivityDetails()">+</button>
+        </div>
+        <div class="list">
+            @if(activities()?.length?? 0 > 0){
+                @for(act of activities(); track act.id){
+                    <app-activity [activity]="act" (activity_selected)="loadActivity($event)" (activity_checked)="checkActivity($event)"></app-activity>
+                }
+            }@else{
+                @for(activity of list.activities; track activity.id){
+                    <app-activity [activity]="activity" (activity_selected)="loadActivity($event)" (activity_checked)="checkActivity($event)"></app-activity>
+                }                
+            }
+            <!-- @if(filter_activities != undefined){
+                @for(act of filter_activities(); track act.id){
+                    <app-activity [activity]="act" (activity_selected)="loadActivity($event)" (activity_checked)="checkActivity($event)"></app-activity>
+                }
+            }@else{
+                @if(list != null){
+                    @for(activity of list.activities; track activity.id){
+                        <app-activity [activity]="activity" (activity_selected)="loadActivity($event)" (activity_checked)="checkActivity($event)"></app-activity>
+                    }
+                }   
+            } -->
+            
+            
+
+        </div>
+    </div>
+
+    <app-activity-details [showDetails]="show" [load_activity]="activity" (update_activity)="updateList($event)" (close_activity)="hideActivityDetails()"></app-activity-details>
+    
+</div>

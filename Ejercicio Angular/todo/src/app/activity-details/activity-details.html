@@ -1,0 +1,46 @@
+<div [ngClass]="{'activity-details-container': showDetails() == true, 'no-show': showDetails() == false}">
+    <div class="details-header">
+        <p class="subtitle">To-do:</p>
+        <a (click)="hideDetails()">X</a>
+    </div>
+    
+    <div class="activity-details-inputs">
+        
+        <input type="text" [(ngModel)]="activity.name" class="detail-input">
+        <textarea rows="5" cols="40" [(ngModel)]="activity.description" class="detail-textarea"></textarea>
+        
+         
+    </div>
+    <div class="list-container">
+        <label for="list">List:</label>
+        
+        <select name="list" id="list" [(ngModel)]="activity.list" [style.background-color]="checkStyle(activity.list)">
+            @if(list_categories != undefined){
+                @for(category of list_categories; track category.id){
+                    <option value="{{category.name}}" [style.background-color]="category.color">{{category.name}}</option>
+                }
+            }
+            
+        </select>
+        
+    </div>
+
+    <div class="list-container">
+        <label for="datefield">Due Date:</label>
+        <input type="date" id="datefield" name="datefield" [(ngModel)]="activity.date" required>
+    </div>
+
+    <div class="list-container">
+        <label for="important-select">Important:</label>
+        <select id="important-select" name="important-select"  [(ngModel)]="activity.important">
+            <option value=True>True</option>
+            <option value=False>False</option>
+        </select>
+    </div>
+    
+    
+    <div class="activity-details-buttons">
+        <button class="text-button" (click)="deleteActivity()">Delete Task</button>
+        <button class="save-button" (click)="setActivity()">Save Changes</button>
+    </div>
+</div>

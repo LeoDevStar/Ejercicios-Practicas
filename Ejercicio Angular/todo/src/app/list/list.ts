@@ -1,0 +1,66 @@
+import { Component, effect, inject, input } from '@angular/core';
+import { Activity } from '../activity/activity';
+import { DateAndProgress } from '../date-and-progress/date-and-progress';
+import { ActivityDetails } from '../activity-details/activity-details';
+import { TodoService } from '../core/services/todo-service';
+import { ActivityModel } from '../core/models/activity-model';
+
+@Component({
+  selector: 'app-list',
+  imports: [Activity, DateAndProgress, ActivityDetails],
+  templateUrl: './list.html',
+  styleUrl: './list.scss'
+})
+export class List {
+  readonly todo_service = inject(TodoService);
+  
+  list = this.todo_service.getList('todo-list');
+
+  activities = input<ActivityModel[]>();
+
+  show: boolean = false;
+
+  activity: ActivityModel = {} as ActivityModel;
+
+
+  loadActivity(activity_received: ActivityModel){
+    this.show = true;
+    this.activity = activity_received;
+  }
+
+  checkActivity(activity: ActivityModel){
+    //if(this.filter_activities == undefined){
+    this.todo_service.updateProgress(activity.id);
+      // if(value){
+      //   this.list.progress += 1;
+      // }else{
+      //   this.list.progress -= 1;
+      // }
+      this.todo_service.setList('todo-list');
+    //}
+    
+  }
+
+  showActivityDetails(){
+    
+      this.show = true;
+      if(this.activity != undefined){
+        this.activity = {} as ActivityModel;
+      }
+    
+  }
+
+  hideActivityDetails(){
+    this.show = false;
+  }
+
+  updateList(value: boolean){
+    if(value){
+      this.list = this.todo_service.getList('todo-list');
+      this.show = false;
+      //this.activity = {} as ActivityModel;
+    }
+  }
+
+
+}

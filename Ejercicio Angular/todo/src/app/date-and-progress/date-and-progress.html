@@ -1,0 +1,17 @@
+<!-- <img
+ width="50"
+ height="50"
+ src="/icons/emoji_nature_icon.svg"
+ alt="Bee icon" > -->
+<div class="date">
+    <h1>{{currentDate | date: 'longDate'}}</h1>
+    <h1 id="day">{{currentDate| date: 'EEEE'}}</h1>
+</div>
+<div class="progress">
+    <h2>{{list().progress}}/{{list().total}}</h2>
+    <h3>Today's Progress</h3>
+    <div class="progress-bar">
+        <div class="progress-made" [style.width]="((list().progress/list().total) * 100 | number: '1.0-0') + '%'"></div>
+    </div>
+    <p class="detail-text">{{(list().progress/list().total) * 100 | number: '1.0-0'}}% completed</p>
+</div>

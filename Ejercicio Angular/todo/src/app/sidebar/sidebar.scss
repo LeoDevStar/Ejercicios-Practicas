@@ -1,0 +1,135 @@
+.sidebar{
+    width: 300px;
+    height: 690px;
+    background-color: rgb(255 246 217);
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    a{
+        cursor: pointer;
+    }
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    //justify-content: space-between;
+    padding: 5%;
+    img{
+        border-radius: 50%;
+        margin-right: 5%;
+    }
+    p{
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    input{
+        appearance: none;
+        border-radius: 3rem;
+        width: 80%;
+        text-align: center;
+        border-style: none;
+        background-color: rgb(255, 238, 187);
+        //margin-left: 10%;
+
+        background-image: url("/icons/glass_gray_icon.svg");
+        background-repeat: no-repeat;
+        background-position: 4rem center;
+        background-size: 15px 15px;
+
+    }
+
+    input:focus{
+        background-image: none;
+    }
+}
+.options, .list-options{
+    padding-block: 2%;
+    ul{
+        list-style-type: none;
+        padding: 0;
+        padding-left: 5%;
+        margin: 0;
+        
+    }
+    img{
+        width: 20px;
+        height: 20px;
+        margin-right: 8%;
+    }
+    // .circle{
+    //     width: 18px;
+    //     height: 18px;
+    //     // background-color: blue;
+    //     border-radius: 50%;
+    //     margin-right: 8%;
+    // }
+}
+
+.list-header-options{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a{
+        margin-right: 10%;
+    }
+}
+
+.list-options{
+    ul{
+        height: 15rem;
+        overflow: auto;
+    }
+}
+.subtitle-sidebar{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0;
+    padding-left: 2%;
+    margin: 2%;
+}
+
+.create-category-container{
+    display: flex;
+    align-items: center;
+    input[type="color"]{
+        appearance: none;
+        background-color: rgb(0, 0, 0, 0);
+        
+        padding: 0;
+        
+        width: 40px;
+        height: 40px;
+
+        border: none;
+        border-radius: 50%;
+        
+        cursor: pointer;
+    }
+    // input[type="color"]::webkit-color{
+    //     border: none;
+    // }
+    input[type="text"]{
+        margin-inline: 4%;
+        appearance: none;
+        
+        border: 2px solid gray;
+        margin-block: 3%;
+        padding: 2%;
+    }
+}
+
+.account-opt{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    li{
+        display: flex;
+        align-items: center;
+        height: 30px;
+    }
+}

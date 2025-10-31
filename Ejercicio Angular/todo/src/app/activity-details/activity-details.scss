@@ -1,0 +1,100 @@
+.no-show{
+    display: none;
+}
+.activity-details-container{
+    width: 350px;
+    position: relative;
+    height: 670px;
+    margin-left: 5rem;
+}
+
+.details-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a{
+        cursor: pointer;
+    }
+}
+
+.activity-details-inputs{
+    display: flex;
+    flex-direction: column;
+    .detail-input, .detail-textarea{
+        appearance: none;
+        width: 320px;
+        border: 2px solid gray;
+        margin-block: 3%;
+        padding: 5%;
+    }
+    .detail-textarea{
+        height: 100px;
+        //resize: vertical;
+        resize: none;
+    }
+}
+
+.list-container{
+    //width: 320px;
+    display: flex;
+    align-items: center;
+    //justify-content: space-around;
+    margin-block: 2rem;
+}
+#list{
+    appearance: none;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius: 0.5rem;
+    margin-left: 5%;
+    background-color: rgb(175 219 251);
+    padding: 2%;
+}
+
+#datefield{
+    appearance: none;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius: 0.5rem;
+    margin-left: 5%;
+    background-color: rgb(175, 251, 229);
+    padding: 2%;
+}
+
+span{
+    background-color: rgb(175 219 251);
+    border-radius: 5px;
+    padding: 2%;
+    margin-block: 10%;
+}
+
+.activity-details-buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    //top: 13rem;
+    bottom: 10px;
+}
+
+.text-button{
+    appearance: none;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.save-button{
+    appearance: none;
+    background: rgb(249 203 69);
+    border: none;
+    border-radius: 5px;
+    padding: 3%;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+}
